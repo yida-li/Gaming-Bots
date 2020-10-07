@@ -15,6 +15,7 @@ function attack() {
   robot.moveMouse(finder.random_x, finder.random_y);
   robot.mouseClick('right');
   sleep(601);
+  git;
   robot.moveMouseSmooth(finder.random_x, finder.random_y + 27);
   robot.mouseClick('left');
 }
