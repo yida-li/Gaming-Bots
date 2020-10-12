@@ -1,24 +1,20 @@
-//importing the robotjs
+// importing the robotjs
 var robot = require('robotjs');
 
 function main() {
   console.log('Starting...');
   sleep(2000);
-
   while (true) {
     var j = 0;
     while (j < 6) {
       var random_x = getRandomInt(30000, 38520);
-
       robot.moveMouse(583, 294);
       robot.mouseClick('right');
-      sleep(642);
+      sleep(642); 
       robot.moveMouseSmooth(583, 338);
       robot.mouseClick();
-
       sleep(4129);
       prayerToggle();
-
       j++;
       console.log('sleeping for ' + random_x + ' ms');
       sleep(random_x);
@@ -33,7 +29,7 @@ function sleep(ms) {
   // console.log('sleeping for ' + ms + ' ms');
 }
 
-
+// function that eats rockcake
 function biteCake(){
   sleep(642);
   robot.moveMouseSmooth(583, 294);
@@ -43,132 +39,25 @@ function biteCake(){
   robot.mouseClick();
 }
 
-// function of sheer complexity
-
-
-function eden1(){
-  
-  var x= [582,625,668,711,582,625,668,711,582,625,668,711,582,625,668,711,582,625,668,711,582,625,668,711];
-  var y= [335,373,411,449,487,525,335,373,411,449,487,525,335,373,411,449,487,525,335,373,411,449,487,525];
-
-
- 
-
-    // a total of 4 sips for each pot
-    var sipCounter =4;
-    while(sipCounter>0){
-    // a total of 24 pots in 1 inventory
-    var PotCounter=24;
-      //
-// declared inside first while loop, hence each x/y combined cordinates can be used 16 times which is 16 sips
-  var attackpotx= [259,259,297,297];
-  var attackpoty= [668,668,711,711];
-
-      while(PotCouter>0){
-          var xTemp=getRandomInt(1,24);
-          if(( x[xTemp]=!0)& (y[xTemp]=!0) ){
-            // literally 1 sip fo potion every 4 minute okay?
-            var temp = getRandomInt(1,3)
-            if (temp==2){
-              biteCake();
-            }
-            else{
-             prayerToggle();
-            }
-            
-            robot.moveMouseSmooth(x[xTemp],y[xTemp]);
-            robot.mouseClick();
-            sleep(getRandomInt(50000,57000));
-            var temp1 = getRandomInt(1,3)
-            if (temp1==2){
-              prayerToggle();
-            }
-            else{
-              biteCake();
-            }
-            robot.moveMouseSmooth(x[xTemp],y[xTemp]);
-            robot.mouseClick();
-           
-            sleep(getRandomInt(50000,57000));
-            var temp2 = getRandomInt(1,3)
-            if (temp2==2){
-              prayerToggle();
-            }
-            else{
-              biteCake();
-            }
-            robot.moveMouseSmooth(x[xTemp],y[xTemp]);
-            robot.mouseClick();
-            sleep(getRandomInt(50000,57000));
-
-            var temp3 = getRandomInt(1,3)
-            if (temp3==2){
-              biteCake();
-            }
-            else{
-              prayerToggle();
-            }
-
-            robot.moveMouseSmooth(x[xTemp],y[xTemp]);
-            robot.mouseClick();
-            x[xTemp]=0;
-            y[xTemp]=0;
-            sleep(getRandomInt(50000,57000));
-                                        }
-                                  // if pot counter is an even number? so basically a spec every 8 minute          
-                  if(PotCounter%=3){
-                    battleaxe();
-                    {
-                      var randomAttackpot=getRandomInt(1,4);
-                      if(( attackpotx[randomAttackpot]=!0)& (attackpoty[randomAttackpot]=!0) ) 
-                      {
-                      robot.moveMouseSmooth(attackpotx[randomAttackpot],attackpoty[randomAttackpot])
-                      attackpotx[randomAttackpot]=0;
-                      attackpoty[randomAttackpot]=0;
-                      }
-                    }
-                  }
-      PotCounter--;
-
-                        }
-      
-
-
-
-     sipCounter--; 
-    }
-      
-
-
-}
-
-
-(
-
-  function eden(){
+(function eden(){
     
-
-  
-  
-   
-  
-      // a total of 4 sips for each pot
       var sipCounter =4;
       while(sipCounter>0){
       // a total of 24 pots in 1 inventory
       var PotCounter=24;
         //
-  // declared inside first while loop, hence each x/y combined cordinates can be used 16 times which is 16 sips
-    var attackpotx= [259,259,297,297];
-    var attackpoty= [668,668,711,711];
-    var x= [582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707];
-    var y= [335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292];
+      // declared inside first while loop, hence each x/y combined cordinates can be used 16 times which is 16 sips
+      var attackpotx= [668,668,711,711];
+      var attackpoty= [259,259,297,297];
+      var x= [582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707];
+      var y= [335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292];
         while(PotCounter>0){
             var xTemp=getRandomInt(1,24);
             if(( x[xTemp]>2)&& (y[xTemp]>2) ){
               // literally 1 sip fo potion every 4 minute okay?
-             
+              
             robot.moveMouseSmooth(x[xTemp],y[xTemp]);
+            
             robot.mouseClick();
             sleep(getRandomInt(50000,57000));
             randomeithzer();
@@ -179,16 +68,11 @@ function eden1(){
             sleep(getRandomInt(50000,57000));
             randomeithzer();
               
-              
-            
-              x[xTemp]=1;
-              y[xTemp]=1;
+            x[xTemp]=1;
+            y[xTemp]=1;
              
-                   
-        PotCounter--;
-        if(PotCounter%=3){
-          battleaxe();
-          {
+            PotCounter--; // decrements counter for a total of 24 times
+            if(PotCounter%=3){{
             var randomAttackpot=getRandomInt(1,4);
             if(( attackpotx[randomAttackpot]>2)& (attackpoty[randomAttackpot]>0) ) 
             {
@@ -197,19 +81,13 @@ function eden1(){
             attackpotx[randomAttackpot]=0;
             attackpoty[randomAttackpot]=0;
             }
-          }
-        }
+                            }
                           }
-        
-  
-  
-  
-       sipCounter--; 
-      }
-        
-  
-  
-  }})();
+                                              }
+                          }
+            sipCounter--; // decrements a counter for a total of 4 times
+            }
+})();          
 
 // randomlly choose to either battleaxe or toggle to reset hp
 function randomeithzer(){
@@ -258,7 +136,7 @@ function tick() {
   sleep(611);
 }
 
-// a subset of layers to differentiate time delay
+// a subset of layers to differentiate time delay 
 function l1() {
   var random_x = getRandomInt(420, 699);
   sleep(random_x);
@@ -284,6 +162,8 @@ function layer5() {
   lay3();
   laye4();
 }
+
+//function that returns random interger between floor and ceiling with 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
