@@ -52,9 +52,9 @@ function biteCake(){
       var attackpotx= [668,668,711,711];
       var attackpoty= [259,259,297,297];
                       // include position in both absortion array and potion array to induce more unpredicatable randomized pattern
-      var x= [582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707];
+                      // both 707 711 are access points
+        while(PotCounter>0){var x= [582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707];
       var y= [335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292];
-        while(PotCounter>0){
             var xTemp=getRandomInt(1,24);
             if(( x[xTemp]>2)&& (y[xTemp]>2) ){
               // literally 1 sip fo potion every 4 minute okay?
@@ -95,7 +95,7 @@ function biteCake(){
 // randomlly choose to either battleaxe or toggle to reset hp
 function randomeithzer(){
   var temp2 = getRandomInt(0,20);
-  if(temp2%7){
+  if(temp2%=7){
     prayerToggle();
     sleep(2000);
     biteCake();
