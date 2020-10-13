@@ -13,48 +13,48 @@ function sleep(ms) {
 function //  slowly combining the clean herb with vial of water in a designated location
 GatherResources(){
 while(true){
-var X_herbArray=[getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),
-    getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),  getRandomInt(616,630), 
-     getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) , 
-     getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716)]
+var X_herbArray=[getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,
+    getRandomInt(616,630)+775,  getRandomInt(616,630)+775,   getRandomInt(616,630)+775,  getRandomInt(616,630)+775,   getRandomInt(616,630)+775,  getRandomInt(616,630)+775,  getRandomInt(616,630)+775, 
+     getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 , 
+     getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775]
 var Y_herbArray=[ getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
 ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
 ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
 ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
 ,getRandomInt(431,444),getRandomInt(463,479)]
-  spc.moveMouseSmooth(getRandomInt(227,243),getRandomInt(120,129));
+  spc.moveMouseSmooth(getRandomInt(227,243)+774,getRandomInt(120,129));
 spc.mouseClick('right');
 tick(getRandomInt(700,800));
-spc.moveMouseSmooth(getRandomInt(227,243),getRandomInt(213,214));
+spc.moveMouseSmooth(getRandomInt(227,243)+774,getRandomInt(213,214));
 spc.mouseClick();
 //close bank
 tick(getRandomInt(700,800));
-spc.moveMouseSmooth(getRandomInt(282,289),getRandomInt(120,129));
+spc.moveMouseSmooth(getRandomInt(282,289)+774,getRandomInt(120,129));
 spc.mouseClick();
 //close bank
 
-spc.moveMouseSmooth(getRandomInt(484,494),getRandomInt(43,53));
+spc.moveMouseSmooth(getRandomInt(484,494)+774,getRandomInt(43,53));
 spc.mouseClick();
 tick();
 
 //combine 2 elements
-spc.moveMouseSmooth(getRandomInt(576,586),getRandomInt(358,371));
+spc.moveMouseSmooth(getRandomInt(576,586)+774,getRandomInt(358,371));
 spc.mouseClick();
-spc.moveMouseSmooth(getRandomInt(576,586),getRandomInt(389,406));
+spc.moveMouseSmooth(getRandomInt(576,586)+774,getRandomInt(389,406));
 spc.mouseClick();
 tick(622);
 // clicking make all
-spc.moveMouseSmooth(getRandomInt(227,290),getRandomInt(433,480));
+spc.moveMouseSmooth(getRandomInt(227,290)+774,getRandomInt(433,480));
 spc.mouseClick();
 
 sleep(9000);
-spc.moveMouseSmooth(264,172);
+spc.moveMouseSmooth(264+774,172);
 spc.mouseClick();
 
 
 sleep(getRandomInt(1200,2000));
 //bankcccc
-spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342))
+spc.moveMouseSmooth(getRandomInt(432,454)+774,getRandomInt(327,342))
 spc.mouseClick();
 
 
@@ -362,6 +362,9 @@ var counter =0;
                 if(X_herbArray[destiny]!=0 &&Y_herbArray[destiny]!=0){
                     // time complexity applied, just coen 352, from data structures, from algorithm
                     spc.moveMouse(X_herbArray[destiny],Y_herbArray[destiny]);
+                    spc.mouseClick('right');
+                    
+                    spc.moveMouse(X_herbArray[destiny],Y_herbArray[destiny]+40);
                     spc.mouseClick();
                     X_herbArray[destiny]=0;
                     Y_herbArray[destiny]=0;
@@ -417,5 +420,6 @@ function getRandomInt(min, max) {
 //main();
 //swip();
 //GatherResources2();
-//
-CleaningVesispianGase2();
+//CleaningVesispianGase2();
+//ShowMeTheMoney();
+GatherResources();

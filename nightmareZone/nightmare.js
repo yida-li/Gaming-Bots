@@ -1,106 +1,96 @@
-// importing the robotjs
+//importing the robotjs
 var robot = require('robotjs');
 
-function main() {
-  console.log('Starting...');
-  sleep(2000);
-  while (true) {
-    var j = 0;
-    while (j < 6) {
-      var random_x = getRandomInt(30000, 38520);
-      robot.moveMouse(583, 294);
-      robot.mouseClick('right');
-      sleep(642); 
-      robot.moveMouseSmooth(583, 338);
-      robot.mouseClick();
-      sleep(4129);
-      prayerToggle();
-      j++;
-      console.log('sleeping for ' + random_x + ' ms');
-      sleep(random_x);
-    }
-    battleaxe();
-  }
-}
-
 // function that performs wait for a thread/process/program
-function sleep(ms) {
-  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
-  // console.log('sleeping for ' + ms + ' ms');
+function sleep(ms) {console.log('sleeping for ' + ms + ' ms');
+Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+
+}
+  
+  
+function clickatPosition(x,y){
+
+robot.moveMouseSmooth(x,y);
+robot.mouseClick();
+tick();
+
 }
 
-// function that eats rockcake
 function biteCake(){
   sleep(642);
-  robot.moveMouseSmooth(583, 294);
+  robot.moveMouseSmooth(583, 331);
+  robot.mouseClick('right'); // 44 is 2nd opetion right click
+  robot.moveMouseSmooth(583, 375);
+  robot.mouseClick();
+  sleep(602);
+  robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,169)); //200 iq
+  robot.moveMouseSmooth(583, 331+534);
   robot.mouseClick('right');
   sleep(642);
-  robot.moveMouseSmooth(583, 338);
+  robot.moveMouseSmooth(583, 375+534);
   robot.mouseClick();
 }
 
-(function eden(){
+// function of sheer complexityfor(var i=0;i<4;i++){
+function duoCourse(){
     
-      var sipCounter =4;
-      while(sipCounter>0){
-      // a total of 24 pots in 1 inventory
-      var PotCounter=24;
-        //
-      // declared inside first while loop, hence each x/y combined cordinates can be used 16 times which is 16 sips
+  for( var i =0 ;i<4;i++){
+      count=0;
       
-                      // potions can be replaced and size as well by enlarging array
-      var attackpotx= [668,668,711,711];
-      var attackpoty= [259,259,297,297];
-                      // include position in both absortion array and potion array to induce more unpredicatable randomized pattern
-                      // both 707 711 are access points
-        while(PotCounter>0){var x= [582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707,582,625,668,707];
-      var y= [335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292,335,373,406,439,477,292];
-            var xTemp=getRandomInt(1,24);
-            if(( x[xTemp]>2)&& (y[xTemp]>2) ){
-              // literally 1 sip fo potion every 4 minute okay?
-              
-            robot.moveMouseSmooth(x[xTemp],y[xTemp]);
-            
-            robot.mouseClick();
-            sleep(getRandomInt(50000,57000));
-            randomeithzer();
-            sleep(getRandomInt(50000,57000));
-            randomeithzer();
-            sleep(getRandomInt(50000,57000));
-            randomeithzer();
-            sleep(getRandomInt(50000,57000));
-            randomeithzer();
-              
-            x[xTemp]=1;
-            y[xTemp]=1;
-             
-            PotCounter--; // decrements counter for a total of 24 times
-            if(PotCounter%=3){{
-            var randomAttackpot=getRandomInt(1,4);
-            if(( attackpotx[randomAttackpot]>2)& (attackpoty[randomAttackpot]>0) ) 
-            {
-            robot.moveMouseSmooth(attackpotx[randomAttackpot],attackpoty[randomAttackpot])
-            robot.mouseClick();
-            attackpotx[randomAttackpot]=0;
-            attackpoty[randomAttackpot]=0;
-            }
-                            }
-                          }
-                                              }
-                          }
-            sipCounter--; // decrements a counter for a total of 4 times
-            }
-})();          
+      var y_position =[ 373,406,439,477,259,297,335,373,406,439,477,259,297,335,373,406,439,477,259,297,335,373,406,439,477];
+      var x_position =[ 582,582,582,582,625,625,625,625,625,625,625,668,668,668,668,668,668,668,707,707,707,707,707,707,707];
 
+        while (count <25){
+
+      var temp= getRandomInt(0,24);
+
+         if(x_position[temp]!=0, y_position[temp]!=0){
+ robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+clickatPosition(x_position[temp],y_position[temp]);
+GatherResources();   
+biteCake();
+ robot.moveMouseSmooth(getRandomInt(55,1800),getRandomInt(69,800)); //200 iq
+clickatPosition(x_position[temp],y_position[temp+534]);
+GatherResources();
+biteCake();
+ robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+GatherResources();
+GatherResources();
+GatherResources();
+biteCake();
+ robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+ GatherResources();
+ GatherResources();
+ GatherResources();
+battleaxe();
+biteCake();
+ robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+ GatherResources();
+biteCake();
+GatherResources();
+y_position[temp]=0;
+x_position[temp]=0;
+count++;
+
+         }
+
+          }
+
+  }
+  
+
+
+
+        
+
+
+
+      }
 // randomlly choose to either battleaxe or toggle to reset hp
 function randomeithzer(){
-  var temp2 = getRandomInt(0,20);
-  if(temp2%=7){
-    prayerToggle();
-    sleep(2000);
-    biteCake();
-  }
-  else if (temp2%=3){
+  var temp2 = getRandomInt(1,2);
+  
+if (temp2=1){
     prayerToggle();
   }
   else{
@@ -109,20 +99,90 @@ function randomeithzer(){
 
 }
 
+function //  slowly combining the clean herb with vial of water in a designated location
+GatherResources(){
+
+var X_herbArray=[getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,getRandomInt(576,586)+775,
+    getRandomInt(616,630)+775,  getRandomInt(616,630)+775,   getRandomInt(616,630)+775,  getRandomInt(616,630)+775,   getRandomInt(616,630)+775,  getRandomInt(616,630)+775,  getRandomInt(616,630)+775, 
+     getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 ,  getRandomInt(656,670)+775 , 
+     getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775,getRandomInt(699,716)+775]
+var Y_herbArray=[ getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+,getRandomInt(431,444),getRandomInt(463,479)]
+  robot.moveMouseSmooth(getRandomInt(227,243)+774,getRandomInt(120,129));
+robot.mouseClick('right');
+tick(getRandomInt(700,800));
+robot.moveMouseSmooth(getRandomInt(227,243)+774,getRandomInt(213,214));
+robot.mouseClick();
+//close bank
+tick(getRandomInt(700,800));
+robot.moveMouseSmooth(getRandomInt(282,289)+774,getRandomInt(120,129));
+robot.mouseClick();
+//close bank
+
+robot.moveMouseSmooth(getRandomInt(484,494)+774,getRandomInt(43,53));
+robot.mouseClick();
+tick();
+
+//combine 2 elements
+robot.moveMouseSmooth(getRandomInt(576,586)+774,getRandomInt(358,371));
+robot.mouseClick();
+robot.moveMouseSmooth(getRandomInt(576,586)+774,getRandomInt(389,406));
+robot.mouseClick();
+tick(622);
+// clicking make all
+robot.moveMouseSmooth(getRandomInt(227,290)+774,getRandomInt(433,480));
+robot.mouseClick();
+
+sleep(9000);
+robot.moveMouseSmooth(264+774,172);
+robot.mouseClick();
+
+
+sleep(getRandomInt(1200,2000));
+//bankcccc
+robot.moveMouseSmooth(getRandomInt(432,454)+774,getRandomInt(327,342))
+robot.mouseClick();
 
 
 
 
 
+
+
+
+ 
+}function guzzleLikeMad1(){
+  for(var i=0;i<getRandomInt(10,20);i++){
+    robot.moveMouseSmooth(getRandomInt(581,585), getRandomInt(329,334));
+  
+    robot.mouseClick('right'); // 44 is 2nd opetion right click
+     sleep(getRandomInt(50,130));
+    robot.moveMouseSmooth(583, 375);
+    robot.mouseClick();
+  }
+  }
+  
+  function guzzleLikeMad2(){
+  for(var i=0;i<getRandomInt(30,40);i++){
+    robot.moveMouseSmooth(getRandomInt(581,585), getRandomInt(862,867));
+    robot.mouseClick('right');
+    sleep(getRandomInt(50,130));
+    robot.moveMouseSmooth(583, 375+534);
+    robot.mouseClick();
+  }
+  }
 // function that performs strength boost
 function battleaxe() {
-  robot.moveMouseSmooth(623, 254);
+  robot.moveMouseSmooth(582, 293);
   robot.mouseClick();
   sleep(923);
-  robot.moveMouseSmooth(589, 175);
+  robot.moveMouseSmooth(559, 118);
   robot.mouseClick();
   sleep(523);
-  robot.moveMouseSmooth(623, 254);
+  robot.moveMouseSmooth(582, 293);
   robot.mouseClick();
   console.log('using my battleaxe spec ');
 }
@@ -130,7 +190,11 @@ function battleaxe() {
 function prayerToggle() {
   robot.moveMouseSmooth(557, 121);
   robot.mouseClick();
-  sleep(131);
+  sleep(231);
+  robot.mouseClick();
+  robot.moveMouseSmooth(557, 121+534);
+  robot.mouseClick();
+  sleep(231);
   robot.mouseClick();
 }
 // function that displays game tick
@@ -138,39 +202,13 @@ function tick() {
   console.log('1tick');
   sleep(611);
 }
-
-// a subset of layers to differentiate time delay 
-function l1() {
-  var random_x = getRandomInt(420, 699);
-  sleep(random_x);
-}
-function la2() {
-  var random_x = getRandomInt(4271, 10000);
-  sleep(random_x);
-}
-function lay3() {
-  var random_x = getRandomInt(0, 414);
-  sleep(random_x);
-}
-function laye4() {
-  var random_x = getRandomInt(14103, 31413);
-  sleep(random_x);
-}
-// function that calls all layer
-// sleeping for between 18.794 millisecond to 42.526 milliseconds
-// used if necessary
-function layer5() {
-  l1();
-  la2();
-  lay3();
-  laye4();
-}
-
-//function that returns random interger between floor and ceiling with 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//main();
+
+
+//guzzleLikeMad2();
+duoCourse();
