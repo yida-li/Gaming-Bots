@@ -31,8 +31,62 @@ function biteCake(){
   robot.mouseClick();
 }
 
-// function of sheer complexityfor(var i=0;i<4;i++){
-function duoCourse(){
+// function of sheer complexity 
+  function duoCourse(){
+    
+    for( var i =0 ;i<4;i++){
+        count=0;
+        
+        var y_position =[ 373,406,439,477,259,297,335,373,406,439,477,259,297,335,373,406,439,477,259,297,335,373,406,439,477];
+        var x_position =[ 582,582,582,582,625,625,625,625,625,625,625,668,668,668,668,668,668,668,707,707,707,707,707,707,707];
+  
+          while (count <25){
+  
+        var temp= getRandomInt(0,24);
+  
+           if(x_position[temp]!=0, y_position[temp]!=0){
+   robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+  clickatPosition(x_position[temp],y_position[temp]);
+  sleep(getRandomInt(20000,25000));  
+  biteCake();
+   robot.moveMouseSmooth(getRandomInt(55,1800),getRandomInt(69,800)); //200 iq
+  clickatPosition(x_position[temp],y_position[temp+534]);
+  sleep(getRandomInt(20000,25000));  
+  
+  biteCake();
+   robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+   sleep(getRandomInt(20000,25000)); // sleep(getRandomInt(45000,50000));
+  biteCake();
+   robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+   sleep(getRandomInt(20000,25000)); 
+   // sleep(getRandomInt(40000,42699)); //sleep(getRandomInt(45000,50000));
+  battleaxe();
+  biteCake();
+   robot.moveMouseSmooth(getRandomInt(800,1300),getRandomInt(69,800)); //200 iq
+   sleep(getRandomInt(20000,25000));  
+  biteCake();
+  sleep(getRandomInt(20000,25000));  
+  y_position[temp]=0;
+  x_position[temp]=0;
+  count++;
+  
+           }
+  
+            }
+  
+    }
+    
+  
+  
+  
+          
+  
+  
+  
+        }
+
+// function of sheer complexity but for 3
+function duoCourse3(){
     
   for( var i =0 ;i<4;i++){
       count=0;
@@ -179,7 +233,7 @@ function battleaxe() {
   robot.moveMouseSmooth(582, 293);
   robot.mouseClick();
   sleep(923);
-  robot.moveMouseSmooth(559, 118);
+  robot.moveMouseSmooth(559, 175);
   robot.mouseClick();
   sleep(523);
   robot.moveMouseSmooth(582, 293);
@@ -210,5 +264,8 @@ function getRandomInt(min, max) {
 
 
 
+//duoCourse3();guzzleLikeMad1();
+//
+//guzzleLikeMad2();guzzleLikeMad2();
 //guzzleLikeMad2();
-duoCourse();
+duoCourse3();
