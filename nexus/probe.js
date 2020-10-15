@@ -117,6 +117,7 @@ getRandomInt(463,479)+534,getRandomInt(463,479)+534,getRandomInt(463,479)+534,ge
       var temp= getRandomInt(0,13);
       spc.moveMouseSmooth(X_firstHalf[temp],Y_firstHalf[temp]);
       spc.mouseClick();
+      tick(getRandomInt(700,800));
       var temp2= getRandomInt(0,13);
       spc.moveMouseSmooth(X_secondHalf[temp2],Y_secondHalf[temp2]);
       spc.mouseClick();
@@ -188,7 +189,7 @@ getRandomInt(463,479)+534,getRandomInt(463,479)+534,getRandomInt(463,479)+534,ge
 function clickBank1() {
     // Default colour for object marker at bank counter is FFFF00
     var img = spc.screen.capture(0, 0, 1900, 1080);
-    var targetNpc = ['514633','373023','8f891a'];
+    var targetNpc = ['514633','373023','8f891a','5c523f','9d9625'];
     for (var i = 0; i < 10011; i++) {
       var random_x = getRandomInt(0, 519);
       var random_y = getRandomInt(0, 365);
@@ -209,7 +210,7 @@ function clickBank1() {
   function clickBank2() {
     // Default colour for object marker at bank counter is FFFF00
     var img = spc.screen.capture(0, 0, 1900, 1080);
-    var targetNpc = ['483c2b'];
+    var targetNpc = ['5c523f','9d9625'];
     for (var i = 0; i < 10011; i++) {
       var random_x = getRandomInt(0, 579);
       var random_y = getRandomInt(500, 897);
@@ -254,5 +255,5 @@ function clickBank1() {
             robot.mouseClick();
             tick(6330);*/
         //  clickBank1();
-        GatherResourcesFinalSpeed()
+     //   GatherResourcesFinalSpeed()
       

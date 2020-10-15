@@ -420,6 +420,7 @@ function getRandomInt(min, max) {
 //main();
 //swip();
 //GatherResources2();
-//CleaningVesispianGase2();
+//GatherResources();
 //ShowMeTheMoney();
-GatherResources();
+
+CleaningVesispianGase2();
