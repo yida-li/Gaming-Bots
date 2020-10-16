@@ -250,6 +250,8 @@ function clickBank1() {
     return false;
   }
 
+
+
 //GatherResources();clickBank2();   
 /*robot.moveMouseSmooth(random_x, random_y);
             robot.mouseClick();

@@ -517,11 +517,11 @@ function clickBank2() {
 //testing ------ 
 //main();
 //swip();
-//GatherResources2();
+GatherResources2();
 //GatherResources();
 //ShowMeTheMoney();
 
 //CleaningVesispianGase2();
 //clickBank1();
 //clickBank2();
-CleaningVesispianGase2();
+//CleaningVesispianGase2();
