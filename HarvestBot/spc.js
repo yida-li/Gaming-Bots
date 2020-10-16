@@ -235,12 +235,13 @@ CleaningVesispianGase1(){
   
   
 } 
-  
+   
+
 
 function // instantly click all grimmy herbs with 2 svcs
 CleaningVesispianGase2(){
     var yida=0;
-for(var i=0;i<40000;i++){
+for(var i=0;i<1300;i++){
 //take herb at 4th location
 spc.moveMouseSmooth(getRandomInt(227,243),getRandomInt(120,129));
 spc.mouseClick();
@@ -308,8 +309,12 @@ var counter =0;
          }
          sleep(getRandomInt(2000,3200));
          //banker
-spc.moveMouseSmooth(264,172);
-spc.mouseClick();
+
+         if(clickBank1()==false){
+          clickRoute1();
+          sleep(4000);
+          clickBank1();
+        }   
 
 
 sleep(getRandomInt(1200,2000));
@@ -317,9 +322,11 @@ sleep(getRandomInt(1200,2000));
 spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342))
 spc.mouseClick();
 
-spc.moveMouseSmooth(264,172+534);
-spc.mouseClick();
-
+if(clickBank2()==false){
+  clickRoute2();
+  sleep(4000);
+  clickBank2();
+}  
 
 sleep(getRandomInt(1200,2000));
 //bankcccc
@@ -416,6 +423,97 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+
+
+
+
+function clickRoute1() {
+  var flag=false;
+  // Default colour for object marker at bank counter is FFFF00
+  var img = spc.screen.capture(0, 0, 1900, 1080);
+  var targetNpc = ['1a1a7e','0000cd'];
+  for (var i = 0; i < 10011; i++) {
+    var random_x = getRandomInt(0, 519);
+    var random_y = getRandomInt(0, 365);
+    var sample_color = img.colorAt(random_x, random_y);
+
+    if (targetNpc.includes(sample_color)) {
+      console.log('found action at : ' + random_x + ' ' + random_y);
+      
+      spc.moveMouseSmooth(random_x, random_y);
+      spc.mouseClick();
+      flag=true;
+      return flag; 
+    }
+  }
+  return flag;
+}
+
+function clickBank1() {
+  // Default colour for object marker at bank counter is FFFF00
+  var flag=false;
+  var img = spc.screen.capture(0, 0, 1900, 1080);
+  var targetNpc = ['5c523f','9d9625','5c513e'];
+  for (var i = 0; i < 1011; i++) {
+    var random_x = getRandomInt(0, 519);
+    var random_y = getRandomInt(0, 365);
+    var sample_color = img.colorAt(random_x, random_y);
+
+    if (targetNpc.includes(sample_color)) {
+      console.log('found action at : ' + random_x + ' ' + random_y);
+      
+      spc.moveMouseSmooth(random_x, random_y);
+      spc.mouseClick();
+      flag=true;
+      return flag; 
+    }
+  }
+  return flag;
+}
+function clickRoute2() {
+  // Default colour for object marker at bank counter is FFFF00
+  var img = spc.screen.capture(0, 0, 1900, 1080);
+  var targetNpc = ['1a1a7e','0000cd','5c513e'];
+  for (var i = 0; i < 10011; i++) {
+    var random_x = getRandomInt(0, 519);
+    var random_y = getRandomInt(0, 365);
+    var sample_color = img.colorAt(random_x, random_y);
+
+    if (targetNpc.includes(sample_color)) {
+      console.log('found action at : ' + random_x + ' ' + random_y);
+      
+      spc.moveMouseSmooth(random_x, random_y);
+      spc.mouseClick();
+      flag=true;
+      return flag; 
+    }
+  }
+  return flag;
+}
+function clickBank2() {
+  flag=false;
+  // Default colour for object marker at bank counter is FFFF00
+  var img = spc.screen.capture(0, 0, 1900, 1080);
+  var targetNpc = ['5c523f','9d9625'];
+  for (var i = 0; i < 10011; i++) {
+    var random_x = getRandomInt(0, 579);
+    var random_y = getRandomInt(500, 897);
+    var sample_color = img.colorAt(random_x, random_y);
+
+    if (targetNpc.includes(sample_color)) {
+      console.log('found action at : ' + random_x + ' ' + random_y);
+      
+      spc.moveMouseSmooth(random_x, random_y);
+      spc.mouseClick();
+      flag=true;
+      return flag;
+      
+    }
+  }
+  return flag;
+}
+
 //testing ------ 
 //main();
 //swip();
@@ -423,4 +521,7 @@ function getRandomInt(min, max) {
 //GatherResources();
 //ShowMeTheMoney();
 
+//CleaningVesispianGase2();
+//clickBank1();
+//clickBank2();
 CleaningVesispianGase2();

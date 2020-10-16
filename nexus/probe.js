@@ -255,5 +255,6 @@ function clickBank1() {
             robot.mouseClick();
             tick(6330);*/
         //  clickBank1();
-     //   GatherResourcesFinalSpeed()
+     //   
+     GatherResourcesFinalSpeed()
       
