@@ -168,6 +168,18 @@ console.log(yida+' cycle sucessful');
  GatherResources2();
  GatherResources2();
  guzzleLikeMad3(); 
+ GatherResources2();
+ GatherResources2();
+ prayerToggle3();
+ GatherResources2();
+ GatherResources2();
+guzzleLikeMad3(); 
+GatherResources2();
+GatherResources2();
+prayerToggle3();
+GatherResources2();
+GatherResources2();
+guzzleLikeMad3(); 
  
   y_position[temp]=0;
   x_position[temp]=0;
@@ -421,8 +433,110 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs
 GatherResources2(){
+
+  var X_herbArray=[getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),
+      getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),  getRandomInt(616,630), 
+       getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) , 
+       getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716)]
+  var Y_herbArray=[ getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+  ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+  ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+  ,getRandomInt(431,444),getRandomInt(463,479),getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,332),getRandomInt(358,371),getRandomInt(389,406)
+  ,getRandomInt(431,444),getRandomInt(463,479)]
+  var X_herbArray2=[getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),getRandomInt(576,586),
+    getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),   getRandomInt(616,630),  getRandomInt(616,630),  getRandomInt(616,630), 
+     getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) ,  getRandomInt(656,670) , 
+     getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716),getRandomInt(699,716)]
+var Y_herbArray2=[ getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandomInt(321,332)+534,getRandomInt(358,371)+534,getRandomInt(389,406)+534
+,getRandomInt(431,444)+534,getRandomInt(463,479)+534,getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandomInt(321,332)+534,getRandomInt(358,371)+534,getRandomInt(389,406)+534
+,getRandomInt(431,444)+534,getRandomInt(463,479)+534,getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandomInt(321,332)+534,getRandomInt(358,371)+534,getRandomInt(389,406)+534
+,getRandomInt(431,444)+534,getRandomInt(463,479)+534,getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandomInt(321,332)+534,getRandomInt(358,371)+534,getRandomInt(389,406)+534
+,getRandomInt(431,444)+534,getRandomInt(463,479)+534]
+
+  
+
+              //  a1
+      robot.moveMouseSmooth(getRandomInt(227,243),getRandomInt(120,129));
+      robot.mouseClick('right');
+      tick(getRandomInt(700,800));
+      robot.moveMouseSmooth(getRandomInt(227,243),getRandomInt(213,214));
+      robot.mouseClick(); tick(getRandomInt(700,800));
+  robot.moveMouseSmooth(getRandomInt(282,289),getRandomInt(120,129));
+  robot.mouseClick(); tick(getRandomInt(700,800));
+  
+ // a1
+     prayerToggle1();
+      tick();
+      robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(358,371));
+      robot.mouseClick();
+      robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(389,406));
+      robot.mouseClick();
+      tick(622);
+      robot.moveMouseSmooth(getRandomInt(227,290),getRandomInt(433,480));
+      robot.mouseClick();
+
+
+              // b1
+              robot.moveMouseSmooth(getRandomInt(227,243),getRandomInt(120,129)+534);
+              robot.mouseClick('right');
+              tick(getRandomInt(700,800));
+              robot.moveMouseSmooth(getRandomInt(227,243),getRandomInt(213,214)+534);
+              robot.mouseClick(); tick(getRandomInt(700,800));
+      robot.moveMouseSmooth(getRandomInt(282,289),getRandomInt(120,129)+534);
+      robot.mouseClick();
+
+     
+ 
+  //b1
+ prayerToggle2();
+  tick();robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(358,371)+534);
+  robot.mouseClick();
+  robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(389,406)+534);
+  robot.mouseClick();
+  tick(622); robot.moveMouseSmooth(getRandomInt(227,290),getRandomInt(433,480)+534);
+  robot.mouseClick();
+
+
+
+
+  sleep(5000);
+  //a1
+   robot.moveMouseSmooth(264,172);
+  robot.mouseClick();
+  tick(getRandomInt(634,780));
+ robot.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342));
+  robot.mouseClick();
+
+
+  
+
+sleep(getRandomInt(1200,2000));
+
+  robot.moveMouseSmooth(264,172+534);
+  robot.mouseClick();
+  tick(getRandomInt(634,780));
+  //bankcccc
+  robot.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342)+534);
+  robot.mouseClick();
+  
+  
+  
+  
+  
+  
+  }
+  
+   
+  
+
+
+function // slowly combining the clean herb with vial of water in a designated location with 2 svcs
+GatherResources2withpixelfind(){
   
   // change 3000 to any amount of time 
  
