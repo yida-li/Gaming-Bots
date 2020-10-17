@@ -168,18 +168,7 @@ console.log(yida+' cycle sucessful');
  GatherResources2();
  GatherResources2();
  guzzleLikeMad3(); 
- GatherResources2();
- GatherResources2();
- prayerToggle3();
- GatherResources2();
- GatherResources2();
-guzzleLikeMad3(); 
-GatherResources2();
-GatherResources2();
-prayerToggle3();
-GatherResources2();
-GatherResources2();
-guzzleLikeMad3(); 
+
  
   y_position[temp]=0;
   x_position[temp]=0;
