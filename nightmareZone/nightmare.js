@@ -158,16 +158,17 @@ console.log(yida+' cycle sucessful');
   clickatPosition(x_position[temp]+774,y_position[temp]);
   GatherResources2();
   GatherResources2();
+  prayerToggle3();
+  GatherResources2();
   GatherResources2();
  guzzleLikeMad3(); 
  GatherResources2();
  GatherResources2();
- GatherResources2();
- guzzleLikeMad3(); 
- GatherResources2();
+ prayerToggle3();
  GatherResources2();
  GatherResources2();
  guzzleLikeMad3(); 
+ 
   y_position[temp]=0;
   x_position[temp]=0;
   count++;
@@ -389,15 +390,26 @@ function battleaxe() {
   console.log('using my battleaxe spec ');
 }
 // function that resets health restore
-function prayerToggle() {
+function prayerToggle1() {
   robot.moveMouseSmooth(557, 121);
   robot.mouseClick();
   sleep(231);
   robot.mouseClick();
+ 
+}
+function prayerToggle2() {
   robot.moveMouseSmooth(557, 121+534);
   robot.mouseClick();
   sleep(231);
   robot.mouseClick();
+ 
+}
+function prayerToggle3() {
+  robot.moveMouseSmooth(557+775, 121);
+  robot.mouseClick();
+  sleep(231);
+  robot.mouseClick();
+ 
 }
 // function that displays game tick
 function tick() {
@@ -445,8 +457,7 @@ var Y_herbArray2=[ getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandom
   robot.mouseClick(); tick(getRandomInt(700,800));
   
  // a1
-      robot.moveMouseSmooth(getRandomInt(484,494),getRandomInt(43,53));
-      robot.mouseClick();
+      prayerToggle1();
       tick();
       robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(358,371));
       robot.mouseClick();
@@ -468,9 +479,7 @@ var Y_herbArray2=[ getRandomInt(247,258)+534,getRandomInt(283,296)+534,getRandom
 
      
  
-  //b1
-  robot.moveMouseSmooth(getRandomInt(484,494),getRandomInt(43,53)+534);
-  robot.mouseClick();
+prayerToggle2();
   tick();robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(358,371)+534);
   robot.mouseClick();
   robot.moveMouseSmooth(getRandomInt(576,586),getRandomInt(389,406)+534);
@@ -525,7 +534,8 @@ robot.mouseClick();
 //guzzleLikeMad2();guzzleLikeMad2();guzzleLikeMad2 ();
 //guzzleLikeMad1();guzzleLikeMad1();guzzleLikeMad1();
 //duoCourse();
-farmingCourse();
+//farmingCourse();prayerToggle1();
 //CleaningVesispianGase2();
 //guzzleLikeMad3();guzzleLikeMad3();guzzleLikeMad3();
 //GatherResources2();
+farmingCourse();

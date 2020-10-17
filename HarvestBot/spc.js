@@ -307,32 +307,28 @@ var counter =0;
 
 
          }
-         sleep(getRandomInt(2000,3200));
-         //banker
-
-         if(clickBank1()==false){
-          clickRoute1();
-          sleep(4000);
-          clickBank1();
-        }   
-
-
-sleep(getRandomInt(1200,2000));
-//bankcccc
-spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342))
-spc.mouseClick();
-
-if(clickBank2()==false){
-  clickRoute2();
-  sleep(4000);
-  clickBank2();
-}  
-
-sleep(getRandomInt(1200,2000));
-//bankcccc
-spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342)+534)
-spc.mouseClick();
-
+         sleep(5000);
+         //a1
+          spc.moveMouseSmooth(264,172);
+         spc.mouseClick();
+         tick(getRandomInt(634,780));
+        spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342));
+         spc.mouseClick();
+       
+       
+         
+       
+       sleep(getRandomInt(1200,2000));
+       
+         spc.moveMouseSmooth(264,172+534);
+         spc.mouseClick();
+         tick(getRandomInt(634,780));
+         //bankcccc
+         spc.moveMouseSmooth(getRandomInt(432,454),getRandomInt(327,342)+534);
+         spc.mouseClick();
+         
+         
+         
 
 yida++;
 console.log(yida+' cycle sucessful');
