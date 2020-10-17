@@ -16,7 +16,8 @@ var Y_herbArray1=[ getRandomInt(247,258),getRandomInt(283,296),getRandomInt(321,
 //top left 
 
 // numerical order 
-var X_herbArray1rightorder=[getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716)]
+var X_herbArray1rightorder=[getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),
+  getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716),getRandomInt(576,586), getRandomInt(616,630),getRandomInt(656,670),getRandomInt(699,716)]
 var Y_herbArray1rightorder=[ getRandomInt(247,258),getRandomInt(247,258),getRandomInt(247,258),getRandomInt(247,258),
   getRandomInt(283,296),getRandomInt(283,296),getRandomInt(283,296),getRandomInt(283,296),
   getRandomInt(321,332),getRandomInt(321,332),getRandomInt(321,332),getRandomInt(321,332),
