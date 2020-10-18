@@ -284,7 +284,9 @@ GatherResources2() {
 
     sleep(5000);
     //a1
-    spc.moveMouseSmooth(264, 172);
+    
+    
+    spc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53));
     spc.mouseClick();
     sleep(getRandomInt(634, 780));
     spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
@@ -292,7 +294,7 @@ GatherResources2() {
 
     sleep(getRandomInt(1200, 2000));
 
-    spc.moveMouseSmooth(264, 172 + 534);
+    spc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53)+534);
     spc.mouseClick();
     sleep(getRandomInt(634, 780));
     //bankcccc
@@ -951,7 +953,7 @@ function getRandomInt(min, max) {
 
 //testing commands
 //GatherResources();
-//GatherResources2();
+GatherResources2();
 //GatherResources3();
 //CleaningVesispianGase1();
 //CleaningVesispianGase2();
