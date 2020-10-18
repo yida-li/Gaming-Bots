@@ -25,9 +25,13 @@ Making decisions on the nano scale in games.
 
 
 
-# How do I change font size?
+# Goal?
+```
+The only way for a human to achieve this; performing thousands of commands in a mere millisecond through myraids of functions.
+```
+# Example
+```
+1 command line to perform chain actions [Nexus](/nexus) menu.
+```
 
-The quickest way to change font size on your map is through the [default view settings](/guides/default-view-settings.html) menu.
-
-
-<span class="edit-link"><a href="https://github.com/kumu/docs/blob/master/faq/how-do-i-change-font-size.md" target="_blank"><i class="fa fa-github"></i> edit this page</a></span>
+<span class="edit-link"><a href="https://github.com/yida-li/Gaming-Bots/edit/master/README.md" target="_blank"><i class="fa fa-github"></i> edit this page</a></span>
