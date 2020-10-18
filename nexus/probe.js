@@ -58,8 +58,9 @@ function // slowly combining the clean herb with vial of water in a designated l
 GatherResourcesFinalSpeed() {
   while(true){
     var time = 0;
+    var arbitrairy =getRandomInt(100,200);
     //    randomlly 100,200 cycle interval
-    while (time < getRandomInt(100,200)) {
+    while (time < arbitrairy) {
       time++;
   
       // top left
@@ -77,7 +78,7 @@ GatherResourcesFinalSpeed() {
         getRandomInt(616, 630),
         getRandomInt(656, 670),
         getRandomInt(699, 716),
-        getRandomInt(576, 586),
+        getRandomInt(576, 586),  
         getRandomInt(616, 630),
       ];
       var X_secondHalf = [
@@ -116,12 +117,10 @@ GatherResourcesFinalSpeed() {
         getRandomInt(358, 371),
         getRandomInt(358, 371),
         getRandomInt(389, 406),
-        ,
         getRandomInt(389, 406),
         getRandomInt(389, 406),
         getRandomInt(389, 406),
         getRandomInt(431, 444),
-        ,
         getRandomInt(431, 444),
         getRandomInt(431, 444),
         getRandomInt(431, 444),
@@ -184,12 +183,10 @@ GatherResourcesFinalSpeed() {
         getRandomInt(358, 371) + 534,
         getRandomInt(358, 371) + 534,
         getRandomInt(389, 406) + 534,
-        ,
         getRandomInt(389, 406) + 534,
         getRandomInt(389, 406) + 534,
         getRandomInt(389, 406) + 534,
         getRandomInt(431, 444) + 534,
-        ,
         getRandomInt(431, 444) + 534,
         getRandomInt(431, 444) + 534,
         getRandomInt(431, 444) + 534,
@@ -248,7 +245,7 @@ GatherResourcesFinalSpeed() {
       spc.moveMouseSmooth(X1_secondHalf[temp4], Y1_secondHalf[temp4]);
       spc.mouseClick();
       tick(getRandomInt(700, 800));
-      spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 53);
+      spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
       spc.mouseClick();
   
       
@@ -281,9 +278,9 @@ GatherResourcesFinalSpeed() {
       console.log(time + "gas harvested");
       
     }
-    layer5(); // rest up to 42.526 milliseconds
+   
   }
-  
+   layer5(); // rest up to 42.526 milliseconds
 }
 
 function clickBank1() {
