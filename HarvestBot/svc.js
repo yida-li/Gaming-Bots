@@ -1,6 +1,6 @@
 //T-280 space construction vehicle is a type of terran general-purpose engineering vehicle.
 // the only dependencies needed for this segment of my consciousnesss
-var spc = require('robotjs');
+var svc = require('robotjs');
 
 // function that performs wait for a thread/process/program
 function sleep(ms) {
@@ -11,14 +11,14 @@ function sleep(ms) {
 
 function //  slowly combining the clean herb with vial of water in a designated location
 GatherResources() {
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-  spc.mouseClick('right');
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
+  svc.mouseClick('right');
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
+  svc.mouseClick();
   sleep(getRandomInt(700, 800));
-  spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
+  svc.mouseClick();
   sleep(getRandomInt(700, 800));
 
   sleep(getRandomInt(700, 800));
@@ -91,24 +91,24 @@ GatherResources() {
 
   sleep(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
-  spc.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
-  spc.mouseClick();
+  svc.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
+  svc.mouseClick();
   sleep(getRandomInt(700, 800));
   var temp2 = getRandomInt(0, 13);
-  spc.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
-  spc.mouseClick();
+  svc.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
+  svc.mouseClick();
   sleep(getRandomInt(700, 800));
-  spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
+  svc.mouseClick();
 
   sleep(9000);
-  spc.moveMouseSmooth(264, 172);
-  spc.mouseClick();
+  svc.moveMouseSmooth(264, 172);
+  svc.mouseClick();
 
   sleep(getRandomInt(1200, 2000));
 
-  //spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  //spc.mouseClick();
+  //svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+  //svc.mouseClick();
 }
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs
 GatherResources2() {
@@ -238,68 +238,68 @@ GatherResources2() {
     ];
 
     //  a1
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-    spc.mouseClick('right');
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
+    svc.mouseClick('right');
     sleep(getRandomInt(700, 800));
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
+    svc.mouseClick();
     sleep(getRandomInt(700, 800));
-    spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
+    svc.mouseClick();
     sleep(getRandomInt(700, 800));
 
     // a1
     prayerToggle1();
 
-    spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371));
+    svc.mouseClick();
     sleep(getRandomInt(200, 300));
-    spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406));
+    svc.mouseClick();
     sleep(622);
-    spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
+    svc.mouseClick();
 
     // b1
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
-    spc.mouseClick('right');
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
+    svc.mouseClick('right');
     sleep(getRandomInt(700, 800));
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214) + 534);
+    svc.mouseClick();
     sleep(getRandomInt(700, 800));
-    spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
+    svc.mouseClick();
 
     //b1
     prayerToggle2();
 
-    spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371) + 534);
+    svc.mouseClick();
     sleep(getRandomInt(200, 300));
-    spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406) + 534);
+    svc.mouseClick();
     sleep(622);
-    spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
+    svc.mouseClick();
 
     sleep(5000);
     //a1
     
     
-    spc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53));
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    svc.mouseClick();
 
     sleep(getRandomInt(1200, 2000));
 
-    spc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53)+534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(234,234+107), getRandomInt(190,190+53)+534);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
     //bankcccc
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    svc.mouseClick();
   }
 }
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs
@@ -436,118 +436,118 @@ GatherResources3() {
     taskC1();
 
     // bank and deposite A1
-    spc.moveMouse(264, 172);
-    spc.mouseClick();
+    svc.moveMouse(264, 172);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    svc.mouseClick();
 
     sleep(getRandomInt(1200, 2000));
     // bank and deposite B1
-    spc.moveMouse(264, 172 + 534);
-    spc.mouseClick();
+    svc.moveMouse(264, 172 + 534);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
 
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    svc.mouseClick();
     // bank and deposite C1
-    spc.moveMouse(264 + 775, 172 + 534);
-    spc.mouseClick();
+    svc.moveMouse(264 + 775, 172 + 534);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
 
-    spc.moveMouseSmooth(
+    svc.moveMouseSmooth(
       getRandomInt(432, 454) + 775,
       getRandomInt(327, 342) + 534
     );
-    spc.mouseClick();
+    svc.mouseClick();
   }
 }
 
 // procedures
 function taskA1() {
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-  spc.mouseClick('right');
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
+  svc.mouseClick('right');
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129));
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
   prayerToggle1();
-  spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371));
+  svc.mouseClick();
   sleep(getRandomInt(200, 300));
-  spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406));
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406));
+  svc.mouseClick();
   sleep(getRandomInt(200, 300));
-  spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
+  svc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
   for (var i = 0; i < getRandomInt(1, 2); i++) {
-    spc.mouseClick();
+    svc.mouseClick();
   }
 }
 function taskB1() {
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
-  spc.mouseClick('right');
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
+  svc.mouseClick('right');
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214) + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214) + 534);
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
+  svc.mouseClick();
   prayerToggle2();
-  spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371) + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(358, 371) + 534);
+  svc.mouseClick();
   sleep(getRandomInt(200, 300));
-  spc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406) + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(getRandomInt(576, 586), getRandomInt(389, 406) + 534);
+  svc.mouseClick();
   sleep(getRandomInt(200, 300));
-  spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
+  svc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
   for (var i = 0; i < getRandomInt(1, 2); i++) {
-    spc.mouseClick();
+    svc.mouseClick();
   }
 }
 function taskC1() {
   // c1
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(227, 243) + 775,
     getRandomInt(120, 129) + 534
   );
-  spc.mouseClick('right');
+  svc.mouseClick('right');
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(227, 243) + 775,
     getRandomInt(213, 214) + 534
   );
-  spc.mouseClick();
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(282, 289) + 775,
     getRandomInt(120, 129) + 534
   );
-  spc.mouseClick();
+  svc.mouseClick();
 
   //c1
   prayerToggle4();
 
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(576, 586) + 775,
     getRandomInt(358, 371) + 534
   );
-  spc.mouseClick();
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(576, 586) + 775,
     getRandomInt(389, 406) + 534
   );
-  spc.mouseClick();
+  svc.mouseClick();
   sleep(getRandomInt(601, 800));
-  spc.moveMouseSmooth(
+  svc.moveMouseSmooth(
     getRandomInt(227, 290) + 775,
     getRandomInt(433, 480) + 534
   );
   for (var i = 0; i < getRandomInt(1, 2); i++) {
-    spc.mouseClick();
+    svc.mouseClick();
   }
 }
 
@@ -555,16 +555,16 @@ function // instantly click all grimmy herbs
 CleaningVesispianGase1() {
   var yida = 0;
   for (var i = 0; i < 40000; i++) {
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
+    svc.mouseClick();
     //close bank
 
-    spc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53));
+    svc.mouseClick();
 
     //take herb at 4th location
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
+    svc.mouseClick();
 
     sleep(getRandomInt(600, 1200));
 
@@ -635,8 +635,8 @@ CleaningVesispianGase1() {
       var destiny = getRandomInt(0, 27);
       if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
         // time complexity applied, just coen 352, from data structures, from algorithm
-        spc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-        spc.mouseClick();
+        svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+        svc.mouseClick();
         X_herbArray[destiny] = 0;
         Y_herbArray[destiny] = 0;
 
@@ -646,13 +646,13 @@ CleaningVesispianGase1() {
     sleep(getRandomInt(2000, 2500));
 
     //banker
-    spc.moveMouseSmooth(264, 172);
-    spc.mouseClick();
+    svc.moveMouseSmooth(264, 172);
+    svc.mouseClick();
 
     sleep(getRandomInt(1200, 2000));
     //bankcccc
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    svc.mouseClick();
 
     yida++;
     console.log(yida + ' cycle sucessful');
@@ -664,20 +664,20 @@ CleaningVesispianGase2() {
   var yida = 0;
   for (var i = 0; i < 1300; i++) {
     //take herb at 4th location
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
+    svc.mouseClick();
     //close bank
 
-    spc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53));
+    svc.mouseClick();
 
     //take herb at 4th location
-    spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
+    svc.mouseClick();
     //close bank
 
-    spc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(484, 494), getRandomInt(43, 53) + 534);
+    svc.mouseClick();
 
     console.log('swiping digital farms');
     var X_herbArray = [
@@ -807,10 +807,10 @@ CleaningVesispianGase2() {
       var destiny = getRandomInt(0, 27);
       if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
         // time complexity applied, just coen 352, from data structures, from algorithm
-        spc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-        spc.mouseClick();
-        spc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
-        spc.mouseClick();
+        svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+        svc.mouseClick();
+        svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+        svc.mouseClick();
         X_herbArray[destiny] = 0;
         Y_herbArray[destiny] = 0;
 
@@ -819,20 +819,20 @@ CleaningVesispianGase2() {
     }
     sleep(5000);
     //a1
-    spc.moveMouseSmooth(264, 172);
-    spc.mouseClick();
+    svc.moveMouseSmooth(264, 172);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    svc.mouseClick();
 
     sleep(getRandomInt(1200, 2000));
 
-    spc.moveMouseSmooth(264, 172 + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(264, 172 + 534);
+    svc.mouseClick();
     sleep(getRandomInt(634, 780));
     //bankcccc
-    spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    spc.mouseClick();
+    svc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    svc.mouseClick();
 
     yida++;
     console.log(yida + ' cycle sucessful');
@@ -907,11 +907,11 @@ ShowMeTheMoney() {
     var destiny = getRandomInt(0, 27);
     if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
       // time complexity applied, just coen 352, from data structures, from algorithm
-      spc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-      spc.mouseClick('right');
+      svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+      svc.mouseClick('right');
 
-      spc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 40);
-      spc.mouseClick();
+      svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 40);
+      svc.mouseClick();
       X_herbArray[destiny] = 0;
       Y_herbArray[destiny] = 0;
 
@@ -921,28 +921,28 @@ ShowMeTheMoney() {
 }
 
 function prayerToggle1() {
-  spc.moveMouseSmooth(557, 121);
-  spc.mouseClick();
+  svc.moveMouseSmooth(557, 121);
+  svc.mouseClick();
   sleep(231);
-  spc.mouseClick();
+  svc.mouseClick();
 }
 function prayerToggle2() {
-  spc.moveMouseSmooth(557, 121 + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(557, 121 + 534);
+  svc.mouseClick();
   sleep(231);
-  spc.mouseClick();
+  svc.mouseClick();
 }
 function prayerToggle3() {
-  spc.moveMouseSmooth(557 + 775, 121);
-  spc.mouseClick();
+  svc.moveMouseSmooth(557 + 775, 121);
+  svc.mouseClick();
   sleep(231);
-  spc.mouseClick();
+  svc.mouseClick();
 }
 function prayerToggle4() {
-  spc.moveMouseSmooth(557 + 775, 121 + 534);
-  spc.mouseClick();
+  svc.moveMouseSmooth(557 + 775, 121 + 534);
+  svc.mouseClick();
   sleep(231);
-  spc.mouseClick();
+  svc.mouseClick();
 }
 //function that returns random interger between floor and ceiling with
 function getRandomInt(min, max) {
