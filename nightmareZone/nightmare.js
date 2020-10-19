@@ -1,5 +1,5 @@
 //importing the robotjs
-var robot = require('robotjs');
+var nightmare = require('robotjs');
 
 // function that performs wait for a thread/process/program
 function sleep(ms) {
@@ -8,30 +8,31 @@ function sleep(ms) {
 }
 
 function clickatPosition(x, y) {
-  robot.moveMouseSmooth(x, y);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(x, y);
+  nightmare.mouseClick();
   tick();
 }
 
 function biteCake() {
   sleep(642);
-  robot.moveMouseSmooth(583, 331);
-  robot.mouseClick('right'); // 44 is 2nd opetion right click
-  robot.moveMouseSmooth(583, 375);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(583, 331);
+  nightmare.mouseClick('right'); // 44 is 2nd opetion right click
+  nightmare.moveMouseSmooth(583, 375);
+  nightmare.mouseClick();
   sleep(602);
-  robot.moveMouseSmooth(getRandomInt(800, 1300), getRandomInt(69, 169)); //200 iq
-  robot.moveMouseSmooth(583, 331 + 534);
-  robot.mouseClick(
-    'right'
-  ); /* 
+  nightmare.moveMouseSmooth(getRandomInt(800, 1300), getRandomInt(69, 169)); //200 iq
+  nightmare.moveMouseSmooth(583, 331 + 534);
+  nightmare.mouseClick('right'); // 44 is 2nd opetion right click
+  nightmare.moveMouseSmooth(583, 375 + 534);
+  nightmare.mouseClick();
   sleep(642);
-  robot.moveMouseSmooth(583, 375+534);
-  robot.mouseClick();
-  robot.moveMouseSmooth(583+775, 331);
-  robot.mouseClick('right'); // 44 is 2nd opetion right click
-  robot.moveMouseSmooth(583, 375);
-  robot.mouseClick();*/
+  /*
+  nightmare.moveMouseSmooth(583, 375+534);
+  nightmare.mouseClick();
+  nightmare.moveMouseSmooth(583+775, 331);
+  nightmare.mouseClick('right'); // 44 is 2nd opetion right click
+  nightmare.moveMouseSmooth(583, 375);
+  nightmare.mouseClick();*/
 }
 
 /**
@@ -108,11 +109,11 @@ function openLootBox() {
     var destiny = getRandomInt(0, 27);
     if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
       // time complexity applied, just coen 352, from data structures, from algorithm
-      svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-      svc.mouseClick('right');
+      nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+      nightmare.mouseClick('right');
 
-      svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 40);
-      svc.mouseClick();
+      nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 40);
+      nightmare.mouseClick();
       X_herbArray[destiny] = 0;
       Y_herbArray[destiny] = 0;
 
@@ -190,9 +191,11 @@ function farmingCourse() {
       var destiny = getRandomInt(0, 27);
       if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
         // time complexity applied, just coen 352, from data structures, from algorithm
-        svc.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-        svc.mouseClick;
-        randomeithzer();
+        nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+        nightmare.mouseClick();
+        nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+        nightmare.mouseClick();
+        biteCake();
         sleep(getRandomInt(15001, 29999));
         biteCake();
         sleep(getRandomInt(15001, 29999));
@@ -200,6 +203,7 @@ function farmingCourse() {
         sleep(getRandomInt(15001, 29999));
         biteCake();
         sleep(getRandomInt(15001, 29999));
+        battleaxe();
         X_herbArray[destiny] = 0;
         Y_herbArray[destiny] = 0;
 
@@ -224,7 +228,7 @@ function randomeithzer() {
 function findPowerUp() {
   var flag = false;
   // Default colour for object marker at bank counter is FFFF00
-  var img = robot.screen.capture(0, 0, 1900, 1080);
+  var img = nightmare.screen.capture(0, 0, 1900, 1080);
   var targetNpc = ['1b1b7f'];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(0, 519);
@@ -234,8 +238,8 @@ function findPowerUp() {
     if (targetNpc.includes(sample_color)) {
       console.log('found action at : ' + random_x + ' ' + random_y);
 
-      robot.moveMouseSmooth(random_x, random_y);
-      robot.mouseClick();
+      nightmare.moveMouseSmooth(random_x, random_y);
+      nightmare.mouseClick();
       flag = true;
       return flag;
     }
@@ -246,7 +250,7 @@ function findPowerUp() {
 function findPowerUp2() {
   // Default colour for object marker at bank counter is FFFF00
   var flag = false;
-  var img = robot.screen.capture(0, 0, 1900, 1080);
+  var img = nightmare.screen.capture(0, 0, 1900, 1080);
   var targetNpc = ['5c523f', '9d9625', '5c513e', '1b1b7f'];
   for (var i = 0; i < 1011; i++) {
     var random_x = getRandomInt(0, 519);
@@ -256,8 +260,8 @@ function findPowerUp2() {
     if (targetNpc.includes(sample_color)) {
       console.log('found action at : ' + random_x + ' ' + random_y);
 
-      robot.moveMouseSmooth(random_x, random_y);
-      robot.mouseClick();
+      nightmare.moveMouseSmooth(random_x, random_y);
+      nightmare.mouseClick();
       flag = true;
       return flag;
     }
@@ -266,7 +270,7 @@ function findPowerUp2() {
 }
 function findPowerUp1() {
   // Default colour for object marker at bank counter is FFFF00
-  var img = robot.screen.capture(0, 0, 1900, 1080);
+  var img = nightmare.screen.capture(0, 0, 1900, 1080);
   var targetNpc = ['1a1a7e', '0000cd', '5c513e'];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(0, 519);
@@ -276,8 +280,8 @@ function findPowerUp1() {
     if (targetNpc.includes(sample_color)) {
       console.log('found action at : ' + random_x + ' ' + random_y);
 
-      robot.moveMouseSmooth(random_x, random_y);
-      robot.mouseClick();
+      nightmare.moveMouseSmooth(random_x, random_y);
+      nightmare.mouseClick();
       flag = true;
       return flag;
     }
@@ -287,7 +291,7 @@ function findPowerUp1() {
 function findPowerUp() {
   flag = false;
   // Default colour for object marker at bank counter is FFFF00
-  var img = robot.screen.capture(0, 0, 1900, 1080);
+  var img = nightmare.screen.capture(0, 0, 1900, 1080);
   var targetNpc = ['5c523f', '5c513e', '7e7c10'];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(0, 579);
@@ -297,8 +301,8 @@ function findPowerUp() {
     if (targetNpc.includes(sample_color)) {
       console.log('found action at : ' + random_x + ' ' + random_y);
 
-      robot.moveMouseSmooth(random_x, random_y);
-      robot.mouseClick();
+      nightmare.moveMouseSmooth(random_x, random_y);
+      nightmare.mouseClick();
       flag = true;
       return flag;
     }
@@ -307,65 +311,68 @@ function findPowerUp() {
 }
 
 function guzzleLikeMad1() {
-  for (var i = 0; i < getRandomInt(10, 20); i++) {
-    robot.moveMouseSmooth(getRandomInt(581, 585), getRandomInt(329, 334));
+  for (var i = 0; i < getRandomInt(30, 40); i++) {
+    nightmare.moveMouseSmooth(getRandomInt(581, 585), getRandomInt(329, 334));
 
-    robot.mouseClick('right'); // 44 is 2nd opetion right click
+    nightmare.mouseClick('right'); // 44 is 2nd opetion right click
     sleep(getRandomInt(50, 130));
-    robot.moveMouseSmooth(583, 375);
-    robot.mouseClick();
+    nightmare.moveMouseSmooth(583, 375);
+    nightmare.mouseClick();
   }
 }
 function guzzleLikeMad3() {
   for (var i = 0; i < getRandomInt(1, 4); i++) {
-    robot.moveMouseSmooth(getRandomInt(581, 585) + 774, getRandomInt(329, 334));
+    nightmare.moveMouseSmooth(
+      getRandomInt(581, 585) + 774,
+      getRandomInt(329, 334)
+    );
 
-    robot.mouseClick('right'); // 44 is 2nd opetion right click
+    nightmare.mouseClick('right'); // 44 is 2nd opetion right click
     sleep(getRandomInt(50, 130));
-    robot.moveMouseSmooth(583 + 774, 375);
-    robot.mouseClick();
+    nightmare.moveMouseSmooth(583 + 774, 375);
+    nightmare.mouseClick();
   }
 }
 
 function guzzleLikeMad2() {
   for (var i = 0; i < getRandomInt(30, 40); i++) {
-    robot.moveMouseSmooth(getRandomInt(581, 585), getRandomInt(862, 867));
-    robot.mouseClick('right');
+    nightmare.moveMouseSmooth(getRandomInt(581, 585), getRandomInt(862, 867));
+    nightmare.mouseClick('right');
     sleep(getRandomInt(50, 130));
-    robot.moveMouseSmooth(583, 375 + 534);
-    robot.mouseClick();
+    nightmare.moveMouseSmooth(583, 375 + 534);
+    nightmare.mouseClick();
   }
 }
 // function that performs strength boost
 function battleaxe() {
-  robot.moveMouseSmooth(582, 293);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(582, 293);
+  nightmare.mouseClick();
   sleep(923);
-  robot.moveMouseSmooth(559, 175);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(559, 175);
+  nightmare.mouseClick();
   sleep(523);
-  robot.moveMouseSmooth(582, 293);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(582, 293);
+  nightmare.mouseClick();
   console.log('using my battleaxe spec ');
 }
 // function that resets health restore
 function prayerToggle1() {
-  robot.moveMouseSmooth(557, 121);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(557, 121);
+  nightmare.mouseClick();
   sleep(231);
-  robot.mouseClick();
+  nightmare.mouseClick();
 }
 function prayerToggle2() {
-  robot.moveMouseSmooth(557, 121 + 534);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(557, 121 + 534);
+  nightmare.mouseClick();
   sleep(231);
-  robot.mouseClick();
+  nightmare.mouseClick();
 }
 function prayerToggle3() {
-  robot.moveMouseSmooth(557 + 775, 121);
-  robot.mouseClick();
+  nightmare.moveMouseSmooth(557 + 775, 121);
+  nightmare.mouseClick();
   sleep(231);
-  robot.mouseClick();
+  nightmare.mouseClick();
 }
 // function that displays game tick
 function tick() {
@@ -380,12 +387,14 @@ function getRandomInt(min, max) {
 
 //https://github.com/yida-li/Gaming-Bots
 
-//duoCourse();
-//guzzleLikeMad2();guzzleLikeMad2();guzzleLikeMad2 ();
-//guzzleLikeMad1();guzzleLikeMad1();guzzleLikeMad1();
-//duoCourse();
-//farmingCourse();prayerToggle1();
-//CleaningVesispianGase2();
-//guzzleLikeMad3();guzzleLikeMad3();guzzleLikeMad3();
-//GatherResources2();
+/*
+openLootBox();
+guzzleLikeMad2();
+guzzleLikeMad2();
+guzzleLikeMad2();
+guzzleLikeMad1();
+guzzleLikeMad1();
+guzzleLikeMad1();
+*/
+
 farmingCourse();
