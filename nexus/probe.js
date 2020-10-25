@@ -230,7 +230,7 @@ GatherResourcesFinalSpeed() {
       spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
       spc.mouseClick("right");
       tick(getRandomInt(700, 800));
-      spc.moveMouseSmooth(getRandomInt(232, 239), getRandomInt(213, 214) + 536);
+      spc.moveMouseSmooth(getRandomInt(232, 239), getRandomInt(213, 214) + 534);
       spc.mouseClick();
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
