@@ -1,7 +1,9 @@
-Overwatch/
-CounterStrike/
-Pubg/
-Dota/
+overwatch/
+csgo/
+pubg/
+
+warcraft/
+starcraft/
 node_modules/
 secret/
 identity/
@@ -9,10 +11,9 @@ identity/
 
 
 
-package.json
+
 
 *.json
-
 *.iml
 *.ipr
 *.com
