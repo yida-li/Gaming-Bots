@@ -1,17 +1,17 @@
 //T-280 space construction vehicle is a type of terran general-purpose engineering vehicle.
 // the only dependencies needed for this segment of my consciousnesss
-var spc = require("robotjs");
+var spc = require('robotjs');
 
 // function that performs wait for a thread/process/program
 function sleep(ms) {
-  console.log("sleeping for " + ms + " ms");
+  console.log('sleeping for ' + ms + ' ms');
   Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
   // console.log('sleeping for ' + ms + ' ms');
 }
 
 // function that displays game tick
 function tick() {
-  console.log("1tick");
+  console.log('1tick');
   sleep(611);
 }
 
@@ -56,13 +56,13 @@ function getRandomInt(min, max) {
 
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs with random intervals+ random combination elements
 GatherResourcesFinalSpeed() {
-  while(true){
+  while (true) {
     var time = 0;
-    var arbitrairy =getRandomInt(100,200);
+    var arbitrairy = getRandomInt(100, 200);
     //    randomlly 100,200 cycle interval
     while (time < arbitrairy) {
       time++;
-  
+
       // top left
       spc.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
       var X_firstHalf = [
@@ -78,7 +78,7 @@ GatherResourcesFinalSpeed() {
         getRandomInt(616, 630),
         getRandomInt(656, 670),
         getRandomInt(699, 716),
-        getRandomInt(576, 586),  
+        getRandomInt(576, 586),
         getRandomInt(616, 630),
       ];
       var X_secondHalf = [
@@ -129,7 +129,7 @@ GatherResourcesFinalSpeed() {
         getRandomInt(463, 479),
         getRandomInt(463, 479),
       ];
-  
+
       //bottom left
       var X1_firstHalf = [
         getRandomInt(576, 586),
@@ -199,15 +199,15 @@ GatherResourcesFinalSpeed() {
       spc.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
       //  a1
       spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129));
-      spc.mouseClick("right");
+      spc.mouseClick('right');
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(213, 214));
       spc.mouseClick();
-  
+
       tick(getRandomInt(700, 800));
       spc.moveMouse(getRandomInt(282, 289), getRandomInt(120, 129));
       spc.mouseClick();
-  
+
       // a1
       prayerToggle1();
       tick(getRandomInt(700, 800));
@@ -221,21 +221,20 @@ GatherResourcesFinalSpeed() {
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
       spc.mouseClick();
-  
-  
-       // random mousemovement
-       spc.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332)+534);
+
+      // random mousemovement
+      spc.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
       // b1
-  
+
       spc.moveMouseSmooth(getRandomInt(227, 243), getRandomInt(120, 129) + 534);
-      spc.mouseClick("right");
+      spc.mouseClick('right');
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(232, 239), getRandomInt(213, 214) + 534);
       spc.mouseClick();
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(282, 289), getRandomInt(120, 129) + 534);
       spc.mouseClick();
-  
+
       prayerToggle2();
       tick(getRandomInt(700, 800));
       var temp3 = getRandomInt(0, 13);
@@ -247,11 +246,9 @@ GatherResourcesFinalSpeed() {
       tick(getRandomInt(700, 800));
       spc.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
       spc.mouseClick();
-  
-      
+
       sleep(getRandomInt(4300, 4700));
-  
-     
+
       spc.moveMouseSmooth(
         getRandomInt(234, 234 + 107),
         getRandomInt(190, 190 + 53)
@@ -260,9 +257,9 @@ GatherResourcesFinalSpeed() {
       sleep(getRandomInt(634, 780));
       spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
       spc.mouseClick();
-  
+
       sleep(getRandomInt(1200, 2000));
-  
+
       spc.moveMouseSmooth(
         getRandomInt(234, 234 + 107),
         getRandomInt(190, 190 + 53) + 534
@@ -272,28 +269,25 @@ GatherResourcesFinalSpeed() {
       //bankcccc
       spc.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
       spc.mouseClick();
-  
+
       //
-  
-      console.log(time + "gas harvested");
-      
+
+      console.log(time + 'gas harvested');
     }
-   
   }
-   layer5(); // rest up to 42.526 milliseconds
+  layer5(); // rest up to 42.526 milliseconds
 }
 
-function clickBank1() {
-  // Default colour for object marker at bank counter is FFFF00
+function findLocation() {
   var img = spc.screen.capture(0, 0, 1900, 1080);
-  var targetNpc = ["514633", "373023", "8f891a", "5c523f", "9d9625"];
+  var targetNpc = [];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(0, 519);
     var random_y = getRandomInt(0, 365);
     var sample_color = img.colorAt(random_x, random_y);
 
     if (targetNpc.includes(sample_color)) {
-      console.log("found action at : " + random_x + " " + random_y);
+      console.log('found action at : ' + random_x + ' ' + random_y);
 
       spc.moveMouseSmooth(random_x, random_y);
       spc.mouseClick();
@@ -304,17 +298,16 @@ function clickBank1() {
   return false;
 }
 
-function clickBank2() {
-  // Default colour for object marker at bank counter is FFFF00
+function findLocation2() {
   var img = spc.screen.capture(0, 0, 1900, 1080);
-  var targetNpc = ["5c523f", "9d9625"];
+  var targetNpc = [];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(0, 579);
     var random_y = getRandomInt(500, 897);
     var sample_color = img.colorAt(random_x, random_y);
 
     if (targetNpc.includes(sample_color)) {
-      console.log("found action at : " + random_x + " " + random_y);
+      console.log('found action at : ' + random_x + ' ' + random_y);
 
       spc.moveMouseSmooth(random_x, random_y);
       spc.mouseClick();
@@ -325,17 +318,16 @@ function clickBank2() {
   return false;
 }
 
-function clickBank3() {
-  // Default colour for object marker at bank counter is FFFF00
+function findLocation3() {
   var img = spc.screen.capture(0, 0, 1900, 1080);
-  var targetNpc = ["483c2b", "8a8415", "483c2b"];
+  var targetNpc = [];
   for (var i = 0; i < 10011; i++) {
     var random_x = getRandomInt(775, 579 + 775);
     var random_y = getRandomInt(500, 897);
     var sample_color = img.colorAt(random_x, random_y);
 
     if (targetNpc.includes(sample_color)) {
-      console.log("found action at : " + random_x + " " + random_y);
+      console.log('found action at : ' + random_x + ' ' + random_y);
 
       spc.moveMouseSmooth(random_x, random_y);
       spc.mouseClick();
