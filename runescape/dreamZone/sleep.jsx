@@ -1,12 +1,4 @@
-var yida = require('robotjs');
-
-
-
-// Dual Core Dream Bot 1.0
-
-
-
-
+var scv = require('robotjs');
 
 // function that performs wait for a thread/process/program
 function sleep(ms) {
@@ -67,7 +59,7 @@ UnfinishedPotion() {
       time++;
 
       // top left
-    yida.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
+    scv.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
       var X_firstHalf = [
         getRandomInt(576, 586),
         getRandomInt(616, 630),
@@ -199,7 +191,7 @@ UnfinishedPotion() {
         getRandomInt(463, 479) + 534,
       ];
       // random mousemovement
-    yida.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
 
 
 
@@ -210,35 +202,35 @@ UnfinishedPotion() {
 
       var xlocation=getRandomInt(381-x, 381+x);
       var ylocation=getRandomInt(198-y, 198+y);
-      yida.moveMouseSmooth(xlocation, ylocation);
+      scv.moveMouseSmooth(xlocation, ylocation);
 
-    yida.mouseClick('right');
+    scv.mouseClick('right');
 
-
-      tick(getRandomInt(700, 800));
-    yida.moveMouseSmooth(xlocation, ylocation+85);
-    yida.mouseClick();
 
       tick(getRandomInt(700, 800));
-    yida.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3));
-    yida.mouseClick();
+    scv.moveMouseSmooth(xlocation, ylocation+85);
+    scv.mouseClick();
+
+      tick(getRandomInt(700, 800));
+    scv.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3));
+    scv.mouseClick();
 
       // a1
       closeBank();
       tick(getRandomInt(700, 800));
       var temp = getRandomInt(0, 13);
-    yida.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
-    yida.mouseClick();
+    scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
+    scv.mouseClick();
       tick(getRandomInt(700, 800));
       var temp2 = getRandomInt(0, 13);
-    yida.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
-    yida.mouseClick();
+    scv.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
+    scv.mouseClick();
       tick(getRandomInt(700, 800));
-    yida.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
+    scv.mouseClick();
 
       // random mousemovement
-    yida.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
 
 
 
@@ -246,55 +238,55 @@ UnfinishedPotion() {
 
       var xlocation=getRandomInt(381-x, 381+x);
       var ylocation=getRandomInt(198-y, 198+y)+534;
-      yida.moveMouseSmooth(xlocation, ylocation);
+      scv.moveMouseSmooth(xlocation, ylocation);
 
-    yida.mouseClick('right');
+    scv.mouseClick('right');
 
-
-      tick(getRandomInt(700, 800));
-    yida.moveMouseSmooth(xlocation, ylocation+85);
-    yida.mouseClick();
 
       tick(getRandomInt(700, 800));
-    yida.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3)+534);
-    yida.mouseClick();
+    scv.moveMouseSmooth(xlocation, ylocation+85);
+    scv.mouseClick();
+
+      tick(getRandomInt(700, 800));
+    scv.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3)+534);
+    scv.mouseClick();
 
 
 
       closeBank2();
       tick(getRandomInt(700, 800));
       var temp3 = getRandomInt(0, 13);
-    yida.moveMouseSmooth(X1_firstHalf[temp3], Y1_firstHalf[temp3]);
-    yida.mouseClick();
+    scv.moveMouseSmooth(X1_firstHalf[temp3], Y1_firstHalf[temp3]);
+    scv.mouseClick();
       var temp4 = getRandomInt(0, 13);
-    yida.moveMouseSmooth(X1_secondHalf[temp4], Y1_secondHalf[temp4]);
-    yida.mouseClick();
+    scv.moveMouseSmooth(X1_secondHalf[temp4], Y1_secondHalf[temp4]);
+    scv.mouseClick();
       tick(getRandomInt(700, 800));
-    yida.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
+    scv.mouseClick();
 
       sleep(getRandomInt(4300, 4700));
 
-    yida.moveMouseSmooth(
+    scv.moveMouseSmooth(
         getRandomInt(234, 234 + 107),
         getRandomInt(190, 190 + 53)
       );
-    yida.mouseClick();
+    scv.mouseClick();
       sleep(getRandomInt(634, 780));
-    yida.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    scv.mouseClick();
 
       sleep(getRandomInt(1200, 2000));
 
-    yida.moveMouseSmooth(
+    scv.moveMouseSmooth(
         getRandomInt(234, 234 + 107),
         getRandomInt(190, 190 + 53) + 534
       );
-    yida.mouseClick();
+    scv.mouseClick();
       sleep(getRandomInt(634, 780));
       
-    yida.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    scv.mouseClick();
 
     
       console.log(time + 'gas harvested');
@@ -305,17 +297,17 @@ UnfinishedPotion() {
 
 
 function closeBank() {
-yida.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
+scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
 
   for (var i = 0; i < getRandomInt(1, 2); i++) {
-  yida.mouseClick();
+  scv.mouseClick();
     sleep(231);
   }
 }
 function closeBank2() {
-yida.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125) + 534);
+scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125) + 534);
   for (var i = 0; i < getRandomInt(1, 2); i++) {
-  yida.mouseClick();
+  scv.mouseClick();
     sleep(231);
   }
 }
@@ -326,19 +318,19 @@ CleanHerbs() {
   var yida = 0;
   for (var i = 0; i < 1300; i++) {
     // random mousemovement
-    yida.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
     // click the location of 3rd row, 8th position
-    yida.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3));
-    yida.mouseClick();
+    scv.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3));
+    scv.mouseClick();
     sleep(getRandomInt(700, 800));
     closeBank();
 
 
-    yida.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
     // b1
 
-    yida.moveMouse(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3)+534);
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(429-4,429+4), getRandomInt(198-3,198+3)+534);
+    scv.mouseClick();
     sleep(getRandomInt(700, 800)); 
     closeBank2();
 
@@ -470,10 +462,10 @@ CleanHerbs() {
       var destiny = getRandomInt(0, 27);
       if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
         // time complexity applied, just coen 352, from data structures, from algorithm
-        yida.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
-        yida.mouseClick();
-        yida.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
-        yida.mouseClick();
+        scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+        scv.mouseClick();
+        scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+        scv.mouseClick();
         X_herbArray[destiny] = 0;
         Y_herbArray[destiny] = 0;
 
@@ -483,38 +475,39 @@ CleanHerbs() {
 
     sleep(getRandomInt(2300, 3130));
 
-    yida.moveMouseSmooth(
+    scv.moveMouseSmooth(
       getRandomInt(234, 234 + 107),
       getRandomInt(190, 190 + 53)
     );
-    yida.mouseClick();
+    scv.mouseClick();
     sleep(getRandomInt(634, 780));
-    yida.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    scv.mouseClick();
 
-    yida.moveMouseSmooth(
+    scv.moveMouseSmooth(
       getRandomInt(234, 234 + 107),
       getRandomInt(190, 190 + 53) + 534
     );
-    yida.mouseClick();
+    scv.mouseClick();
     sleep(getRandomInt(634, 780));
     //bankcccc
-    yida.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    yida.mouseClick();
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    scv.mouseClick();
 
     yida++;
     console.log(yida + ' cycle sucessful');
   }
 }
 //
-//  https://github.com/yida-li/Gaming-Bots
+// Edit at https://github.com/yida-li/Gaming-Bots
+//  
+//  Cmds
 //
-//Cmds
+//  CleanHerbs();
+//  Scheduling();
 
 
-
-
-
+UnfinishedPotion();
 
 
 
