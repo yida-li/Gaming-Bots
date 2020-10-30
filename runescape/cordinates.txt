@@ -1,0 +1,29 @@
+Bank space row 1
+
+
+// Maximum Logical Space = 5x8 Vector Space
+var bankarray [ ]
+
+var xMaximumOutbound= 2;
+var yMaximumOutbound= 2;
+*first location here
+    (92,125)  +48      |  141 |   190 | 238 |  284 | 333 | 381 | 429
+
+    +37
+
+    163 
+
+    +37
+
+    198         | | | | | | (381,198)  |  (429,198)  
+
+                            x item spot (381, 198+ 85)
+
+    +37
+
+    +37
+
+var bankarray [getRandomInt( ) ]
+
+
+
