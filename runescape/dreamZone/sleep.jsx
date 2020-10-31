@@ -740,39 +740,6 @@ SoloClean() {
     console.log(yida + ' cycle sucessful');
   }
 }
-//
-// Edit at https://github.com/yida-li/Gaming-Bots
-//
-//  Cmds ::
-//
-//  DuoMix();
-//  DuoClean();
-//  Scheduling();
-//  SoloClean();
-
-//SoloMix();
-
-/* instant 70 fletching clicks
-function click() {
-  var counter = 999;
-  while (0 < counter) {
-    scv.moveMouse(
-      getRandomInt(581 - 4, 581 + 4),
-      getRandomInt(256 - 3, 256 + 3)
-    );
-    scv.mouseClick();
-    sleep(50, 100);
-    scv.moveMouse(
-      getRandomInt(581 - 4, 581 + 4),
-      getRandomInt(291 - 3, 291 + 3)
-    );
-    scv.mouseClick();
-    console.log(counter + ' many times left');
-    counter--;
-  }
-}
-click();
-*/
 
 function // instantly click all grimmy herbs with 2 svcs
 TrioClean() {
@@ -1050,4 +1017,14 @@ TrioClean() {
   }
 }
 
+//
+// Edit at https://github.com/yida-li/Gaming-Bots
+//
+//  Cmds ::
+//
+//  DuoMix();
+//  DuoClean();
+//  Scheduling();
+//  SoloClean();
 DuoMix();
+//SoloMix();
