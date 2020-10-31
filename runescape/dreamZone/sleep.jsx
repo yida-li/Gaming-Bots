@@ -48,7 +48,7 @@ function getRandomInt(min, max) {
 }
 
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs with random intervals+ random combination elements
-OneWorkerMixer() {
+SoloMix() {
   while (true) {
     var time = 0;
     var arbitrairy = getRandomInt(100, 200);
@@ -179,7 +179,7 @@ OneWorkerMixer() {
 }
 
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs with random intervals+ random combination elements
-UnfinishedPotionTwoWorker() {
+DuoMix() {
   while (true) {
     var time = 0;
     var arbitrairy = getRandomInt(100, 200);
@@ -436,8 +436,19 @@ function closeBank2() {
   }
 }
 
+function closeBank3() {
+  scv.moveMouseSmooth(
+    getRandomInt(551, 556) + 797,
+    getRandomInt(111, 125) + 534
+  );
+  for (var i = 0; i < getRandomInt(1, 2); i++) {
+    scv.mouseClick();
+    sleep(231);
+  }
+}
+
 function // instantly click all grimmy herbs with 2 svcs
-CleanHerbs() {
+DuoClean() {
   var yida = 0;
   for (var i = 0; i < 1300; i++) {
     // random mousemovement
@@ -628,7 +639,7 @@ CleanHerbs() {
 }
 
 function // instantly click all grimmy herbs solo worker
-fastclean() {
+SoloClean() {
   var yida = 0;
   for (var i = 0; i < 1300; i++) {
     scv.moveMouse(
@@ -732,9 +743,311 @@ fastclean() {
 //
 // Edit at https://github.com/yida-li/Gaming-Bots
 //
-//  Cmds
+//  Cmds ::
 //
-//  CleanHerbs();
+//  DuoMix();
+//  DuoClean();
 //  Scheduling();
+//  SoloClean();
 
-UnfinishedPotionTwoWorker();
+//SoloMix();
+
+/* instant 70 fletching clicks
+function click() {
+  var counter = 999;
+  while (0 < counter) {
+    scv.moveMouse(
+      getRandomInt(581 - 4, 581 + 4),
+      getRandomInt(256 - 3, 256 + 3)
+    );
+    scv.mouseClick();
+    sleep(50, 100);
+    scv.moveMouse(
+      getRandomInt(581 - 4, 581 + 4),
+      getRandomInt(291 - 3, 291 + 3)
+    );
+    scv.mouseClick();
+    console.log(counter + ' many times left');
+    counter--;
+  }
+}
+click();
+*/
+
+function // instantly click all grimmy herbs with 2 svcs
+TrioClean() {
+  var yida = 0;
+  for (var i = 0; i < 1300; i++) {
+    // random mousemovement
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
+    // click the location of 3rd row, 8th position
+    scv.moveMouse(
+      getRandomInt(429 - 4, 429 + 4),
+      getRandomInt(198 - 3, 198 + 3)
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(700, 800));
+    closeBank();
+
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
+    // b1
+
+    scv.moveMouseSmooth(
+      getRandomInt(429 - 4, 429 + 4),
+      getRandomInt(198 - 3, 198 + 3) + 534
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(700, 800));
+    closeBank2();
+
+    scv.moveMouseSmooth(getRandomInt(0, 560) + 797, getRandomInt(0, 332) + 534);
+    // c1
+
+    scv.moveMouseSmooth(
+      getRandomInt(429 - 4, 429 + 4) + 797,
+      getRandomInt(198 - 3, 198 + 3) + 534
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(700, 800));
+    closeBank2();
+
+    console.log(' harvesting vespian gas ');
+    var X_herbArray = [
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+    ];
+    var Y_herbArray = [
+      getRandomInt(247, 258),
+      getRandomInt(283, 296),
+      getRandomInt(321, 332),
+      getRandomInt(358, 371),
+      getRandomInt(389, 406),
+      getRandomInt(431, 444),
+      getRandomInt(463, 479),
+      getRandomInt(247, 258),
+      getRandomInt(283, 296),
+      getRandomInt(321, 332),
+      getRandomInt(358, 371),
+      getRandomInt(389, 406),
+      getRandomInt(431, 444),
+      getRandomInt(463, 479),
+      getRandomInt(247, 258),
+      getRandomInt(283, 296),
+      getRandomInt(321, 332),
+      getRandomInt(358, 371),
+      getRandomInt(389, 406),
+      getRandomInt(431, 444),
+      getRandomInt(463, 479),
+      getRandomInt(247, 258),
+      getRandomInt(283, 296),
+      getRandomInt(321, 332),
+      getRandomInt(358, 371),
+      getRandomInt(389, 406),
+      getRandomInt(431, 444),
+      getRandomInt(463, 479),
+    ];
+    var X_herbArray2 = [
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+      getRandomInt(699, 716),
+    ];
+    var Y_herbArray2 = [
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+    ];
+    var X_herbArray3 = [
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(576, 586) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(616, 630) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(656, 670) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+      getRandomInt(699, 716) + 797,
+    ];
+    var Y_herbArray3 = [
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+    ];
+    //a2
+    var counter = 0;
+    while (counter < 27) {
+      var destiny = getRandomInt(0, 27);
+      if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
+        // time complexity applied, just coen 352, from data structures, from algorithm
+        scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
+        scv.mouseClick();
+        scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+        scv.mouseClick();
+        scv.moveMouse(X_herbArray[destiny] + 797, Y_herbArray[destiny] + 534);
+        scv.mouseClick();
+        X_herbArray[destiny] = 0;
+        Y_herbArray[destiny] = 0;
+
+        counter++;
+      }
+    }
+
+    sleep(getRandomInt(2300, 3130));
+
+    scv.moveMouseSmooth(
+      getRandomInt(234, 234 + 107),
+      getRandomInt(190, 190 + 53)
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(634, 780));
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
+    scv.mouseClick();
+
+    scv.moveMouseSmooth(
+      getRandomInt(234, 234 + 107),
+      getRandomInt(190, 190 + 53) + 534
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(634, 780));
+    //bankcccc
+    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
+    scv.mouseClick();
+
+    scv.moveMouseSmooth(
+      getRandomInt(234, 234 + 107) + 797,
+      getRandomInt(190, 190 + 53) + 534
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(634, 780));
+    //bankcccc
+    scv.moveMouseSmooth(
+      getRandomInt(432, 454) + 797,
+      getRandomInt(327, 342) + 534
+    );
+    scv.mouseClick();
+
+    yida++;
+    console.log(yida + ' cycle sucessful');
+  }
+}
+
+DuoMix();
