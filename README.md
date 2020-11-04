@@ -8,25 +8,22 @@ By harnessing the power of Advanced Computational Devices (maximal CPU output), 
 
 
 
-```
+
 
 Making decisions on the nano scale in games.
 
 
 
-```
-
 
 Making Heuristic decisions
 
 
----
+
 
 
 
 # Goal?
 
-```
 # Runescape
 
 command line to perform chain actions [nexus](/nexus) 
