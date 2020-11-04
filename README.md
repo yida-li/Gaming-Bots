@@ -17,12 +17,15 @@ Making decisions on the nano scale in games.
 ```
 
 
+Making Heuristic decisions
+
+
+---
 
 
 
 # Goal?
-```
-The only way for a human to achieve this; performing thousands of commands in a mere millisecond through myraids of functions.
+---
 ```
 # Runescape
 
