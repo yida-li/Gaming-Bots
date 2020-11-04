@@ -28,7 +28,7 @@ Making Heuristic decisions
 
 command line to perform chain actions [nexus](/nexus) 
 
-# Overwatch 
+# Overwatch/Valorant/Csgo
 command line to detect and trace enemy target 
 
 <span class="edit-link"><a href="https://github.com/yida-li/Gaming-Bots/edit/master/README.md" target="_blank"><i class="fa fa-github"></i> edit this page</a></span>
