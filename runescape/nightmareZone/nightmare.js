@@ -395,8 +395,43 @@ guzzleLikeMad2();
 guzzleLikeMad2();
 guzzleLikeMad2();
 farmingCourse();
-
+guzzleLikeMad1();
 guzzleLikeMad1();
 guzzleLikeMad1();
 */
-guzzleLikeMad1();
+
+
+
+const readline = require('readline');
+
+function Scheduler() {
+  const readline = require('readline');
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'Command Center Terminal> ',
+  });
+
+  rl.prompt();
+
+  rl.on('line', (line) => {
+    switch (line.trim()) {
+      case 'hello':
+        console.log('world!');
+        break;
+      case 'bye':
+        console.log('Have a great day!');
+        process.exit(0);
+      default:
+        console.log(`Say what? I might have heard '${line.trim()}'`);
+        break;
+    }
+    rl.prompt();
+  }).on('close', () => {
+    // basically ctrl +c  here smart shortcut    but ultimately pointless
+    console.log('Have a great day!');
+    process.exit(0);
+  });
+}
+
+Scheduler();
