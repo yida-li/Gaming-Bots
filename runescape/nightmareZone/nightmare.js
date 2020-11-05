@@ -124,6 +124,7 @@ function openLootBox() {
 
 // function of sheer complexity
 function farmingCourse() {
+  var timesLeft=100;
   for (var i = 0; i < 4; i++) {
     var X_herbArray = [
       getRandomInt(576, 586),
@@ -187,14 +188,15 @@ function farmingCourse() {
     ];
 
     var counter = 0;
-    while (counter < 27) {
-      var destiny = getRandomInt(0, 27);
+    while (counter < 26) {
+      var destiny = getRandomInt(3, 27);
       if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
         // time complexity applied, just coen 352, from data structures, from algorithm
         nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
         nightmare.mouseClick();
         nightmare.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
         nightmare.mouseClick();
+        console.log(timesLeft+' loops left.')
         biteCake();
         sleep(getRandomInt(15001, 29999));
         biteCake();
