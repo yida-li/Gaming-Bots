@@ -313,7 +313,7 @@ function findPowerUp() {
 }
 
 function guzzleLikeMad1() {
-  for (var i = 0; i < getRandomInt(30, 40); i++) {
+  for (var i = 0; i < getRandomInt(10, 12 ); i++) {
     nightmare.moveMouseSmooth(getRandomInt(581, 585), getRandomInt(329, 334));
 
     nightmare.mouseClick('right'); // 44 is 2nd opetion right click
@@ -394,9 +394,9 @@ openLootBox();
 guzzleLikeMad2();
 guzzleLikeMad2();
 guzzleLikeMad2();
-guzzleLikeMad1();
+farmingCourse();
+
 guzzleLikeMad1();
 guzzleLikeMad1();
 */
-
-farmingCourse();
+guzzleLikeMad1();
