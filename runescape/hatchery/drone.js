@@ -23,3 +23,10 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+
+// https://github.com/yida-li/Gaming-Bots
+// cnnds
+//
+//
