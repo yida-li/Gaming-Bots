@@ -161,7 +161,7 @@ SoloMix() {
       scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
       scv.mouseClick();
 
-      sleep(getRandomInt(7400, 8200));
+      sleep(getRandomInt(8100, 8500));
 
       scv.moveMouseSmooth(
         getRandomInt(234, 234 + 107),
@@ -1116,6 +1116,7 @@ SoloClean() {
     scv.mouseClick();
     sleep(getRandomInt(700, 800));
     closeBank();
+    sleep(getRandomInt(351, 612));
     var X_herbArray = [
       getRandomInt(576, 586),
       getRandomInt(576, 586),
@@ -1537,13 +1538,14 @@ function OperatingSystem() {
 //
 //  TrioClean();
 
-//  SoloMix();
+//
 //  DuoMix();
 //  DuoClean();
-//
+//  OperatingSystem();
 
 //  SoloClean();
+
 //  Scheduler();
 //  DuoMakeSupply();DuoMakeSupplyReverse();
 
-OperatingSystem();
+SoloMix();
