@@ -1537,9 +1537,10 @@ function OperatingSystem() {
 //  DuoClean();
 //  OperatingSystem();
 
-//
+//SoloClean(60000 / 28);
 
 //  Scheduler();
 //  DuoMakeSupply();DuoMakeSupplyReverse();
 //  SoloMix(amount of herbs / 14 inventory slot );
-SoloClean(930);
+
+SoloMix(30000 / 14);
