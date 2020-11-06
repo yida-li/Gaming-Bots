@@ -33,11 +33,11 @@ robot.moveMouseSmooth(getRandomInt(407,520),getRandomInt(305,326));
 robot.mouseClick();
 sleep(1000);
 // type username
-robot.typeString('superyida@hotmail.co.jp');
+robot.typeString('');
 sleep(1000);
 robot.keyTap("tab");
 // type password 
-robot.typeString('04021993');
+robot.typeString('');
 //  
 robot.keyTap("enter");
 sleep(7000);
