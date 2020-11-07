@@ -25,7 +25,7 @@ Making Heuristic decisions
 
 # Runescape
 
-command line to perform chain actions [nexus](/nexus)   [login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/hatchery/access.gif)
+command line to perform chain actions [collect resources](https://github.com/ai-gorithm-js/CommandCenter/tree/main/planets/runescape) ,  [login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/hatchery/access.gif)
 
 # Overwatch/Valorant/Csgo
 command line to detect and trace enemy target 
