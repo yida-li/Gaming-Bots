@@ -20,13 +20,12 @@ Making Heuristic decisions
 
 
 
-
-
 # Goal?
+
 
 # Runescape
 
-command line to perform chain actions [nexus](/nexus) 
+command line to perform chain actions [nexus](/nexus)   [login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/hatchery/access.gif)
 
 # Overwatch/Valorant/Csgo
 command line to detect and trace enemy target 
