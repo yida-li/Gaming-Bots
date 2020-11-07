@@ -117,10 +117,85 @@ function moveHand(targetx, targety) {
 //
 // moveHand(200, 200);
 
-(function fullcourse() {
+function fullcourse() {
   login();
   sleep(3000);
-  exchange('grimy harralander');
+  //exchange('grimy harralander');
+
+  reposition();
+  sleep(3000);
+  collectResources();
   sleep(3000);
   logOut();
-})();
+}
+
+function reposition() {
+  robot.setMouseDelay(0.5);
+  robot.moveMouseSmooth(58, 138);
+  robot.mouseToggle('down', 'right');
+  robot.moveMouseSmooth(246, 138);
+  robot.mouseToggle('up', 'right');
+}
+
+function collectResources() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193);
+  robot.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  robot.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  robot.moveMouseSmooth(x, y + 43);
+  sleep(getRandomInt(600, 700));
+  robot.mouseClick();
+  sleep(getRandomInt(3500, 4000));
+  console.log('collecting');
+  var boxArrayX = [
+    getRandomInt(68, 85),
+    getRandomInt(68, 85),
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 333,
+    getRandomInt(68, 85) + 333,
+  ];
+
+  var boxArrayY = [
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+  ];
+  var counter = 0;
+  while (counter < 8) {
+    var destiny = getRandomInt(0, 7);
+    if (boxArrayX[destiny] != 0 && boxArrayY[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      robot.moveMouseSmooth(boxArrayX[destiny], boxArrayY[destiny]);
+      robot.mouseClick();
+      sleep(getRandomInt(150, 230));
+      boxArrayX[destiny] = 0;
+      boxArrayY[destiny] = 0;
+
+      counter++;
+    }
+  }
+  console.log('Closing collection log');
+  closeThing();
+}
+
+function closeThing() {
+  robot.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
+
+  for (var i = 0; i < getRandomInt(1, 2); i++) {
+    robot.mouseClick();
+    sleep(231);
+  }
+}
+
+//reposition();collectResources();
+fullcourse();
