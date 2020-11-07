@@ -2928,7 +2928,7 @@ function Algorithm2() {
       DuoMake2ndRow2tick();
       count++;
     } else {
-      DuoMake3rdRow1tick();
+      DuoMake3rdRow1tick(); // which is 1ticking mainly, for unf potion run
       count++;
     }
     console.log(count + ' cycles.');
@@ -2972,7 +2972,7 @@ function Algorithm4() {
   }
 }
 
-function login() {
+function login1() {
   scv.moveMouseSmooth(getRandomInt(407, 520), getRandomInt(305, 326));
   scv.mouseClick();
   sleep(1000);
@@ -2984,10 +2984,252 @@ function login() {
   scv.typeString('');
   //
   scv.keyTap('enter');
-  sleep(7000);
+  sleep(9000);
   // close the menu that pops up
   scv.moveMouseSmooth(getRandomInt(298, 469), getRandomInt(335, 382));
   scv.mouseClick();
+}
+function login2() {
+  scv.moveMouseSmooth(getRandomInt(407, 520), getRandomInt(305, 326) + 534);
+  scv.mouseClick();
+  sleep(1000);
+  // type username
+  scv.typeString('');
+  sleep(1000);
+  scv.keyTap('tab');
+  // type password
+  scv.typeString('');
+  //
+  scv.keyTap('enter');
+  sleep(9000);
+  // close the menu that pops up
+  scv.moveMouseSmooth(getRandomInt(298, 469), getRandomInt(335, 382) + 534);
+  scv.mouseClick();
+}
+
+function logOut1() {
+  scv.moveMouseSmooth(getRandomInt(635, 655), getRandomInt(498, 519));
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  scv.moveMouseSmooth(getRandomInt(595, 702), getRandomInt(452, 463));
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+}
+function logOut2() {
+  scv.moveMouseSmooth(getRandomInt(635, 655), getRandomInt(498, 519) + 534);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  scv.moveMouseSmooth(getRandomInt(595, 702), getRandomInt(452, 463) + 534);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+}
+//turn to face bank
+function moveHand(targetx, targety) {
+  // Speed up the mouse.
+  scv.setMouseDelay(2);
+
+  var yidaNumber = Math.PI * 1.4;
+
+  var height = targetx;
+  var width = targety;
+
+  for (var x = 0; x < width; x++) {
+    y = height * Math.sin((yidaNumber * x) / width) + height;
+    scv.moveMouse(x, y);
+  }
+  scv.moveMouseSmooth(targetx, targety);
+}
+
+function fullcourse() {
+  login();
+  sleep(3000);
+  //exchange('grimy harralander');
+
+  reposition();
+  sleep(3000);
+  collectResources();
+  sleep(3000);
+  logOut();
+}
+
+function reposition1() {
+  scv.setMouseDelay(0.5);
+  scv.moveMouseSmooth(58, 138);
+  scv.mouseToggle('down', 'right');
+  scv.moveMouseSmooth(246, 138);
+  scv.mouseToggle('up', 'right');
+}
+function reposition2() {
+  scv.setMouseDelay(0.5);
+  scv.moveMouseSmooth(58, 138 + 534);
+  scv.mouseToggle('down', 'right');
+  scv.moveMouseSmooth(246, 138 + 534);
+  scv.mouseToggle('up', 'right');
+}
+
+function openBank1() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193);
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 20);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+}
+function banktab1() {
+  // currently 6th position
+
+  var x = getRandomInt(314, 344);
+  var y = getRandomInt(79, 91);
+  scv.moveMouseSmooth(x, y);
+  scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+}
+function banktab2() {
+  // currently 6th position
+
+  var x = getRandomInt(314, 344);
+  var y = getRandomInt(79, 91) + 534;
+  scv.moveMouseSmooth(x, y);
+  scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+}
+function openBank2() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193) + 534;
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 20);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+}
+function collectResources1() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193);
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 43);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  sleep(getRandomInt(3500, 4000));
+  console.log('collecting');
+  var boxArrayX = [
+    getRandomInt(68, 85),
+    getRandomInt(68, 85),
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 333,
+    getRandomInt(68, 85) + 333,
+  ];
+
+  var boxArrayY = [
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+    getRandomInt(155, 173),
+    getRandomInt(155, 173) + 82,
+  ];
+  var counter = 0;
+  while (counter < 8) {
+    var destiny = getRandomInt(0, 7);
+    if (boxArrayX[destiny] != 0 && boxArrayY[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      scv.moveMouseSmooth(boxArrayX[destiny], boxArrayY[destiny]);
+      scv.mouseClick();
+      sleep(getRandomInt(150, 230));
+      boxArrayX[destiny] = 0;
+      boxArrayY[destiny] = 0;
+
+      counter++;
+    }
+  }
+  console.log('Closing collection log');
+  closeThing();
+}
+function collectResources2() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193) + 534;
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 43);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  sleep(getRandomInt(3500, 4000));
+  console.log('collecting');
+  var boxArrayX = [
+    getRandomInt(68, 85),
+    getRandomInt(68, 85),
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 111,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 222,
+    getRandomInt(68, 85) + 333,
+    getRandomInt(68, 85) + 333,
+  ];
+
+  var boxArrayY = [
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+  ];
+  var counter = 0;
+  while (counter < 8) {
+    var destiny = getRandomInt(0, 7);
+    if (boxArrayX[destiny] != 0 && boxArrayY[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      scv.moveMouseSmooth(boxArrayX[destiny], boxArrayY[destiny]);
+      scv.mouseClick();
+      sleep(getRandomInt(150, 230));
+      boxArrayX[destiny] = 0;
+      boxArrayY[destiny] = 0;
+
+      counter++;
+    }
+  }
+  console.log('Closing collection log');
+  closeThing2();
+}
+function closeThing() {
+  scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
+
+  for (var i = 0; i < getRandomInt(1, 2); i++) {
+    scv.mouseClick();
+    sleep(231);
+  }
+}
+function closeThing2() {
+  scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125) + 534);
+
+  for (var i = 0; i < getRandomInt(1, 2); i++) {
+    scv.mouseClick();
+    sleep(231);
+  }
 }
 
 function CommandCenter() {
@@ -3002,7 +3244,66 @@ function CommandCenter() {
   rl.on('line', (line) => {
     switch (line.trim()) {
       case 'manual':
-        console.log('gas cook herb');
+        console.log('log1 cook herb');
+        break;
+
+      case 'loginboth':
+        console.log('');
+        login1();
+        login2();
+        break;
+
+      case 'logoutboth':
+        console.log('');
+        logOut1();
+        logOut2();
+        break;
+
+      case 'repoboth':
+        console.log('');
+        reposition1();
+        reposition2();
+
+        break;
+
+      case 'collectboth':
+        console.log('');
+        collectResources1();
+        collectResources2();
+        break;
+
+      case 'bank':
+        console.log('');
+        openBank1();
+        sleep(getRandomInt(4000, 5000));
+        banktab1();
+        openBank2();
+        sleep(getRandomInt(4000, 5000));
+        banktab2();
+
+        break;
+
+      case 'log1':
+        console.log('');
+        logOut1();
+        break;
+      case 'log2':
+        console.log('');
+        logOut2();
+        break;
+
+      case 'bank1':
+        console.log('');
+        openBank1();
+        sleep(getRandomInt(4000, 5000));
+        banktab1();
+        break;
+
+      case 'bank2':
+        console.log('');
+        openBank2();
+        sleep(getRandomInt(4000, 5000));
+        banktab2();
         break;
 
       case 'gas':
@@ -3077,152 +3378,27 @@ function CommandCenter() {
     process.exit(0);
   });
 }
-
-function logOut() {
-  scv.moveMouseSmooth(getRandomInt(635, 655), getRandomInt(498, 519));
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick();
-  scv.moveMouseSmooth(getRandomInt(595, 702), getRandomInt(452, 463));
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick();
-}
-
-//turn to face bank
-function moveHand(targetx, targety) {
-  // Speed up the mouse.
-  scv.setMouseDelay(2);
-
-  var yidaNumber = Math.PI * 1.4;
-
-  var height = targetx;
-  var width = targety;
-
-  for (var x = 0; x < width; x++) {
-    y = height * Math.sin((yidaNumber * x) / width) + height;
-    scv.moveMouse(x, y);
-  }
-  scv.moveMouseSmooth(targetx, targety);
-}
-
+//
+//
+//
+//
 // https://github.com/yida-li/Gaming-Bots
-// cnnds
-//
-// the only thing stopping me was my own ego, super ego and the voices of others that are drowning my own inner desires
-//
-//
-//  login();
 
-//
-// moveHand(200, 200);
-
-function fullcourse() {
-  login();
-  sleep(3000);
-  //exchange('grimy harralander');
-
-  reposition();
-  sleep(3000);
-  collectResources();
-  sleep(3000);
-  logOut();
+function boxOfCommands() {
+  openBank1();
+  sleep(4000);
+  banktab1();
+  openBank2();
+  sleep(4000);
+  banktab2();
+  closeBank();
+  closeBank2();
+  logOut1();
+  logOut2();
+  reposition1();
+  reposition2();
+  sleep(5000);
+  collectResources1();
+  collectResources2();
 }
-
-function reposition() {
-  scv.setMouseDelay(0.5);
-  scv.moveMouseSmooth(58, 138);
-  scv.mouseToggle('down', 'right');
-  scv.moveMouseSmooth(246, 138);
-  scv.mouseToggle('up', 'right');
-}
-
-function openBank() {
-  var x = getRandomInt(248, 267);
-  var y = getRandomInt(186, 193);
-  scv.moveMouseSmooth(x, y);
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick('right');
-  sleep(getRandomInt(600, 700));
-  scv.moveMouseSmooth(x, y + 20);
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick();
-}
-function collectResources() {
-  var x = getRandomInt(248, 267);
-  var y = getRandomInt(186, 193);
-  scv.moveMouseSmooth(x, y);
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick('right');
-  sleep(getRandomInt(600, 700));
-  scv.moveMouseSmooth(x, y + 43);
-  sleep(getRandomInt(600, 700));
-  scv.mouseClick();
-  sleep(getRandomInt(3500, 4000));
-  console.log('collecting');
-  var boxArrayX = [
-    getRandomInt(68, 85),
-    getRandomInt(68, 85),
-    getRandomInt(68, 85) + 111,
-    getRandomInt(68, 85) + 111,
-    getRandomInt(68, 85) + 222,
-    getRandomInt(68, 85) + 222,
-    getRandomInt(68, 85) + 333,
-    getRandomInt(68, 85) + 333,
-  ];
-
-  var boxArrayY = [
-    getRandomInt(155, 173),
-    getRandomInt(155, 173) + 82,
-    getRandomInt(155, 173),
-    getRandomInt(155, 173) + 82,
-    getRandomInt(155, 173),
-    getRandomInt(155, 173) + 82,
-    getRandomInt(155, 173),
-    getRandomInt(155, 173) + 82,
-  ];
-  var counter = 0;
-  while (counter < 8) {
-    var destiny = getRandomInt(0, 7);
-    if (boxArrayX[destiny] != 0 && boxArrayY[destiny] != 0) {
-      // time complexity applied, just coen 352, from data structures, from algorithm
-      scv.moveMouseSmooth(boxArrayX[destiny], boxArrayY[destiny]);
-      scv.mouseClick();
-      sleep(getRandomInt(150, 230));
-      boxArrayX[destiny] = 0;
-      boxArrayY[destiny] = 0;
-
-      counter++;
-    }
-  }
-  console.log('Closing collection log');
-  closeThing();
-}
-
-function closeThing() {
-  scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
-
-  for (var i = 0; i < getRandomInt(1, 2); i++) {
-    scv.mouseClick();
-    sleep(231);
-  }
-}
-
-//reposition();collectResources();
-//fullcourse();
-
-//
-//
-//  Cmds ::
-//
-//  TrioClean();
-
-//
-//  DuoCombinationBoilderPlate();
-//  DuoClean();
-//  Algorithm1();
-
-//  SoloClean(60000 / 28);
-
-//
-//  DuoMakeSupply();DuoMake1stRow1tick();
-//  SoloMix(amount of herbs / 14 inventory slot );
 CommandCenter();
