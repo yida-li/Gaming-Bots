@@ -167,8 +167,7 @@ SoloMix() {
     );
     scv.mouseClick();
     sleep(getRandomInt(634, 780));
-    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    scv.mouseClick();
+    advancedDeposit1();
     sleep(getRandomInt(634, 780));
   }
 }
@@ -394,8 +393,7 @@ DuoMix() {
       );
       scv.mouseClick();
       sleep(getRandomInt(634, 780));
-      scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-      scv.mouseClick();
+      advancedDeposit1();
 
       sleep(getRandomInt(1200, 2000));
 
@@ -406,8 +404,7 @@ DuoMix() {
       scv.mouseClick();
       sleep(getRandomInt(634, 780));
 
-      scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-      scv.mouseClick();
+      advancedDeposit2();
 
       console.log(time + 'gas harvested');
     }
@@ -634,8 +631,7 @@ DuoMake1stRow1tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -646,8 +642,7 @@ DuoMake1stRow1tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 function // slowly harvesting gas once         wait7.5ms
 DuoMake1stRow2tick() {
@@ -868,8 +863,7 @@ DuoMake1stRow2tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -880,8 +874,7 @@ DuoMake1stRow2tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function // slowly harvesting gas once         wait9ms
@@ -1103,8 +1096,7 @@ DuoMake1stRow3tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -1115,8 +1107,7 @@ DuoMake1stRow3tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function // slowing making supply once        wait7.5ms
@@ -1349,8 +1340,7 @@ DuoMake2ndRow2tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -1361,8 +1351,7 @@ DuoMake2ndRow2tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function // slowly mining minerals once        wait7.5ms
@@ -1583,8 +1572,7 @@ DuoMake3rdRow1tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -1595,8 +1583,7 @@ DuoMake3rdRow1tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function // slowly mining minerals once        wait9ms
@@ -1817,8 +1804,7 @@ DuoMake3rdRow3tick() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -1829,8 +1815,7 @@ DuoMake3rdRow3tick() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function closeBank() {
@@ -1956,8 +1941,7 @@ SoloClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(634, 780));
-    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    scv.mouseClick();
+    advancedDeposit1();
   }
 }
 function // instantly click all grimmy herbs with 2 svcs
@@ -2644,8 +2628,7 @@ DuoMakeSupply() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -2656,8 +2639,7 @@ DuoMakeSupply() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 function // used in Algorithm4
@@ -2879,8 +2861,7 @@ DuoMakeSupplyReverse() {
   );
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-  scv.mouseClick();
+  advancedDeposit1();
 
   sleep(getRandomInt(1200, 2000));
 
@@ -2891,8 +2872,7 @@ DuoMakeSupplyReverse() {
   scv.mouseClick();
   sleep(getRandomInt(634, 780));
 
-  scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-  scv.mouseClick();
+  advancedDeposit2();
 }
 
 // custum rule
@@ -3384,6 +3364,172 @@ function CommandCenter() {
 //
 // https://github.com/yida-li/Gaming-Bots
 
+function advancedDeposit1() {
+  var X_herbArray = [
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+  ];
+  var Y_herbArray = [
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+  ];
+
+  //a2
+  var counter1 = 0;
+  var temp1 = getRandomInt(2, 6);
+  while (counter1 < temp1) {
+    var destiny = getRandomInt(0, 27);
+    if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      scv.moveMouseSmooth(X_herbArray[destiny], Y_herbArray[destiny]);
+      scv.mouseClick();
+      sleep(getRandomInt(100, 200));
+      X_herbArray[destiny] = 0;
+      Y_herbArray[destiny] = 0;
+
+      counter1++;
+    }
+  }
+  if (X_herbArray[0] != 0) {
+    scv.moveMouseSmooth(X_herbArray[0], Y_herbArray[0]);
+    scv.mouseClick();
+  } // in case of impossibility beyond imaginatino
+}
+function advancedDeposit2() {
+  var X_herbArray = [
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(576, 586),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(616, 630),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(656, 670),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+    getRandomInt(699, 716),
+  ];
+  var Y_herbArray = [
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+    getRandomInt(247, 258),
+    getRandomInt(283, 296),
+    getRandomInt(321, 332),
+    getRandomInt(358, 371),
+    getRandomInt(389, 406),
+    getRandomInt(431, 444),
+    getRandomInt(463, 479),
+  ];
+
+  //a2
+  var counter1 = 0;
+  var temp1 = getRandomInt(2, 6);
+  while (counter1 < temp1) {
+    var destiny = getRandomInt(0, 27);
+    if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      scv.moveMouseSmooth(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+      scv.mouseClick();
+      sleep(getRandomInt(100, 200));
+      X_herbArray[destiny] = 0;
+      Y_herbArray[destiny] = 0;
+
+      counter1++;
+    }
+  }
+  if (X_herbArray[0] != 0) {
+    scv.moveMouseSmooth(X_herbArray[0], Y_herbArray[0] + 534);
+    scv.mouseClick();
+  } // in case of impossibility beyond imaginatino
+}
 function boxOfCommands() {
   openBank1();
   sleep(4000);
@@ -3401,4 +3547,5 @@ function boxOfCommands() {
   collectResources1();
   collectResources2();
 }
-CommandCenter();
+//CommandCenter();
+advancedDeposit1();
