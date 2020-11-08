@@ -2968,7 +2968,7 @@ Algorithm6() {
     // approxiate 3 hour-5 hours
 
     var count = 0;
-    var tempHour = getRandomInt(650 - 800);
+    var tempHour = getRandomInt(650, 800);
     while (count < tempHour) {
       var temp = getRandomInt(1, 256);
       if (temp > 250) {
@@ -3016,7 +3016,7 @@ Algorithm5() {
     // approxiate 3 hour-5 hours
 
     var count = 0;
-    var tempHour = getRandomInt(650 - 800);
+    var tempHour = getRandomInt(650, 800);
     while (count < tempHour) {
       var temp = getRandomInt(1, 256);
       if (temp > 250) {
@@ -3151,6 +3151,9 @@ function openBank1() {
   scv.moveMouseSmooth(x, y + 20);
   sleep(getRandomInt(600, 700));
   scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
 }
 function banktab1() {
   // currently 6th position
@@ -3188,6 +3191,9 @@ function openBank2() {
   scv.moveMouseSmooth(x, y + 20);
   sleep(getRandomInt(600, 700));
   scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
 }
 function collectResources1() {
   var x = getRandomInt(248, 267);
@@ -3622,7 +3628,7 @@ function CommandCenter() {
         process.exit(0);
       case 'A6':
         console.log('starting fletch production for infinite minutes');
-        Algorithm5();
+        Algorithm6();
         process.exit(0);
       default:
         console.log(`Wrong command, read the manual.'${line.trim()}'`);
