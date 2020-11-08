@@ -3641,13 +3641,9 @@ function CommandCenter() {
     process.exit(0);
   });
 }
-//
-//
-//
-//
-// https://github.com/yida-li/Gaming-Bots
 
-function Infinite() {
+function // an example of an infinite sequence without variation
+ExampleInfinite() {
   while (true) {
     login1();
     login2();
@@ -3673,3 +3669,9 @@ function Infinite() {
 }
 
 CommandCenter();
+
+//
+//
+//
+//
+// https://github.com/yida-li/Gaming-Bots
