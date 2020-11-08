@@ -146,7 +146,7 @@ SoloMix() {
     scv.mouseClick();
 
     // a1
-    closeBank();
+    closeBank1();
     tick(getRandomInt(700, 800));
     var temp = getRandomInt(0, 13);
     scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -174,242 +174,239 @@ SoloMix() {
 
 function // slowly combining the clean herb with vial of water in a designated location with 2 svcs with random intervals+ random combination elements
 DuoMix() {
-  while (true) {
-    var time = 0;
-    var arbitrairy = getRandomInt(100, 200);
-    //    randomlly 100,200 cycle interval
-    while (time < arbitrairy) {
-      time++;
+  var time = 0;
 
-      // top left
-      scv.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
-      var X_firstHalf = [
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-      ];
-      var X_secondHalf = [
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-      ];
-      var Y_firstHalf = [
-        getRandomInt(247, 258),
-        getRandomInt(247, 258),
-        getRandomInt(247, 258),
-        getRandomInt(247, 258),
-        getRandomInt(283, 296),
-        getRandomInt(283, 296),
-        getRandomInt(283, 296),
-        getRandomInt(283, 296),
-        getRandomInt(321, 332),
-        getRandomInt(321, 332),
-        getRandomInt(321, 332),
-        getRandomInt(321, 332),
-        getRandomInt(358, 371),
-        getRandomInt(358, 371),
-      ];
-      var Y_secondHalf = [
-        getRandomInt(358, 371),
-        getRandomInt(358, 371),
-        getRandomInt(389, 406),
-        getRandomInt(389, 406),
-        getRandomInt(389, 406),
-        getRandomInt(389, 406),
-        getRandomInt(431, 444),
-        getRandomInt(431, 444),
-        getRandomInt(431, 444),
-        getRandomInt(431, 444),
-        getRandomInt(463, 479),
-        getRandomInt(463, 479),
-        getRandomInt(463, 479),
-        getRandomInt(463, 479),
-      ];
+  //    randomlly between 3 hour -5 hour worktime
+  while (time < getRandomInt(650, 823)) {
+    time++;
 
-      //bottom left
-      var X1_firstHalf = [
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-      ];
-      var X1_secondHalf = [
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-        getRandomInt(576, 586),
-        getRandomInt(616, 630),
-        getRandomInt(656, 670),
-        getRandomInt(699, 716),
-      ];
-      var Y1_firstHalf = [
-        getRandomInt(247, 258) + 534,
-        getRandomInt(247, 258) + 534,
-        getRandomInt(247, 258) + 534,
-        getRandomInt(247, 258) + 534,
-        getRandomInt(283, 296) + 534,
-        getRandomInt(283, 296) + 534,
-        getRandomInt(283, 296) + 534,
-        getRandomInt(283, 296) + 534,
-        getRandomInt(321, 332) + 534,
-        getRandomInt(321, 332) + 534,
-        getRandomInt(321, 332) + 534,
-        getRandomInt(321, 332) + 534,
-        getRandomInt(358, 371) + 534,
-        getRandomInt(358, 371) + 534,
-      ];
-      var Y1_secondHalf = [
-        getRandomInt(358, 371) + 534,
-        getRandomInt(358, 371) + 534,
-        getRandomInt(389, 406) + 534,
-        getRandomInt(389, 406) + 534,
-        getRandomInt(389, 406) + 534,
-        getRandomInt(389, 406) + 534,
-        getRandomInt(431, 444) + 534,
-        getRandomInt(431, 444) + 534,
-        getRandomInt(431, 444) + 534,
-        getRandomInt(431, 444) + 534,
-        getRandomInt(463, 479) + 534,
-        getRandomInt(463, 479) + 534,
-        getRandomInt(463, 479) + 534,
-        getRandomInt(463, 479) + 534,
-      ];
-      // random mousemovement
-      scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
+    // top left
+    scv.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
+    var X_firstHalf = [
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+    ];
+    var X_secondHalf = [
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+    ];
+    var Y_firstHalf = [
+      getRandomInt(247, 258),
+      getRandomInt(247, 258),
+      getRandomInt(247, 258),
+      getRandomInt(247, 258),
+      getRandomInt(283, 296),
+      getRandomInt(283, 296),
+      getRandomInt(283, 296),
+      getRandomInt(283, 296),
+      getRandomInt(321, 332),
+      getRandomInt(321, 332),
+      getRandomInt(321, 332),
+      getRandomInt(321, 332),
+      getRandomInt(358, 371),
+      getRandomInt(358, 371),
+    ];
+    var Y_secondHalf = [
+      getRandomInt(358, 371),
+      getRandomInt(358, 371),
+      getRandomInt(389, 406),
+      getRandomInt(389, 406),
+      getRandomInt(389, 406),
+      getRandomInt(389, 406),
+      getRandomInt(431, 444),
+      getRandomInt(431, 444),
+      getRandomInt(431, 444),
+      getRandomInt(431, 444),
+      getRandomInt(463, 479),
+      getRandomInt(463, 479),
+      getRandomInt(463, 479),
+      getRandomInt(463, 479),
+    ];
 
-      var x = 3;
-      var y = 3;
-      // movemouse to the 3rd row,7th column 381, 198
+    //bottom left
+    var X1_firstHalf = [
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+    ];
+    var X1_secondHalf = [
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+      getRandomInt(576, 586),
+      getRandomInt(616, 630),
+      getRandomInt(656, 670),
+      getRandomInt(699, 716),
+    ];
+    var Y1_firstHalf = [
+      getRandomInt(247, 258) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(247, 258) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(283, 296) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(321, 332) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(358, 371) + 534,
+    ];
+    var Y1_secondHalf = [
+      getRandomInt(358, 371) + 534,
+      getRandomInt(358, 371) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(389, 406) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(431, 444) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(463, 479) + 534,
+      getRandomInt(463, 479) + 534,
+    ];
+    // random mousemovement
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
 
-      var xlocation = getRandomInt(381 - x, 381 + x);
-      var ylocation = getRandomInt(198 - y, 198 + y);
-      scv.moveMouseSmooth(xlocation, ylocation);
+    var x = 3;
+    var y = 3;
+    // movemouse to the 3rd row,7th column 381, 198
 
-      scv.mouseClick('right');
+    var xlocation = getRandomInt(381 - x, 381 + x);
+    var ylocation = getRandomInt(198 - y, 198 + y);
+    scv.moveMouseSmooth(xlocation, ylocation);
 
-      tick(getRandomInt(700, 800));
-      scv.moveMouseSmooth(xlocation, ylocation + 85);
-      scv.mouseClick();
+    scv.mouseClick('right');
 
-      tick(getRandomInt(700, 800));
-      scv.moveMouse(
-        getRandomInt(429 - 4, 429 + 4),
-        getRandomInt(198 - 3, 198 + 3)
-      );
-      scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouseSmooth(xlocation, ylocation + 85);
+    scv.mouseClick();
 
-      // a1
-      closeBank();
-      tick(getRandomInt(700, 800));
-      var temp = getRandomInt(0, 13);
-      scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
-      scv.mouseClick();
-      tick(getRandomInt(700, 800));
-      var temp2 = getRandomInt(0, 13);
-      scv.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
-      scv.mouseClick();
-      tick(getRandomInt(700, 800));
-      scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
-      scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouse(
+      getRandomInt(429 - 4, 429 + 4),
+      getRandomInt(198 - 3, 198 + 3)
+    );
+    scv.mouseClick();
 
-      // random mousemovement
-      scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
+    // a1
+    closeBank1();
+    tick(getRandomInt(700, 800));
+    var temp = getRandomInt(0, 13);
+    scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
+    scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    var temp2 = getRandomInt(0, 13);
+    scv.moveMouseSmooth(X_secondHalf[temp2], Y_secondHalf[temp2]);
+    scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
+    scv.mouseClick();
 
-      // b1
+    // random mousemovement
+    scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
 
-      var xlocation = getRandomInt(381 - x, 381 + x);
-      var ylocation = getRandomInt(198 - y, 198 + y) + 534;
-      scv.moveMouseSmooth(xlocation, ylocation);
+    // b1
 
-      scv.mouseClick('right');
+    var xlocation = getRandomInt(381 - x, 381 + x);
+    var ylocation = getRandomInt(198 - y, 198 + y) + 534;
+    scv.moveMouseSmooth(xlocation, ylocation);
 
-      tick(getRandomInt(700, 800));
-      scv.moveMouseSmooth(xlocation, ylocation + 85);
-      scv.mouseClick();
+    scv.mouseClick('right');
 
-      tick(getRandomInt(700, 800));
-      scv.moveMouse(
-        getRandomInt(429 - 4, 429 + 4),
-        getRandomInt(198 - 3, 198 + 3) + 534
-      );
-      scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouseSmooth(xlocation, ylocation + 85);
+    scv.mouseClick();
 
-      closeBank2();
-      tick(getRandomInt(700, 800));
-      var temp3 = getRandomInt(0, 13);
-      scv.moveMouseSmooth(X1_firstHalf[temp3], Y1_firstHalf[temp3]);
-      scv.mouseClick();
-      var temp4 = getRandomInt(0, 13);
-      scv.moveMouseSmooth(X1_secondHalf[temp4], Y1_secondHalf[temp4]);
-      scv.mouseClick();
-      tick(getRandomInt(700, 800));
-      scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
-      scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouse(
+      getRandomInt(429 - 4, 429 + 4),
+      getRandomInt(198 - 3, 198 + 3) + 534
+    );
+    scv.mouseClick();
 
-      sleep(getRandomInt(4300, 4700));
+    closeBank2();
+    tick(getRandomInt(700, 800));
+    var temp3 = getRandomInt(0, 13);
+    scv.moveMouseSmooth(X1_firstHalf[temp3], Y1_firstHalf[temp3]);
+    scv.mouseClick();
+    var temp4 = getRandomInt(0, 13);
+    scv.moveMouseSmooth(X1_secondHalf[temp4], Y1_secondHalf[temp4]);
+    scv.mouseClick();
+    tick(getRandomInt(700, 800));
+    scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480) + 534);
+    scv.mouseClick();
 
-      scv.moveMouseSmooth(
-        getRandomInt(236, 236 + 107),
-        getRandomInt(190, 190 + 53)
-      );
-      scv.mouseClick();
-      sleep(getRandomInt(634, 780));
-      advancedDeposit1();
+    sleep(getRandomInt(4300, 4700));
 
-      sleep(getRandomInt(1200, 2000));
+    scv.moveMouseSmooth(
+      getRandomInt(236, 236 + 107),
+      getRandomInt(190, 190 + 53)
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(634, 780));
+    advancedDeposit1();
 
-      scv.moveMouseSmooth(
-        getRandomInt(236, 236 + 107),
-        getRandomInt(190, 190 + 53) + 534
-      );
-      scv.mouseClick();
-      sleep(getRandomInt(634, 780));
+    sleep(getRandomInt(1200, 2000));
 
-      advancedDeposit2();
+    scv.moveMouseSmooth(
+      getRandomInt(236, 236 + 107),
+      getRandomInt(190, 190 + 53) + 534
+    );
+    scv.mouseClick();
+    sleep(getRandomInt(634, 780));
 
-      console.log(time + 'gas harvested');
-    }
+    advancedDeposit2();
+
+    console.log(time + 'gas harvested');
   }
-  layer5(); // rest up to 42.526 milliseconds
 }
 
 function // slowly harvesting gas once         wait6ms
@@ -569,7 +566,7 @@ DuoMake1stRow1tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -801,7 +798,7 @@ DuoMake1stRow2tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -1034,7 +1031,7 @@ DuoMake1stRow3tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -1267,7 +1264,7 @@ DuoMake2ndRow2tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -1510,7 +1507,7 @@ DuoMake3rdRow1tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -1742,7 +1739,7 @@ DuoMake3rdRow3tick() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -1818,7 +1815,7 @@ DuoMake3rdRow3tick() {
   advancedDeposit2();
 }
 
-function closeBank() {
+function closeBank1() {
   scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
 
   for (var i = 0; i < getRandomInt(1, 2); i++) {
@@ -1854,7 +1851,7 @@ SoloClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(700, 800));
-    closeBank();
+    closeBank1();
     sleep(getRandomInt(351, 612));
     var X_herbArray = [
       getRandomInt(576, 586),
@@ -1957,7 +1954,7 @@ DuoClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(700, 800));
-    closeBank();
+    closeBank1();
 
     scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
     // b1
@@ -2148,7 +2145,7 @@ TrioClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(700, 800));
-    closeBank();
+    closeBank1();
     console.log(' randomized arbitrary mouse pattern ');
     scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332) + 534);
     // b1
@@ -2567,7 +2564,7 @@ DuoMakeSupply() {
   scv.mouseClick();
 
   // a1
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -2799,7 +2796,7 @@ DuoMakeSupplyReverse() {
 
   // a1
 
-  closeBank();
+  closeBank1();
   tick(getRandomInt(700, 800));
   var temp = getRandomInt(0, 13);
   scv.moveMouseSmooth(X_firstHalf[temp], Y_firstHalf[temp]);
@@ -2949,6 +2946,103 @@ function Algorithm4() {
       count++;
     }
     console.log(count + ' cycles.');
+  }
+}
+
+function // mainly fletch infinit
+Algorithm6() {
+  // double potion
+  while (true) {
+    login1();
+    login2();
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+    reposition2();
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+    openBank2();
+    banktab1();
+    banktab2();
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour-5 hours
+
+    var count = 0;
+    var tempHour = getRandomInt(650 - 800);
+    while (count < tempHour) {
+      var temp = getRandomInt(1, 256);
+      if (temp > 250) {
+        DuoMake2ndRow2tick();
+        count++;
+      } else if (temp > 236) {
+        DuoMake1stRow1tick(); // which is 1ticking mainly, for unf potion run
+        count++;
+      } else {
+        DuoMake3rdRow3tick();
+        count++;
+      }
+      console.log(count + ' cycles.');
+    }
+    var chance = getRandomInt(1, 10); //10% chance to collect resources
+    if (chance == 10) {
+      closeBank1();
+      closeBank2();
+      collectResources1();
+      collectResources2();
+    }
+
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    logOut2();
+    sleep(getRandomInt(40000, 50000));
+  }
+}
+
+function // mainly potion infinit
+Algorithm5() {
+  while (true) {
+    login1();
+    login2();
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+    reposition2();
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+    openBank2();
+    banktab1();
+    banktab2();
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour-5 hours
+
+    var count = 0;
+    var tempHour = getRandomInt(650 - 800);
+    while (count < tempHour) {
+      var temp = getRandomInt(1, 256);
+      if (temp > 250) {
+        DuoMake2ndRow2tick();
+        count++;
+      } else if (temp > 236) {
+        DuoMake1stRow3tick();
+        count++;
+      } else {
+        DuoMake3rdRow1tick(); // which is 1ticking mainly, for unf potion run
+        count++;
+      }
+      console.log(count + ' cycles.');
+    }
+    var chance = getRandomInt(1, 10); //10% chance to collect resources
+    if (chance == 10) {
+      closeBank1();
+      closeBank2();
+      collectResources1();
+      collectResources2();
+    }
+
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    logOut2();
+    sleep(getRandomInt(40000, 50000));
   }
 }
 
@@ -3211,159 +3305,6 @@ function closeThing2() {
     sleep(231);
   }
 }
-
-function CommandCenter() {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    prompt: 'Command Center Terminal> ',
-  });
-
-  rl.prompt();
-
-  rl.on('line', (line) => {
-    switch (line.trim()) {
-      case 'manual':
-        console.log('log1 cook herb');
-        break;
-
-      case 'loginboth':
-        console.log('');
-        login1();
-        login2();
-        break;
-
-      case 'logoutboth':
-        console.log('');
-        logOut1();
-        logOut2();
-        break;
-
-      case 'repoboth':
-        console.log('');
-        reposition1();
-        reposition2();
-
-        break;
-
-      case 'collectboth':
-        console.log('');
-        collectResources1();
-        collectResources2();
-        break;
-
-      case 'bank':
-        console.log('');
-        openBank1();
-        sleep(getRandomInt(4000, 5000));
-        banktab1();
-        openBank2();
-        sleep(getRandomInt(4000, 5000));
-        banktab2();
-
-        break;
-
-      case 'log1':
-        console.log('');
-        logOut1();
-        break;
-      case 'log2':
-        console.log('');
-        logOut2();
-        break;
-
-      case 'bank1':
-        console.log('');
-        openBank1();
-        sleep(getRandomInt(4000, 5000));
-        banktab1();
-        break;
-
-      case 'bank2':
-        console.log('');
-        openBank2();
-        sleep(getRandomInt(4000, 5000));
-        banktab2();
-        break;
-
-      case 'gas':
-        console.log('harvesting vespian gas');
-        DuoMake1stRow1tick();
-        break;
-
-      case 'solomix':
-        console.log('solo mix');
-        SoloMix();
-        break;
-
-      case 'soloclean':
-        console.log('solo clean');
-        SoloClean();
-        break;
-
-      case 'cook':
-        console.log('creating supplies');
-        DuoMake2ndRow2tick();
-        break;
-
-      case 'herb':
-        console.log('mining minerals');
-        DuoMake3rdRow3tick();
-        break;
-
-      case 'login':
-        console.log('logging in for you');
-        login();
-        break;
-      case 'logout':
-        console.log('logging out for you');
-        logOut();
-        break;
-      case 'repo':
-        console.log('repositioning');
-        reposition();
-        break;
-      case 'bank':
-        console.log('accesing bank');
-        openBank();
-        break;
-      case 'closebank':
-        console.log('closing bank');
-        closeBank();
-        break;
-      case 'A1':
-        console.log('starting production for 360 minutes');
-        Algorithm1();
-        process.exit(0);
-      case 'A2':
-        console.log('starting production for 360 minutes');
-        Algorithm2();
-        process.exit(0);
-      case 'A3':
-        console.log('starting production for 360 minutes');
-        Algorithm3();
-        process.exit(0);
-      case 'A4':
-        console.log('starting production for 360 minutes');
-        Algorithm4();
-        process.exit(0);
-      default:
-        console.log(`Wrong command, read the manual.'${line.trim()}'`);
-        break;
-    }
-    rl.prompt();
-  }).on('close', () => {
-    // basically ctrl +c  here smart shortcut    but ultimately pointless
-    console.log('Going to sleep mode!');
-    process.exit(0);
-  });
-}
-//
-//
-//
-//
-// https://github.com/yida-li/Gaming-Bots
-
 function advancedDeposit1() {
   var X_herbArray = [
     getRandomInt(576, 586),
@@ -3530,22 +3471,199 @@ function advancedDeposit2() {
     scv.mouseClick();
   } // in case of impossibility beyond imaginatino
 }
-function boxOfCommands() {
-  openBank1();
-  sleep(4000);
-  banktab1();
-  openBank2();
-  sleep(4000);
-  banktab2();
-  closeBank();
-  closeBank2();
-  logOut1();
-  logOut2();
-  reposition1();
-  reposition2();
-  sleep(5000);
-  collectResources1();
-  collectResources2();
+function CommandCenter() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'Command Center Terminal> ',
+  });
+
+  rl.prompt();
+
+  rl.on('line', (line) => {
+    switch (line.trim()) {
+      case 'manual':
+        console.log(
+          'loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
+        );
+        break;
+
+      case 'loginboth':
+        console.log('');
+        login1();
+        login2();
+        break;
+
+      case 'logoutboth':
+        console.log('');
+        logOut1();
+        logOut2();
+        break;
+
+      case 'repoboth':
+        console.log('');
+        reposition1();
+        reposition2();
+
+        break;
+
+      case 'collectboth':
+        console.log('');
+        collectResources1();
+        collectResources2();
+        break;
+
+      case 'bankboth':
+        console.log('');
+        openBank1();
+        sleep(getRandomInt(4000, 5000));
+        banktab1();
+        openBank2();
+        sleep(getRandomInt(4000, 5000));
+        banktab2();
+
+        break;
+
+      case 'log1':
+        console.log('');
+        logOut1();
+        break;
+      case 'log2':
+        console.log('');
+        logOut2();
+        break;
+
+      case 'bank1':
+        console.log('');
+        openBank1();
+        sleep(getRandomInt(4000, 5000));
+        banktab1();
+        break;
+
+      case 'bank2':
+        console.log('');
+        openBank2();
+        sleep(getRandomInt(4000, 5000));
+        banktab2();
+        break;
+
+      case 'R1T1':
+        console.log('one tick first row');
+        DuoMake1stRow1tick();
+        break;
+      case 'R1T2':
+        console.log('two tick first row');
+        DuoMake1stRow2tick();
+        break;
+      case 'R1T3':
+        console.log('three tick first row');
+        DuoMake1stRow3tick();
+        break;
+
+      case 'solomix':
+        console.log('solo mix');
+        SoloMix();
+        break;
+
+      case 'soloclean':
+        console.log('solo clean');
+        SoloClean();
+        break;
+
+      case 'R2T2':
+        console.log('');
+        DuoMake2ndRow2tick();
+        break;
+
+      case 'R3T3':
+        console.log('');
+        DuoMake3rdRow3tick();
+        break;
+
+      case 'login':
+        console.log('logging in for you');
+        login1();
+        break;
+      case 'logout':
+        console.log('logging out for you');
+        logOut1();
+        break;
+      case 'repo':
+        console.log('repositioning');
+        reposition();
+        break;
+      case 'bank':
+        console.log('accesing bank');
+        openBank();
+        break;
+      case 'closebank':
+        console.log('closing bank');
+        closeBank1();
+        break;
+      case 'A1':
+        console.log('starting production for 360 minutes');
+        Algorithm1();
+        process.exit(0);
+      case 'A2':
+        console.log('starting production for 360 minutes');
+        Algorithm2();
+        process.exit(0);
+      case 'A3':
+        console.log('starting production for 360 minutes');
+        Algorithm3();
+        process.exit(0);
+      case 'A4':
+        console.log('starting production for 360 minutes');
+        Algorithm4();
+        process.exit(0);
+      case 'A5':
+        console.log('starting herb production for infinite minutes');
+        Algorithm5();
+        process.exit(0);
+      case 'A6':
+        console.log('starting fletch production for infinite minutes');
+        Algorithm5();
+        process.exit(0);
+      default:
+        console.log(`Wrong command, read the manual.'${line.trim()}'`);
+        break;
+    }
+    rl.prompt();
+  }).on('close', () => {
+    // basically ctrl +c  here smart shortcut    but ultimately pointless
+    console.log('Going to sleep mode!');
+    process.exit(0);
+  });
 }
-//CommandCenter();
-advancedDeposit1();
+//
+//
+//
+//
+// https://github.com/yida-li/Gaming-Bots
+
+function Infinite() {
+  while (true) {
+    login1();
+    login2();
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+    reposition2();
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+    openBank2();
+    banktab1();
+    banktab2();
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour
+    DuoMix();
+    //
+
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    logOut2();
+    sleep(getRandomInt(40000, 50000));
+  }
+}
+
+CommandCenter();
