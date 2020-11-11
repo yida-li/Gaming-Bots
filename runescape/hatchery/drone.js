@@ -1944,7 +1944,8 @@ SoloClean() {
 function // instantly click all grimmy herbs with 2 svcs
 DuoClean() {
   var yida = 0;
-  for (var i = 0; i < 1300; i++) {
+  var randomTimer = getRandomInt(500, 1000);
+  for (var i = 0; i < randomTimer; i++) {
     // random mousemovement
     scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
     // click the location of 3rd row, 8th position
@@ -2114,8 +2115,9 @@ DuoClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(634, 780));
-    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342));
-    scv.mouseClick();
+    advancedDeposit1();
+
+    sleep(getRandomInt(1200, 2000));
 
     scv.moveMouseSmooth(
       getRandomInt(236, 236 + 107),
@@ -2123,10 +2125,8 @@ DuoClean() {
     );
     scv.mouseClick();
     sleep(getRandomInt(634, 780));
-    //bankcccc
-    scv.moveMouseSmooth(getRandomInt(432, 454), getRandomInt(327, 342) + 534);
-    scv.mouseClick();
 
+    advancedDeposit2();
     yida++;
     console.log(yida + ' cycle sucessful');
   }
@@ -3477,6 +3477,9 @@ function advancedDeposit2() {
     scv.mouseClick();
   } // in case of impossibility beyond imaginatino
 }
+
+//Custom Terminal Windows to be upgraded in the future with UI
+
 function CommandCenter() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -3490,8 +3493,24 @@ function CommandCenter() {
     switch (line.trim()) {
       case 'manual':
         console.log(
-          'loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
+          'mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
         );
+        break;
+      case 'mix':
+        console.log('');
+        SoloMix();
+        break;
+      case 'mix2':
+        console.log('');
+        DuoMix();
+        break;
+      case 'clean':
+        console.log('');
+        SoloClean();
+        break;
+      case 'clean2':
+        console.log('');
+        DuoClean();
         break;
 
       case 'loginboth':
@@ -3668,10 +3687,17 @@ ExampleInfinite() {
   }
 }
 
-CommandCenter();
-
 //
 //
 //
 //
 // https://github.com/yida-li/Gaming-Bots
+//
+//
+//
+//
+//
+//
+// cmd :: running CommandCenter() on launch
+
+CommandCenter();
