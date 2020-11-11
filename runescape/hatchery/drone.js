@@ -3493,7 +3493,7 @@ function CommandCenter() {
     switch (line.trim()) {
       case 'manual':
         console.log(
-          'mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
+          'A7 for infinite mix=====  A8 for infinite clean====  mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
         );
         break;
       case 'mix':
@@ -3649,6 +3649,14 @@ function CommandCenter() {
         console.log('starting fletch production for infinite minutes');
         Algorithm6();
         process.exit(0);
+        case 'A7':
+        console.log('starting to mix potion for 2 for infinite minutes');
+        ExampleInfiniteMix();
+        process.exit(0);
+        case 'A8':
+        console.log('starting to clean herbs for 2 for infinite minutes');
+        ExampleInfiniteClean();
+        process.exit(0);
       default:
         console.log(`Wrong command, read the manual.'${line.trim()}'`);
         break;
@@ -3662,7 +3670,32 @@ function CommandCenter() {
 }
 
 function // an example of an infinite sequence without variation
-ExampleInfinite() {
+ExampleInfiniteClean() {
+  while (true) {
+    login1();
+    login2();
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+    reposition2();
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+    openBank2();
+    banktab1();
+    banktab2();
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour
+    DuoClean();
+    //
+
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    logOut2();
+    sleep(getRandomInt(40000, 50000));
+  }
+}
+function // an example of an infinite sequence without variation
+ExampleInfiniteMix() {
   while (true) {
     login1();
     login2();
@@ -3686,7 +3719,6 @@ ExampleInfinite() {
     sleep(getRandomInt(40000, 50000));
   }
 }
-
 //
 //
 //
