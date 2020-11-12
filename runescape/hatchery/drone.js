@@ -2872,7 +2872,7 @@ DuoMakeSupplyReverse() {
   advancedDeposit2();
 }
 
-// custum rule
+// A6 without login/logout yew 3rd row
 function Algorithm1() {
   var count = 0;
   while (count < 10000) {
@@ -2892,7 +2892,7 @@ function Algorithm1() {
   }
 }
 
-// custum rule reverse of A1
+// A5 without login/logout also the reverse of A1
 function Algorithm2() {
   var count = 0;
   while (true) {
@@ -2949,6 +2949,54 @@ function Algorithm4() {
   }
 }
 
+function // mainly potion infinit
+Algorithm5() {
+  while (true) {
+    login1();
+    login2();
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+    reposition2();
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+    openBank2();
+    banktab1();
+    banktab2();
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour-5 hours
+
+    var count = 0;
+    var tempHour = getRandomInt(650, 800);
+    while (count < tempHour) {
+      var temp = getRandomInt(1, 256);
+      if (temp > 250) {
+        DuoMake2ndRow2tick();
+        count++;
+      } else if (temp > 236) {
+        DuoMake1stRow3tick();
+        count++;
+      } else {
+        DuoMake3rdRow1tick(); // which is 1ticking mainly, for unf potion run
+        count++;
+      }
+      console.log(count + ' cycles.');
+    }
+    var chance = getRandomInt(1, 10); //10% chance to collect resources
+    if (chance == 10) {
+      closeBank1();
+      closeBank2();
+      collectResources1();
+      collectResources2();
+    }
+    closeBank1();
+    closeBank2();
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    logOut2();
+    sleep(getRandomInt(40000, 50000));
+  }
+}
 function // mainly fletch infinit
 Algorithm6() {
   // double potion
@@ -2990,62 +3038,15 @@ Algorithm6() {
       collectResources1();
       collectResources2();
     }
-
+    closeBank1();
+    closeBank2();
     sleep(getRandomInt(4000, 5000));
     logOut1();
     logOut2();
-    sleep(getRandomInt(40000, 50000));
+    //sleep(getRandomInt(40000, 50000));
+    sleep(getRandomInt(4000, 5000));
   }
 }
-
-function // mainly potion infinit
-Algorithm5() {
-  while (true) {
-    login1();
-    login2();
-    sleep(getRandomInt(4000, 5000));
-    reposition1();
-    reposition2();
-    sleep(getRandomInt(4000, 5000));
-    openBank1();
-    openBank2();
-    banktab1();
-    banktab2();
-    sleep(getRandomInt(4000, 5000));
-
-    // approxiate 3 hour-5 hours
-
-    var count = 0;
-    var tempHour = getRandomInt(650, 800);
-    while (count < tempHour) {
-      var temp = getRandomInt(1, 256);
-      if (temp > 250) {
-        DuoMake2ndRow2tick();
-        count++;
-      } else if (temp > 236) {
-        DuoMake1stRow3tick();
-        count++;
-      } else {
-        DuoMake3rdRow1tick(); // which is 1ticking mainly, for unf potion run
-        count++;
-      }
-      console.log(count + ' cycles.');
-    }
-    var chance = getRandomInt(1, 10); //10% chance to collect resources
-    if (chance == 10) {
-      closeBank1();
-      closeBank2();
-      collectResources1();
-      collectResources2();
-    }
-
-    sleep(getRandomInt(4000, 5000));
-    logOut1();
-    logOut2();
-    sleep(getRandomInt(40000, 50000));
-  }
-}
-
 function login1() {
   scv.moveMouseSmooth(getRandomInt(407, 520), getRandomInt(305, 326));
   scv.mouseClick();
@@ -3080,6 +3081,29 @@ function login2() {
   scv.moveMouseSmooth(getRandomInt(298, 469), getRandomInt(335, 382) + 534);
   scv.mouseClick();
 }
+function login3() {
+  scv.moveMouseSmooth(
+    getRandomInt(407, 520) + 779,
+    getRandomInt(305, 326) + 534
+  );
+  scv.mouseClick();
+  sleep(1000);
+  // type username
+  scv.typeString('');
+  sleep(1000);
+  scv.keyTap('tab');
+  // type password
+  scv.typeString('');
+  //
+  scv.keyTap('enter');
+  sleep(9000);
+  // close the menu that pops up
+  scv.moveMouseSmooth(
+    getRandomInt(298, 469) + 779,
+    getRandomInt(335, 382) + 534
+  );
+  scv.mouseClick();
+}
 
 function logOut1() {
   scv.moveMouseSmooth(getRandomInt(635, 655), getRandomInt(498, 519));
@@ -3094,6 +3118,20 @@ function logOut2() {
   sleep(getRandomInt(600, 700));
   scv.mouseClick();
   scv.moveMouseSmooth(getRandomInt(595, 702), getRandomInt(452, 463) + 534);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+}
+function logOut3() {
+  scv.moveMouseSmooth(
+    getRandomInt(635, 655) + 779,
+    getRandomInt(498, 519) + 534
+  );
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  scv.moveMouseSmooth(
+    getRandomInt(595, 702) + 779,
+    getRandomInt(452, 463) + 534
+  );
   sleep(getRandomInt(600, 700));
   scv.mouseClick();
 }
@@ -3114,18 +3152,6 @@ function moveHand(targetx, targety) {
   scv.moveMouseSmooth(targetx, targety);
 }
 
-function fullcourse() {
-  login();
-  sleep(3000);
-  //exchange('grimy harralander');
-
-  reposition();
-  sleep(3000);
-  collectResources();
-  sleep(3000);
-  logOut();
-}
-
 function reposition1() {
   scv.setMouseDelay(0.5);
   scv.moveMouseSmooth(58, 138);
@@ -3138,6 +3164,13 @@ function reposition2() {
   scv.moveMouseSmooth(58, 138 + 534);
   scv.mouseToggle('down', 'right');
   scv.moveMouseSmooth(246, 138 + 534);
+  scv.mouseToggle('up', 'right');
+}
+function reposition3() {
+  scv.setMouseDelay(0.5);
+  scv.moveMouseSmooth(58 + 779, 138 + 534);
+  scv.mouseToggle('down', 'right');
+  scv.moveMouseSmooth(246 + 779, 138 + 534);
   scv.mouseToggle('up', 'right');
 }
 
@@ -3181,8 +3214,35 @@ function banktab2() {
   sleep(getRandomInt(600, 700));
   sleep(getRandomInt(600, 700));
 }
+function banktab3() {
+  // currently 6th position
+
+  var x = getRandomInt(314, 344) + 779;
+  var y = getRandomInt(79, 91) + 534;
+  scv.moveMouseSmooth(x, y);
+  scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+  sleep(getRandomInt(600, 700));
+}
 function openBank2() {
   var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193) + 534;
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 20);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  sleep(getRandomInt(100, 200));
+  scv.mouseClick();
+  sleep(getRandomInt(600, 700));
+}
+function openBank3() {
+  var x = getRandomInt(248, 267) + 779;
   var y = getRandomInt(186, 193) + 534;
   scv.moveMouseSmooth(x, y);
   sleep(getRandomInt(600, 700));
@@ -3295,6 +3355,56 @@ function collectResources2() {
   console.log('Closing collection log');
   closeThing2();
 }
+function collectResources3() {
+  var x = getRandomInt(248, 267);
+  var y = getRandomInt(186, 193) + 534;
+  scv.moveMouseSmooth(x, y);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick('right');
+  sleep(getRandomInt(600, 700));
+  scv.moveMouseSmooth(x, y + 43);
+  sleep(getRandomInt(600, 700));
+  scv.mouseClick();
+  sleep(getRandomInt(3500, 4000));
+  console.log('collecting');
+  var boxArrayX = [
+    getRandomInt(68, 85) + 779,
+    getRandomInt(68, 85) + 779,
+    getRandomInt(68, 85) + 111 + 779,
+    getRandomInt(68, 85) + 111 + 779,
+    getRandomInt(68, 85) + 222 + 779,
+    getRandomInt(68, 85) + 222 + 779,
+    getRandomInt(68, 85) + 333 + 779,
+    getRandomInt(68, 85) + 333 + 779,
+  ];
+
+  var boxArrayY = [
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+    getRandomInt(155, 173) + 534,
+    getRandomInt(155, 173) + 82 + 534,
+  ];
+  var counter = 0;
+  while (counter < 8) {
+    var destiny = getRandomInt(0, 7);
+    if (boxArrayX[destiny] != 0 && boxArrayY[destiny] != 0) {
+      // time complexity applied, just coen 352, from data structures, from algorithm
+      scv.moveMouseSmooth(boxArrayX[destiny], boxArrayY[destiny]);
+      scv.mouseClick();
+      sleep(getRandomInt(150, 230));
+      boxArrayX[destiny] = 0;
+      boxArrayY[destiny] = 0;
+
+      counter++;
+    }
+  }
+  console.log('Closing collection log');
+  closeThing3();
+}
 function closeThing() {
   scv.moveMouseSmooth(getRandomInt(551, 556), getRandomInt(111, 125));
 
@@ -3311,7 +3421,19 @@ function closeThing2() {
     sleep(231);
   }
 }
+function closeThing3() {
+  scv.moveMouseSmooth(
+    getRandomInt(551, 556) + 779,
+    getRandomInt(111, 125) + 779
+  );
+
+  for (var i = 0; i < getRandomInt(1, 2); i++) {
+    scv.mouseClick();
+    sleep(231);
+  }
+}
 function advancedDeposit1() {
+  sleep(getRandomInt(601, 1199));
   var X_herbArray = [
     getRandomInt(576, 586),
     getRandomInt(576, 586),
@@ -3373,16 +3495,16 @@ function advancedDeposit1() {
     getRandomInt(463, 479),
   ];
 
-  //a2
+  //a1
   var counter1 = 0;
-  var temp1 = getRandomInt(2, 6);
-  while (counter1 < temp1) {
+
+  while (counter1 < 7) {
     var destiny = getRandomInt(0, 27);
     if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
       // time complexity applied, just coen 352, from data structures, from algorithm
-      scv.moveMouseSmooth(X_herbArray[destiny], Y_herbArray[destiny]);
+      scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
       scv.mouseClick();
-      sleep(getRandomInt(100, 200));
+      sleep(getRandomInt(50, 150));
       X_herbArray[destiny] = 0;
       Y_herbArray[destiny] = 0;
 
@@ -3390,11 +3512,18 @@ function advancedDeposit1() {
     }
   }
   if (X_herbArray[0] != 0) {
-    scv.moveMouseSmooth(X_herbArray[0], Y_herbArray[0]);
+    scv.moveMouse(X_herbArray[0], Y_herbArray[0]);
     scv.mouseClick();
-  } // in case of impossibility beyond imaginatino
+  }
+  sleep(getRandomInt(601, 1199));
+  if (X_herbArray[17] != 0) {
+    scv.moveMouse(X_herbArray[17], Y_herbArray[17]);
+    scv.mouseClick();
+  }
+  sleep(getRandomInt(601, 1199));
 }
 function advancedDeposit2() {
+  sleep(getRandomInt(601, 1199));
   var X_herbArray = [
     getRandomInt(576, 586),
     getRandomInt(576, 586),
@@ -3458,14 +3587,14 @@ function advancedDeposit2() {
 
   //a2
   var counter1 = 0;
-  var temp1 = getRandomInt(2, 6);
-  while (counter1 < temp1) {
+
+  while (counter1 < 7) {
     var destiny = getRandomInt(0, 27);
     if (X_herbArray[destiny] != 0 && Y_herbArray[destiny] != 0) {
       // time complexity applied, just coen 352, from data structures, from algorithm
-      scv.moveMouseSmooth(X_herbArray[destiny], Y_herbArray[destiny] + 534);
+      scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny] + 534);
       scv.mouseClick();
-      sleep(getRandomInt(100, 200));
+      sleep(getRandomInt(50, 150));
       X_herbArray[destiny] = 0;
       Y_herbArray[destiny] = 0;
 
@@ -3473,9 +3602,15 @@ function advancedDeposit2() {
     }
   }
   if (X_herbArray[0] != 0) {
-    scv.moveMouseSmooth(X_herbArray[0], Y_herbArray[0] + 534);
+    scv.moveMouse(X_herbArray[0], Y_herbArray[0] + 534);
     scv.mouseClick();
-  } // in case of impossibility beyond imaginatino
+  }
+  sleep(getRandomInt(601, 1199));
+  if (X_herbArray[17] != 0) {
+    scv.moveMouse(X_herbArray[17], Y_herbArray[17] + 534);
+    scv.mouseClick();
+  }
+  sleep(getRandomInt(601, 1199));
 }
 
 //Custom Terminal Windows to be upgraded in the future with UI
@@ -3493,7 +3628,7 @@ function CommandCenter() {
     switch (line.trim()) {
       case 'manual':
         console.log(
-          'A7 for infinite mix=====  A8 for infinite clean====  mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
+          'A1=3tick3rdrow\n, A2=1tick3rdrow\n, A6=infinite A1\n, A5=infinite A2\n,A4=food/pizza, mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
         );
         break;
       case 'mix':
@@ -3613,10 +3748,7 @@ function CommandCenter() {
         console.log('logging out for you');
         logOut1();
         break;
-      case 'repo':
-        console.log('repositioning');
-        reposition();
-        break;
+
       case 'bank':
         console.log('accesing bank');
         openBank();
@@ -3649,14 +3781,6 @@ function CommandCenter() {
         console.log('starting fletch production for infinite minutes');
         Algorithm6();
         process.exit(0);
-        case 'A7':
-        console.log('starting to mix potion for 2 for infinite minutes');
-        ExampleInfiniteMix();
-        process.exit(0);
-        case 'A8':
-        console.log('starting to clean herbs for 2 for infinite minutes');
-        ExampleInfiniteClean();
-        process.exit(0);
       default:
         console.log(`Wrong command, read the manual.'${line.trim()}'`);
         break;
@@ -3670,32 +3794,7 @@ function CommandCenter() {
 }
 
 function // an example of an infinite sequence without variation
-ExampleInfiniteClean() {
-  while (true) {
-    login1();
-    login2();
-    sleep(getRandomInt(4000, 5000));
-    reposition1();
-    reposition2();
-    sleep(getRandomInt(4000, 5000));
-    openBank1();
-    openBank2();
-    banktab1();
-    banktab2();
-    sleep(getRandomInt(4000, 5000));
-
-    // approxiate 3 hour
-    DuoClean();
-    //
-
-    sleep(getRandomInt(4000, 5000));
-    logOut1();
-    logOut2();
-    sleep(getRandomInt(40000, 50000));
-  }
-}
-function // an example of an infinite sequence without variation
-ExampleInfiniteMix() {
+ExampleInfinite() {
   while (true) {
     login1();
     login2();
@@ -3719,6 +3818,7 @@ ExampleInfiniteMix() {
     sleep(getRandomInt(40000, 50000));
   }
 }
+
 //
 //
 //
