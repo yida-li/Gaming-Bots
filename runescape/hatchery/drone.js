@@ -1,7 +1,7 @@
 // dependencies/libraries/packages/bundles/extensions
 var scv = require('robotjs');
 const readline = require('readline');
-
+var auth = require('../aauthenticationFolder/auth');
 // function that performs wait for a thread/process/program
 function sleep(ms) {
   console.log('sleeping for ' + ms + ' ms');
@@ -3052,11 +3052,11 @@ function login1() {
   scv.mouseClick();
   sleep(1000);
   // type username
-  scv.typeString('');
+  scv.typeString(auth.token1);
   sleep(1000);
   scv.keyTap('tab');
   // type password
-  scv.typeString('');
+  scv.typeString(auth.token2);
   //
   scv.keyTap('enter');
   sleep(9000);
