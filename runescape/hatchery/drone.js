@@ -1,7 +1,7 @@
 // dependencies/libraries/packages/bundles/extensions
 var scv = require('robotjs');
 const readline = require('readline');
-
+var accessToken=require('../aAuth/auth.json');
 // function that performs wait for a thread/process/program
 function sleep(ms) {
   console.log('sleeping for ' + ms + ' ms');
@@ -2967,7 +2967,7 @@ Algorithm5() {
     // approxiate 3 hour-5 hours
 
     var count = 0;
-    var tempHour = getRandomInt(650, 800);
+    var tempHour = getRandomInt(450, 600);
     while (count < tempHour) {
       var temp = getRandomInt(1, 256);
       if (temp > 250) {
@@ -3016,7 +3016,7 @@ Algorithm6() {
     // approxiate 3 hour-5 hours
 
     var count = 0;
-    var tempHour = getRandomInt(650, 800);
+    var tempHour = getRandomInt(300, 450);
     while (count < tempHour) {
       var temp = getRandomInt(1, 256);
       if (temp > 250) {
@@ -3052,11 +3052,11 @@ function login1() {
   scv.mouseClick();
   sleep(1000);
   // type username
-  scv.typeString('');
+  scv.typeString(accessToken.username1);
   sleep(1000);
   scv.keyTap('tab');
   // type password
-  scv.typeString('');
+  scv.typeString(accessToken.password1);
   //
   scv.keyTap('enter');
   sleep(9000);
@@ -3069,11 +3069,11 @@ function login2() {
   scv.mouseClick();
   sleep(1000);
   // type username
-  scv.typeString('');
+  scv.typeString(accessToken.username2);
   sleep(1000);
   scv.keyTap('tab');
   // type password
-  scv.typeString('');
+  scv.typeString(accessToken.password2);
   //
   scv.keyTap('enter');
   sleep(9000);
@@ -3515,9 +3515,14 @@ function advancedDeposit1() {
     scv.moveMouse(X_herbArray[0], Y_herbArray[0]);
     scv.mouseClick();
   }
-  sleep(getRandomInt(601, 1199));
+  sleep(getRandomInt(601, 799));
   if (X_herbArray[17] != 0) {
     scv.moveMouse(X_herbArray[17], Y_herbArray[17]);
+    scv.mouseClick();
+  }
+  sleep(getRandomInt(601, 799));
+  if (X_herbArray[27] != 0) {
+    scv.moveMouse(X_herbArray[27], Y_herbArray[27]);
     scv.mouseClick();
   }
   sleep(getRandomInt(601, 1199));
@@ -3605,12 +3610,16 @@ function advancedDeposit2() {
     scv.moveMouse(X_herbArray[0], Y_herbArray[0] + 534);
     scv.mouseClick();
   }
-  sleep(getRandomInt(601, 1199));
+  sleep(getRandomInt(601, 799));
   if (X_herbArray[17] != 0) {
     scv.moveMouse(X_herbArray[17], Y_herbArray[17] + 534);
     scv.mouseClick();
   }
-  sleep(getRandomInt(601, 1199));
+  sleep(getRandomInt(601, 799));
+  if (X_herbArray[27] != 0) {
+    scv.moveMouse(X_herbArray[27], Y_herbArray[27]);
+    scv.mouseClick();
+  }
 }
 
 //Custom Terminal Windows to be upgraded in the future with UI
