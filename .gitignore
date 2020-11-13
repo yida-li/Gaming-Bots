@@ -19,7 +19,7 @@ identity/
 .env.production.local
 
 
-*.json
+*.json    
 *.iml
 *.ipr
 *.com

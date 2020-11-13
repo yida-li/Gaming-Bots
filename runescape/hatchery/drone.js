@@ -3433,7 +3433,6 @@ function closeThing3() {
   }
 }
 function advancedDeposit1() {
-  sleep(getRandomInt(601, 1199));
   var X_herbArray = [
     getRandomInt(576, 586),
     getRandomInt(576, 586),
