@@ -1,7 +1,11 @@
 // dependencies/libraries/packages/bundles/extensions
 var scv = require('robotjs');
 const readline = require('readline');
+
 var accessToken=require('../aAuth/auth.json');
+
+// var auth = require('../aauthenticationFolder/auth');
+
 // function that performs wait for a thread/process/program
 function sleep(ms) {
   console.log('sleeping for ' + ms + ' ms');
@@ -9,11 +13,10 @@ function sleep(ms) {
 }
 
 // function that displays game tick
-function tick() {
-  console.log('1tick');
-  sleep(611);
-}
 
+function tick(x) {
+  sleep(x);
+}
 // a subset of layers to differentiate time delay
 function l1() {
   var random_x = getRandomInt(420, 699);
@@ -158,8 +161,9 @@ SoloMix() {
     tick(getRandomInt(700, 800));
     scv.moveMouseSmooth(getRandomInt(227, 290), getRandomInt(433, 480));
     scv.mouseClick();
-
-    sleep(getRandomInt(8100, 8500));
+    tick(getRandomInt(100, 200));  
+    scv.mouseClick();
+    sleep(getRandomInt(8800, 9200));
 
     scv.moveMouseSmooth(
       getRandomInt(236, 236 + 107),
@@ -410,7 +414,7 @@ DuoMix() {
 }
 
 function // slowly harvesting gas once         wait6ms
-DuoMake1stRow1tick() {
+DuoMake1stRow1  {
   // top left
   scv.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
   var X_firstHalf = [
@@ -642,7 +646,7 @@ DuoMake1stRow1tick() {
   advancedDeposit2();
 }
 function // slowly harvesting gas once         wait7.5ms
-DuoMake1stRow2tick() {
+DuoMake1stRow2  {
   // top left
   scv.moveMouseSmooth(getRandomInt(600, 700), getRandomInt(1, 900));
   var X_firstHalf = [
@@ -1844,15 +1848,15 @@ function closeBank3() {
 
 function // instantly click all grimmy herbs with 1 scvs
 SoloClean() {
-  for (var i = 0; i < 10000; i++) {
-    scv.moveMouse(
+  for (var i = 0; i < 1000; i++) {
+    scv.moveMouseSmooth(
       getRandomInt(429 - 4, 429 + 4),
       getRandomInt(198 - 3, 198 + 3)
     );
     scv.mouseClick();
     sleep(getRandomInt(700, 800));
     closeBank1();
-    sleep(getRandomInt(351, 612));
+    sleep(getRandomInt(700, 800));
     var X_herbArray = [
       getRandomInt(576, 586),
       getRandomInt(576, 586),
@@ -1922,7 +1926,7 @@ SoloClean() {
         // time complexity applied, just coen 352, from data structures, from algorithm
         scv.moveMouse(X_herbArray[destiny], Y_herbArray[destiny]);
         scv.mouseClick();
-
+        tick();
         X_herbArray[destiny] = 0;
         Y_herbArray[destiny] = 0;
 
@@ -1936,6 +1940,8 @@ SoloClean() {
       getRandomInt(236, 236 + 107),
       getRandomInt(190, 190 + 53)
     );
+    scv.mouseClick();
+    tick(getRandomInt(100, 200));  
     scv.mouseClick();
     sleep(getRandomInt(634, 780));
     advancedDeposit1();
@@ -3052,14 +3058,17 @@ function login1() {
   scv.mouseClick();
   sleep(1000);
   // type username
+
   scv.typeString(accessToken.username1);
   sleep(1000);
   scv.keyTap('tab');
   // type password
   scv.typeString(accessToken.password1);
-  //
+
+  
   scv.keyTap('enter');
   sleep(9000);
+  sleep(getRandomInt(4000, 5000));
   // close the menu that pops up
   scv.moveMouseSmooth(getRandomInt(298, 469), getRandomInt(335, 382));
   scv.mouseClick();
@@ -3433,7 +3442,6 @@ function closeThing3() {
   }
 }
 function advancedDeposit1() {
-  sleep(getRandomInt(601, 1199));
   var X_herbArray = [
     getRandomInt(576, 586),
     getRandomInt(576, 586),
@@ -3520,12 +3528,13 @@ function advancedDeposit1() {
     scv.moveMouse(X_herbArray[17], Y_herbArray[17]);
     scv.mouseClick();
   }
+
   sleep(getRandomInt(601, 799));
   if (X_herbArray[27] != 0) {
     scv.moveMouse(X_herbArray[27], Y_herbArray[27]);
     scv.mouseClick();
   }
-  sleep(getRandomInt(601, 1199));
+
 }
 function advancedDeposit2() {
   sleep(getRandomInt(601, 1199));
@@ -3637,7 +3646,7 @@ function CommandCenter() {
     switch (line.trim()) {
       case 'manual':
         console.log(
-          'A1=3tick3rdrow\n, A2=1tick3rdrow\n, A6=infinite A1\n, A5=infinite A2\n,A4=food/pizza, mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
+          'A1=3tick3rdrow\n, A2=1tick3rdrow\n, A6=infinite A1\n, A5=infinite A2\n,A4=food/pizza, A7=solomix/clean, mix mix2 clean clean2 clean3 loginboth logoutboth log1 log2 repoboth collectboth bankboth bank1 bank2 R1T1 R1T2 R1T3'
         );
         break;
       case 'mix':
@@ -3790,6 +3799,10 @@ function CommandCenter() {
         console.log('starting fletch production for infinite minutes');
         Algorithm6();
         process.exit(0);
+      case 'A7':
+        console.log('solo cleaning then mixing loop');
+        ExampleInfinite();
+        process.exit(0);
       default:
         console.log(`Wrong command, read the manual.'${line.trim()}'`);
         break;
@@ -3806,29 +3819,47 @@ function // an example of an infinite sequence without variation
 ExampleInfinite() {
   while (true) {
     login1();
-    login2();
+
     sleep(getRandomInt(4000, 5000));
     reposition1();
-    reposition2();
+
     sleep(getRandomInt(4000, 5000));
     openBank1();
-    openBank2();
+
     banktab1();
-    banktab2();
+
     sleep(getRandomInt(4000, 5000));
 
     // approxiate 3 hour
-    DuoMix();
+    SoloClean();
     //
-
+    closeBank1();
     sleep(getRandomInt(4000, 5000));
     logOut1();
-    logOut2();
-    sleep(getRandomInt(40000, 50000));
+    sleep(getRandomInt(4000, 5000));
+
+    //
+
+    login1();
+
+    sleep(getRandomInt(4000, 5000));
+    reposition1();
+
+    sleep(getRandomInt(4000, 5000));
+    openBank1();
+
+    sleep(getRandomInt(4000, 5000));
+
+    // approxiate 3 hour
+    SoloMix();
+    //
+    closeBank1();
+    sleep(getRandomInt(4000, 5000));
+    logOut1();
+    sleep(getRandomInt(4000, 5000));
   }
 }
 
-//
 //
 //
 //
@@ -3840,5 +3871,4 @@ ExampleInfinite() {
 //
 //
 // cmd :: running CommandCenter() on launch
-
 CommandCenter();
