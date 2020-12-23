@@ -1,0 +1,14 @@
+5% more
+robot.moveMouseSmooth(getRandomInt(225,245),getRandomInt(234,247))
+
+5% less
+robot.moveMouseSmooth(getRandomInt(284,302),getRandomInt(234,247))
+
+custom amount
+robot.moveMouseSmooth(getRandomInt(225,244),getRandomInt(234,247))
+
+1k amount
+robot.moveMouseSmooth(getRandomInt(185,202),getRandomInt(234,247))
+
+confirm 
+robot.moveMouseSmooth(getRandomInt(201,322),getRandomInt(304,324))
