@@ -36,7 +36,7 @@ Making Heuristic decisions
   
   *Getting detected/proxy-banned/reported/sued/blacklisted/ip-blocked/lets not get there
   
-# Runescape  ( halted )
+# Runescape  ( restarted )
 
 
 command line to perform chain actions [collect resources](https://github.com/ai-gorithm-js/CommandCenter/tree/main/planets/runescape) ,  [login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/grandExchangeBot/access.gif), logout,buy,sell,level up

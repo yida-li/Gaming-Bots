@@ -10,7 +10,7 @@ secret/
 identity/
 client/build
 auth/
-aauthentication/
+
 
 # misc
 .DS_Store
@@ -20,7 +20,7 @@ aauthentication/
 .env.production.local
 
 
-*.json
+
 *.iml
 *.ipr
 *.com
