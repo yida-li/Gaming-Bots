@@ -1936,9 +1936,11 @@ SoloClean() {
 }
 function // instantly click all grimmy herbs with 2 svcs
 DuoClean() {
-  
-   var randomTimer = getRandomInt(300, 400);
-  for (var i = 0; i < randomTimer; i++) {
+  var time = 0;
+  var randomTime=getRandomInt(300, 350);
+  //    randomlly between 3 hour -5 hour worktime
+  while (time < randomTime) {
+    time++;
     // random mousemovement
     scv.moveMouseSmooth(getRandomInt(0, 560), getRandomInt(0, 332));
     // click the location of 3rd row, 8th position
@@ -2109,6 +2111,13 @@ DuoClean() {
       getRandomInt(190, 190 + 53)
     );
     scv.mouseClick();
+    var r1= getRandomInt(1,3);
+    for( var i=0;i<r1;i++){
+      sleep(getRandomInt(134, 180));
+      scv.mouseClick();
+    }
+    sleep(getRandomInt(134, 280));
+    scv.mouseClick();
     sleep(getRandomInt(634, 780));
     advancedDeposit1();
 
@@ -2118,12 +2127,17 @@ DuoClean() {
       getRandomInt(256, 256 + 97),
       getRandomInt(190, 190 + 53) + 534
     );
-    scv.mouseClick();
+    scv.mouseClick();  
+    var r2= getRandomInt(1,3);
+    for( var i=0;i<r2;i++){
+      sleep(getRandomInt(134, 180));
+      scv.mouseClick();
+    }
     sleep(getRandomInt(634, 780));
 
     advancedDeposit2();
    
-    console.log((randomTimer-i) + ' cycles left');
+    console.log(randomTime-time + 'cycles left');
   }
 }
 function // instantly click all grimmy herbs with 3 svcs
