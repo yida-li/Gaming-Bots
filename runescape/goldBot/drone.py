@@ -236,7 +236,7 @@ def advancedDeposit1(Xi,Xj):
         pyautogui.click
 
 # arbitrarymoments
-def arbitraryMovement(x, y, z):
+def arbitraryMovement1(x, y, z):
     temp = random.randint(0, 12)
     if temp == 0:
         pyautogui.moveTo(x, y, z, pyautogui.easeInBack)
@@ -265,6 +265,27 @@ def arbitraryMovement(x, y, z):
     elif temp == 12:
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
 
+
+
+# arbitrarymoments with more precision, less variety
+def arbitraryMovement(x, y, z):
+    temp = random.randint(0, 7)
+    if temp == 1:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInBounce)
+    elif temp == 2:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInCirc)
+    elif temp == 3:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInCubic)
+    elif temp == 4:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInExpo)
+    elif temp == 5:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInOutBounce)
+    elif temp == 6:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInOutCirc)
+    elif temp == 7:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInOutCubic)
+    elif temp == 0:
+        pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
 # unpredictability
 def sleepsegment():
     temp= random.randint(0,4)
@@ -582,36 +603,36 @@ def SoloMix(x):
     for i in range(x):
 
         X_firstHalf = [
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
         ]
         X_secondHalf = [
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
-            random.randint(576, 586)+5,
-            random.randint(616, 630)+5,
-            random.randint(656, 670)+5,
-            random.randint(699, 716)+5,
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
         ]
         Y_firstHalf = [
             random.randint(247, 258)+8,
@@ -1138,13 +1159,13 @@ def bankAll(x,y):
 #1 hour 2100 potions /150 runes
 
 def choice():
-    x=input('C for Collect, M for Mine')
-    if x=='C' or 'c':
+    x=input('1 for Collect, 2 for Mine')
+    if x=='1':
         y=input('amount')
-        SoloClean(y)
-    if x=='M' or 'm':
+        SoloClean(int(y))
+    if x=='2':
         y=input('amount')
-        SoloMix(y)    
+        SoloMix(int(y))    
 #SoloClean(475)
-SoloMix(475)
-#choice()
+#SoloMix(475)
+choice()
