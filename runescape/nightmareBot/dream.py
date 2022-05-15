@@ -190,7 +190,7 @@ def inventory(Xi,Xj):
             dice=random.randint(0,4)
             if dice==2:
                 refreshPrayer(0,0)
-            time.sleep(random.uniform(45.50, 55.150))
+            time.sleep(random.uniform(35.50, 45.150))
             x_cordinates[destiny] = 0
             rocktake()
             y_cordinates[destiny] = 0
@@ -203,19 +203,42 @@ def rockcake():
     pyautogui.click()
 
 def rocktake():
+
+    y=random.randint(247, 258)
     arbitraryMovement(
-               random.randint(576, 586), random.randint(247, 258)+10, random.uniform(0.50, 0.150))
+               random.randint(576, 586), y, random.uniform(0.50, 0.150))
     sleepsegment()
     pyautogui.click(button='right')
     sleepsegment()
     arbitraryMovement2(
-               random.randint(576, 586), random.randint(247, 258)+55, random.uniform(0.50, 0.150))
+               random.randint(576, 586), y+45, random.uniform(0.50, 0.150))
     sleepsegment()
     pyautogui.click()
 
-def halfcourse():
-    count =4
-    while(counter>0):
-        count=count-1
-        inventory()
 
+def decreaseHP():
+    counter=random.randint(19,26)
+    
+    while(counter>0):
+        y=random.randint(247, 258)
+        counter=counter-1
+        arbitraryMovement(
+               random.randint(576, 586), y, random.uniform(0.50, 0.150))
+
+        pyautogui.click(button='right')
+
+        arbitraryMovement2(
+               random.randint(576, 586), y+45, random.uniform(0.50, 0.150))
+
+        pyautogui.click()
+
+def halfcourse():
+    #decreaseHP()
+    count =4
+    while(count>0):
+        count=count-1
+        inventory(0,0)
+
+halfcourse()
+#decreaseHP()
+#rocktake()
