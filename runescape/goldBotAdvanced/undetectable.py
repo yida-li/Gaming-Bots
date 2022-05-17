@@ -403,7 +403,7 @@ def SoloClean(x):
         bankAll(0,0)
         #normalDeposit()
         end = time.time()
-        print(end - start)
+        print(round((end - start)/60,2),"minutes ")
 
 def SoloMix(x):
 
@@ -549,7 +549,7 @@ def SoloMix(x):
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
-        print(end - start)
+        print(round((end - start)/60,2),"minutes ")
 
 
 def bankAll(x,y):
@@ -693,7 +693,7 @@ def SoloCraft(x):
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
         
-        moreRandom=random.randint(0,3)
+        moreRandom=random.randint(0,6)
         if moreRandom ==0:
             normalDeposit(0,0)
         elif moreRandom ==1:
@@ -702,22 +702,41 @@ def SoloCraft(x):
             bankAll(0,10)        
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
-        print(end - start)
+        print(round((end - start)/60,2),"minutes ")
 
 
+def singularity(x):
 
+    while(x>0):
+        randomThreshold=random.randint(6969,9696) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+        end = time.time()
+        while(start-end<=randomThreshold):
+            SoloCraft(1):
+            end = time.time()
+def duality():
+
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(start-end<=randomThreshold):
+        decision=random.randint(0,1)
+        if decision==0:
+            SoloMix(random.randint(50,99))
+        else:
+            SoloClean(random.randint(50,100))
+        end = time.time()
 def trinity():
-    print(start)
+
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
     while(start-end<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            SoloMix(1)
+            SoloMix(random.randint(50,99))
         elif decision==1:
-            SoloClean(1)
+            SoloClean(random.randint(50,100))
         else:
-            SoloCraft(1)
+            SoloCraft(random.randint(10,40))
         end = time.time()
+        print(round((end - start)/60,2),"Finished!")
 
 trinity()
