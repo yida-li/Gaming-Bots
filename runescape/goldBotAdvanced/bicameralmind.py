@@ -14,50 +14,6 @@ def closeBank(x,y):
         pyautogui.click()
         time.sleep(0.2)
 
-def login(i,j):
-    check=pyautogui.locateOnScreen('authenticatorRecognition/login.png')
-    time.sleep(random.uniform(3.3, 3.780))
-    if check:
-        pyautogui.leftClick(x=449+i,y=319+j,duration=1)
-        check2=pyautogui.locateOnScreen('authenticatorRecognition/enterusername.png')
-        time.sleep(random.uniform(3.3, 3.780))    
-        if check2:
-            pyautogui.leftClick(x=357+i,y=291+j,duration=1)
-            pyautogui.typewrite('password',interval=1)
-            pyautogui.leftClick(x=312+i,y=349+j,duration=1)
-            pyautogui.moveTo(random.randint(0,700),random.randint(0,200))
-            time.sleep(random.uniform(5.3, 6.780))        
-            pyautogui.leftClick(x=371+i,y=348+j,duration=2)
-            check4=pyautogui.locateOnScreen('authenticatorRecognition/clickhere.png')
-            time.sleep(random.uniform(3.3, 3.780))
-            if not check4:
-                pyautogui.keyDown('down')
-                time.sleep(random.uniform(1.3, 2.380))
-                pyautogui.keyUp('down')
-                pyautogui.moveTo(x=51+i,y=142+j,duration=1)
-                
-                pyautogui.dragTo(x=227+i,y=147+j,duration=2,button='right')
-
-def logout(i,j):
-    closeBank()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(640,647)+i,random.randint(502,517)+j,random.uniform(0.5,1.5))
-    time.sleep(random.uniform(1.3, 2.380))
-    pyautogui.leftClick()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(607,689)+i,random.randint(453,463)+j,random.uniform(0.5,1.5))
-    pyautogui.leftClick()
-
-
-
-# VPN located in the middle of screen
-def checkVPN():
-    check=pyautogui.locateOnScreen('authenticatorRecognition/forti.png')
-    if check:
-        pyautogui.leftClick(x=1434,y=525,duration=2)
-        pyautogui.typewrite('password', interval=1)
-        pyautogui.leftClick(x=1490,y=587,duration=1)
-
 def normalDeposit(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -139,8 +95,6 @@ def normalDeposit(Xi,Xj):
         pyautogui.click()
 
 
-
-# decadence
 def advancedDeposit1(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -235,7 +189,6 @@ def advancedDeposit1(Xi,Xj):
         time.sleep(random.uniform(0.101, 0.199))
         pyautogui.click
 
-# arbitrarymoments
 def arbitraryMovement1(x, y, z):
     temp = random.randint(0, 12)
     if temp == 0:
@@ -264,8 +217,6 @@ def arbitraryMovement1(x, y, z):
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutElastic)
     elif temp == 12:
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
-
-
 
 # arbitrarymoments with more precision, less variety
 def arbitraryMovement(x, y, z):
@@ -299,7 +250,6 @@ def sleepsegment():
         time.sleep(random.uniform(0.800, 0.900))    
     elif temp == 4:
         time.sleep(random.uniform(0.600, 0.800))  
-
 
 def duoClean(x):    
     for i in range(x):
@@ -460,16 +410,16 @@ def duoClean(x):
             destiny = random.randint(0, 27)
 
             if (X_herbArray2[destiny] != 0 and Y_herbArray2[destiny] != 0):
-               # pyautogui.moveTo(X_herbArray[destiny], Y_herbArray[destiny])
+               
                 pyautogui.click(
                     button='left', x=X_herbArray2[destiny], y=Y_herbArray2[destiny])
-                # print(destiny)
+                
                 X_herbArray2[destiny] = 0
                 Y_herbArray2[destiny] = 0
 
                 counter2 = counter2+1
-        # print('phase')
-
+       
+        time.sleep(random.uniform(1.234, 1.780))
 
         pyautogui.moveTo(
             random.randint(256, 256 + 97),
@@ -479,7 +429,13 @@ def duoClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        bankAll(0,8)
+        moreRandom=random.randint(0,6)
+        if moreRandom ==0:
+            bankAll(0,10) 
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
+        else:
+            normalDeposit(0,10) 
 
         pyautogui.moveTo(
             random.randint(256, 256 + 97),
@@ -489,7 +445,13 @@ def duoClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        bankAll(0,551)
+        moreRandom=random.randint(0,6)
+        if moreRandom ==0:
+            bankAll(0,551)
+        elif moreRandom ==1:
+            advancedDeposit1(0,551)
+        else:
+            normalDeposit(0,551)  
         #normalDeposit()
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
@@ -717,12 +679,13 @@ def duoMix(x):
             random.randint(190, 190 + 53), 0.5)
             pyautogui.click()
             time.sleep(random.uniform(1.100, 2.200))
-            moreRandom=random.randint(0,7)
-            if moreRandom==0:
-                normalDeposit(0,0)
-            
+            moreRandom=random.randint(0,6)
+            if moreRandom ==0:
+                bankAll(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
             else:
-                bankAll(0,0)
+                normalDeposit(0,10) 
             
 
         arbitraryMovement(
@@ -731,16 +694,17 @@ def duoMix(x):
         )
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))      
-        moreRandom=random.randint(0,7)
-        if moreRandom==0:
-            normalDeposit(0,551)
-        else:
+        moreRandom=random.randint(0,6)
+        if moreRandom ==0:
             bankAll(0,551)
+        elif moreRandom ==1:
+            advancedDeposit1(0,551)
+        else:
+            normalDeposit(0,551)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
-
 
 def bankAll(x,y):
             arbitraryMovement( 
@@ -916,11 +880,11 @@ def duoCraft(x):
         
         moreRandom=random.randint(0,6)
         if moreRandom ==0:
-            normalDeposit(0,0)
+            bankAll(0,10) 
         elif moreRandom ==1:
-            advancedDeposit1(0,0)
+            advancedDeposit1(0,10)
         else:
-            bankAll(0,10)       
+            normalDeposit(0,10)       
         arbitraryMovement1(
             random.randint(256, 256 + 97),
             random.randint(190, 190 + 53)+551, 0.5
@@ -930,16 +894,14 @@ def duoCraft(x):
         
         moreRandom=random.randint(0,6)
         if moreRandom ==0:
-            normalDeposit(0,551)
+            bankAll(0,551)
         elif moreRandom ==1:
             advancedDeposit1(0,551)
         else:
-            bankAll(0,551)  
+            normalDeposit(0,551)  
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
-
-
 
 def triforce():
 
