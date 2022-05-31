@@ -910,11 +910,11 @@ def triforce():
     while(start-end<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            duoMix(random.randint(1,2))
+            duoMix(random.randint(1,200))
         elif decision==1:
-            duoClean(random.randint(1,2))
+            duoClean(random.randint(1,200))
         else:
-            duoCraft(random.randint(1,2))
+            duoCraft(random.randint(1,200))
         end = time.time()
         
 
