@@ -728,7 +728,7 @@ def trinity():
 
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
-    while(start-end<=randomThreshold):
+    while(end-start<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
             SoloMix(random.randint(50,99))
@@ -738,5 +738,13 @@ def trinity():
             SoloCraft(random.randint(10,40))
         end = time.time()
         
-
-trinity()
+def ttime():
+    randomThreshold=random.randint(5,19) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    
+    end = time.time()
+    while(start-end<=randomThreshold):
+        time.sleep(1.5)
+        end = time.time()   
+        print(end-start)
+#trinity()
+ttime()
