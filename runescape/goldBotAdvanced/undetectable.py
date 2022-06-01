@@ -205,7 +205,7 @@ def advancedDeposit1(Xi,Xj):
 
     counter1 = 0
 
-    while (counter1 < 7):
+    while (counter1 < 4):
         destiny = random.randint(0, 27)
         if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
             arbitraryMovement(
@@ -222,11 +222,6 @@ def advancedDeposit1(Xi,Xj):
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
 
-    time.sleep(random.uniform(0.601, 0.799))
-    if (X_herbArray[17] != 0):
-        arbitraryMovement(
-            X_herbArray[10]+Xi, Y_herbArray[10]+Xj, random.uniform(0.50, 0.150))
-        pyautogui.click()
 
     time.sleep(random.uniform(0.601, 0.799))
     if (X_herbArray[27] != 0):
@@ -372,24 +367,22 @@ def SoloClean(x):
             random.randint(431, 444),
             random.randint(463, 479),
         ]
-        # print('phase')
+
         counter = 0
-        # print(X_herbArray)
-        # print(Y_herbArray)
         while (counter < 27):
 
             destiny = random.randint(0, 27)
 
             if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
-               # pyautogui.moveTo(X_herbArray[destiny], Y_herbArray[destiny])
+
                 pyautogui.click(
                     button='left', x=X_herbArray[destiny], y=Y_herbArray[destiny])
-                # print(destiny)
+
                 X_herbArray[destiny] = 0
                 Y_herbArray[destiny] = 0
 
                 counter = counter+1
-        # print('phase')
+
         time.sleep(random.uniform(2.4000, 2.500))
 
         pyautogui.moveTo(
@@ -400,8 +393,14 @@ def SoloClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        bankAll(0,0)
-        #normalDeposit()
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            normalDeposit(0,0)
+        elif moreRandom ==1:
+            advancedDeposit1(0,0)
+        else:
+            bankAll(0,10)  
+
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
@@ -540,12 +539,13 @@ def SoloMix(x):
         )
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
-        
-        moreRandom=random.randint(0,7)
-        if moreRandom==0:
-            normalDeposit(0,0)
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            normalDeposit(0,10)
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
         else:
-            bankAll(0,0)
+            bankAll(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -693,7 +693,7 @@ def SoloCraft(x):
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
         
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             normalDeposit(0,0)
         elif moreRandom ==1:

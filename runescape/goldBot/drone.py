@@ -400,10 +400,16 @@ def SoloClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        bankAll(0,0)
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            bankAll(0,10) 
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
+        else:
+            normalDeposit(0,10)
         #normalDeposit()
         end = time.time()
-        print(end - start)
+        print(round((end - start)/60,2),"minutes ")
 
 def DuoClean(x):    
     for i in range(x):
@@ -734,15 +740,17 @@ def SoloMix(x):
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
         
-        moreRandom=random.randint(0,7)
-        if moreRandom==0:
-            normalDeposit(0,0)
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            bankAll(0,10) 
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
         else:
-            bankAll(0,0)
+            normalDeposit(0,10)
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
-        print(end - start)
+        print(round((end - start)/60,2),"minutes ")
 def DualTask(x,y):
     time.sleep(random.uniform(5.4000, 5.500))
     login(x,y)
@@ -1142,22 +1150,6 @@ def bankAll(x,y):
                     random.randint(437, 458)+x,random.randint(333, 349)+y, random.uniform(0.2,0.5))
             pyautogui.click() 
 
-#while True:
-    #SoloMix(40)
-    #checkVPN()
-#SoloMix(500)
-#SoloHybrid()
-#login()n
-#logout()
-#login()speedclick()
-#speedclick()
-#lamda for 2 cordinates
-#DoubleMix(200)
-
-#1 hour 6700 herbs /237 runes
-
-#1 hour 2100 potions /150 runes
-
 def choice():
     x=input('1 for Collect, 2 for Mine')
     if x=='1':
@@ -1166,6 +1158,5 @@ def choice():
     if x=='2':
         y=input('amount')
         SoloMix(int(y))    
-#SoloClean(475)
-#SoloMix(475)
+
 choice()
