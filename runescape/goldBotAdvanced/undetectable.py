@@ -738,13 +738,5 @@ def trinity():
             SoloCraft(random.randint(10,40))
         end = time.time()
         
-def ttime():
-    randomThreshold=random.randint(5,19) # between 4 hours and 20 minutes to 5 hours and 18 minutes
-    
-    end = time.time()
-    while(start-end<=randomThreshold):
-        time.sleep(1.5)
-        end = time.time()   
-        print(end-start)
-#trinity()
-ttime()
+
+trinity()

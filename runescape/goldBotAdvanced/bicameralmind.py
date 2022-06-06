@@ -429,7 +429,7 @@ def duoClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             bankAll(0,10) 
         elif moreRandom ==1:
@@ -445,7 +445,7 @@ def duoClean(x):
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click(button='left')
         time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             bankAll(0,551)
         elif moreRandom ==1:
@@ -599,11 +599,13 @@ def duoMix(x):
             random.randint(190, 190 + 53), 0.5)
             pyautogui.click()
             time.sleep(random.uniform(1.100, 2.200))
-            moreRandom=random.randint(0,7)
-            if moreRandom==0:
-                normalDeposit(0,0)
+            moreRandom=random.randint(0,10)
+            if moreRandom ==0:
+                bankAll(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
             else:
-                bankAll(0,0)
+                normalDeposit(0,10)
         else:
             xlocation = random.randint(429 - 4, 429 + 4)
             ylocation = random.randint(198 - 3, 198 + 3)+8
@@ -694,7 +696,7 @@ def duoMix(x):
         )
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))      
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             bankAll(0,551)
         elif moreRandom ==1:
@@ -878,7 +880,7 @@ def duoCraft(x):
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
         
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             bankAll(0,10) 
         elif moreRandom ==1:
@@ -892,7 +894,7 @@ def duoCraft(x):
         pyautogui.click()
         time.sleep(random.uniform(0.634, 0.780))
         
-        moreRandom=random.randint(0,6)
+        moreRandom=random.randint(0,10)
         if moreRandom ==0:
             bankAll(0,551)
         elif moreRandom ==1:
