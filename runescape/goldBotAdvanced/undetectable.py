@@ -575,8 +575,15 @@ def SoloFletch(x):
             random.randint(576, 586),
             random.randint(616, 630),
             random.randint(656, 670),
-            random.randint(SoloFletch
-SoloFletch699, 716),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
         ]
         Y_firstHalf = [
             random.randint(247, 258)+8,
