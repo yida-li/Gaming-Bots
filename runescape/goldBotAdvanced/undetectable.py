@@ -22,8 +22,6 @@ def login(i,j):
         check2=pyautogui.locateOnScreen('authenticatorRecognition/enterusername.png')
         time.sleep(random.uniform(3.3, 3.780))    
         if check2:
-            pyautogui.leftClick(x=357+i,y=291+j,duration=1)
-            pyautogui.typewrite('password',interval=1)
             pyautogui.leftClick(x=312+i,y=349+j,duration=1)
             pyautogui.moveTo(random.randint(0,700),random.randint(0,200))
             time.sleep(random.uniform(5.3, 6.780))        
@@ -551,6 +549,147 @@ def SoloMix(x):
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
+def SoloFletch(x):
+
+    for i in range(x):
+
+        X_firstHalf = [
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+        ]
+        X_secondHalf = [
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(SoloFletch
+SoloFletch699, 716),
+        ]
+        Y_firstHalf = [
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+        ]
+        Y_secondHalf = [
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+        ]
+
+        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
+
+        Choice =random.randint(0,1)
+        if Choice==1:
+            xlocation = random.randint(380, 382)
+            ylocation = random.randint(198 -1, 198+1 )+45
+            arbitraryMovement(xlocation, ylocation, 0.3)
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(331 - 4, 331 + 4),
+                random.randint(198 - 3, 198 + 3)+45, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+        else:
+            xlocation = random.randint(331 - 4, 331 + 4)
+            ylocation = random.randint(198 - 3, 198 + 3)+45
+            arbitraryMovement(
+                xlocation,
+                ylocation, random.uniform(0.25,0.45)
+            )
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(380, 382),
+                random.randint(198 -1, 198+1 )+45, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+
+
+        closeBank(0,10)
+        sleepsegment()
+        temp = random.randint(0, 13)
+        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+        pyautogui.click()
+        sleepsegment()
+        temp2 = random.randint(0, 13)
+        arbitraryMovement(
+            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(
+            227, 290), random.randint(433, 480), 0.2)
+        pyautogui.click()
+        time.sleep(random.uniform(0.100, 0.200))
+        pyautogui.click()
+        time.sleep(random.uniform(14.690, 16.200))
+
+        arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5
+        )
+        pyautogui.click()
+        time.sleep(random.uniform(0.634, 0.780))
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            normalDeposit(0,10)
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
+        else:
+            bankAll(0,10)  
+        
+        time.sleep(random.uniform(0.634, 0.780))
+        end = time.time()
+        print(round((end - start)/60,2),"minutes ")
+
+
 
 def bankAll(x,y):
             arbitraryMovement( 
@@ -724,6 +863,9 @@ def duality():
         else:
             SoloClean(random.randint(50,100))
         end = time.time()
+
+
+        
 def trinity():
 
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
@@ -731,12 +873,26 @@ def trinity():
     while(end-start<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            SoloMix(random.randint(50,99))
+            SoloMix(random.randint(50,200))
         elif decision==1:
-            SoloClean(random.randint(50,100))
+            SoloClean(random.randint(25,50))
         else:
-            SoloCraft(random.randint(10,40))
+            SoloCraft(random.randint(5,25))
         end = time.time()
-        
+def quadruple():
 
-trinity()
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,3)
+        if decision==0:
+            SoloMix(random.randint(50,200))
+        elif decision==1:
+            SoloClean(random.randint(25,50))
+        elif decision==2;
+            SoloFletch(random.randint(5,15))
+        else:
+            SoloCraft(random.randint(5,25))
+        end = time.time()
+               
+
