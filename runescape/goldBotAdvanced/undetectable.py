@@ -886,6 +886,17 @@ def trinity():
         else:
             SoloCraft(random.randint(5,25))
         end = time.time()
+
+def testCase():
+    while(True):
+        SoloMix(1)
+        
+        SoloClean(1)
+
+        SoloFletch(1)
+
+        SoloCraft(1)
+
 def quadruple():
 
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
@@ -896,10 +907,11 @@ def quadruple():
             SoloMix(random.randint(50,200))
         elif decision==1:
             SoloClean(random.randint(25,50))
-        elif decision==2;
-            SoloFletch(random.randint(5,15))
+        elif decision==2:
+            SoloFletch(random.randint(3,13))
         else:
             SoloCraft(random.randint(5,25))
         end = time.time()
                
-
+testCase()
+#quadruple()
