@@ -598,7 +598,7 @@ def duoMix(x):
             random.randint(256, 256 + 97),
             random.randint(190, 190 + 53), 0.5)
             pyautogui.click()
-            time.sleep(random.uniform(1.100, 2.200))
+            time.sleep(random.uniform(2.500, 3.700))
             moreRandom=random.randint(0,10)
             if moreRandom ==0:
                 bankAll(0,10) 
@@ -680,7 +680,7 @@ def duoMix(x):
             random.randint(256, 256 + 97),
             random.randint(190, 190 + 53), 0.5)
             pyautogui.click()
-            time.sleep(random.uniform(1.100, 2.200))
+            time.sleep(random.uniform(2.400, 3.200))
             moreRandom=random.randint(0,6)
             if moreRandom ==0:
                 bankAll(0,10) 
@@ -911,11 +911,11 @@ def triforce():
     while(end-start<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            duoMix(random.randint(1,200))
+            duoMix(random.randint(25,200))
         elif decision==1:
-            duoClean(random.randint(1,200))
+            duoClean(random.randint(25,100))
         else:
-            duoCraft(random.randint(1,200))
+            duoCraft(random.randint(5,20))
         end = time.time()
         
 
