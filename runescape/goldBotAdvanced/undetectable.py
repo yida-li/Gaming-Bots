@@ -871,35 +871,16 @@ def duality():
             SoloClean(random.randint(50,100))
         end = time.time()
 
-
-        
-def trinity():
-
-    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
-    end = time.time()
-    while(end-start<=randomThreshold):
-        decision=random.randint(0,2)
-        if decision==0:
-            SoloMix(random.randint(50,200))
-        elif decision==1:
-            SoloClean(random.randint(25,125))
-        else:
-            SoloCraft(random.randint(5,25))
-        end = time.time()
-
 def testCase():
     while(True):
-        SoloMix(1)
-        
+        SoloMix(1)   
         SoloClean(1)
-
         SoloFletch(1)
-
         SoloCraft(1)
 
 def quadruple():
 
-    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    randomThreshold=random.randint(14499,19333) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
     while(end-start<=randomThreshold):
         decision=random.randint(0,3)
@@ -912,12 +893,30 @@ def quadruple():
         else:
             SoloCraft(random.randint(5,25))
         end = time.time()
+def trinity():
+
+    randomThreshold=random.randint(14499,19333) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,2)
+        if decision==0:
+            SoloMix(random.randint(50,200))
+        elif decision==1:
+            SoloClean(random.randint(25,125))
+        else:
+            SoloCraft(random.randint(5,25))
+        end = time.time()
+
 
 def choice():
-    x=input('1 for trinity, 2 for quadruple')
+    x=input('1 for singularity \n2 for duality\n3 for trinity\n4 for quadruple')
     if x=='1':
-        trinity()  
+        singularity()  
     if x=='2':
-        quadruple() 
-
-
+        duality()
+    if x=='3':
+        trinity() 
+    if x=='4':
+        quadruple()   
+        
+choice()
