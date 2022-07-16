@@ -603,6 +603,157 @@ def DuoClean(x):
         print(end - start)
 
 
+def SoloFusion(x):
+
+    for i in range(x):
+
+        X_firstHalf = [
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+        ]
+        X_secondHalf = [
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+        ]
+        Y_firstHalf = [
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+        ]
+        Y_secondHalf = [
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+        ]
+
+        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
+
+        Choice =random.randint(0,1)
+        if Choice==1:
+            xlocation = random.randint(380, 382)
+            ylocation = random.randint(198 -1, 198+1 )+10
+            arbitraryMovement(xlocation, ylocation, 0.3)
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(429 - 4, 429 + 4),
+                random.randint(198 - 3, 198 + 3)+8, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+        else:
+            xlocation = random.randint(429 - 4, 429 + 4)
+            ylocation = random.randint(198 - 3, 198 + 3)+8
+            arbitraryMovement(
+                xlocation,
+                ylocation, random.uniform(0.25,0.45)
+            )
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(380, 382),
+                random.randint(198 -1, 198+1 )+8, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+
+
+        closeBank(0,10)
+        sleepsegment()
+        temp = random.randint(0, 13)
+        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+        pyautogui.click()
+        sleepsegment()
+        temp2 = random.randint(0, 13)
+        arbitraryMovement(
+            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(
+            231, 280), random.randint(443, 490), random.uniform(1.89, 2.11))
+
+        pyautogui.click()
+        arbitraryMovement(random.randint(
+            227, 290), random.randint(433, 480), 0.2)
+        pyautogui.click()
+        time.sleep(random.uniform(0.100, 0.200))
+        pyautogui.click()
+        time.sleep(random.uniform(18.800, 19.200))
+
+        arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5
+        )
+        pyautogui.click()
+        time.sleep(random.uniform(0.634, 0.780))
+        
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            bankAll(0,10) 
+        elif moreRandom ==1:
+            advancedDeposit1(0,10)
+        else:
+            normalDeposit(0,10)
+        
+        time.sleep(random.uniform(0.634, 0.780))
+        end = time.time()
+        print(round((end - start)/60,2),"minutes ")
 
 def SoloMix(x):
 
@@ -1151,12 +1302,17 @@ def bankAll(x,y):
             pyautogui.click() 
 
 def choice():
-    x=input('1 for Collect, 2 for Mine')
+    x=input('1 for Collect, 2 for Mine, 3 to Fusion')
     if x=='1':
         y=input('amount')
         SoloClean(int(y))
     if x=='2':
         y=input('amount')
-        SoloMix(int(y))    
+        SoloMix(int(y))
+    if x=='3':
+        y=input('amount')
+        SoloFusion(int(y))    
 
-choice()
+#choice()
+
+#SoloFusion(int(135))
