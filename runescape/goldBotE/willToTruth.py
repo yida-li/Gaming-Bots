@@ -136,7 +136,89 @@ def normalDeposit(Xi,Xj):
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
 
+def mediumDeposit(Xi,Xj):
+    X_herbArray = [
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+    ]
+    Y_herbArray = [
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+    ]
+    counter1 = 0
 
+    while (counter1 < 2):
+        destiny = random.randint(0, 27)
+        if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
+            arbitraryMovement(
+                X_herbArray[destiny]+Xi, Y_herbArray[destiny]+Xj, random.uniform(0.50, 0.150))
+            pyautogui.click()
+            time.sleep(random.uniform(0.50, 0.150))
+            X_herbArray[destiny] = 0
+            Y_herbArray[destiny] = 0
+
+            counter1 = counter1+1
+
+    if (X_herbArray[0] != 0):
+        arbitraryMovement(
+            X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
+    if (X_herbArray[27] != 0):
+        arbitraryMovement(
+            X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
 
 # decadence
 def advancedDeposit1(Xi,Xj):
@@ -203,7 +285,7 @@ def advancedDeposit1(Xi,Xj):
 
     counter1 = 0
 
-    while (counter1 < 4):
+    while (counter1 < 3):
         destiny = random.randint(0, 27)
         if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
             arbitraryMovement(
@@ -397,7 +479,7 @@ def SoloClean(x):
         elif moreRandom ==1:
             advancedDeposit1(0,0)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
 
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
@@ -543,7 +625,7 @@ def SoloMix(x):
         elif moreRandom ==1:
             advancedDeposit1(0,10)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -690,7 +772,7 @@ def SoloMix2(x):
         elif moreRandom ==1:
             advancedDeposit1(0,10)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -837,7 +919,7 @@ def SoloMix3(x):
         elif moreRandom ==1:
             advancedDeposit1(0,10)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -986,7 +1068,7 @@ def SoloFletch(x):
         elif moreRandom ==1:
             advancedDeposit1(0,10)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -1133,7 +1215,7 @@ def SoloFletch2(x):
         elif moreRandom ==1:
             advancedDeposit1(0,10)
         else:
-            bankAll(0,10)  
+            mediumDeposit(0,10)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
@@ -1282,7 +1364,7 @@ def SoloCraft(x):
         
         moreRandom=random.randint(0,10)
         if moreRandom ==0:
-            bankAll(0,10) 
+            mediumDeposit(0,10) 
         elif moreRandom ==1:
             advancedDeposit1(0,0)
         else:
@@ -1297,9 +1379,9 @@ def SoloCraft(x):
 def Triforce(x):
     while(x>0):
         x=x-1
-        decision=random.randint(0,2)
+        decision=random.randint(0,0)
         if decision==0:
-            SoloMix(random.randint(1,5))
+            SoloMix(random.randint(1,50))
         elif decision==1:
             SoloMix2(random.randint(1,5))
         elif decision==2:
@@ -1346,3 +1428,5 @@ def willToTruth():
         else:
             SoloCraft(random.randint(2,12))
         end = time.time()
+
+willToTruth()
