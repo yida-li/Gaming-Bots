@@ -693,7 +693,7 @@ def duoMix(x):
                 normalDeposit(0,10)
         else:
             xlocation = random.randint(429 - 4, 429 + 4)
-            ylocation = random.randint(198 -1, 198+1 )+45
+            ylocation = random.randint(198 -1, 198+1 )+10
             arbitraryMovement(
                 xlocation,
                 ylocation, random.uniform(0.25,0.45)
@@ -1127,7 +1127,7 @@ def duoFletch(x):
             pyautogui.click()
             time.sleep(random.uniform(0.100, 0.200))
             pyautogui.click()
-            time.sleep(random.uniform(8.100, 10.200))
+            time.sleep(random.uniform(10.100, 12.200))
             arbitraryMovement(
             random.randint(256, 256 + 97),
             random.randint(190, 190 + 53), 0.5)
@@ -1209,7 +1209,7 @@ def duoFletch(x):
                 227, 290), random.randint(433, 480)+551, 0.2)
             pyautogui.click()
             
-            time.sleep(random.uniform(9.100, 10.200))
+            time.sleep(random.uniform(10.100, 12.200))
             arbitraryMovement(
             random.randint(256, 256 + 97),
             random.randint(190, 190 + 53), 0.5)
@@ -1309,4 +1309,5 @@ def trinity():
 #test1()
 #test2()
 #test3()       
-trinity()
+#trinity()
+duoMix(10)
