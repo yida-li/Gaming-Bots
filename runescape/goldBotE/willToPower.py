@@ -1255,7 +1255,42 @@ def test():
         else:
             duoCraft(random.randint(1,1))
         end = time.time()
-
+def test1():
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,2)
+        if decision==0:
+            duoMix(random.randint(1,1))
+        if decision==1:
+            duoFletch(random.randint(1,1))
+        else:
+            duoCraft(random.randint(1,99))
+        end = time.time()
+def test2():
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,2)
+        if decision==0:
+            duoMix(random.randint(1,99))
+        if decision==1:
+            duoFletch(random.randint(1,1))
+        else:
+            duoCraft(random.randint(1,1))
+        end = time.time()
+def test3():
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,2)
+        if decision==0:
+            duoMix(random.randint(1,1))
+        if decision==1:
+            duoFletch(random.randint(1,99))
+        else:
+            duoCraft(random.randint(1,1))
+        end = time.time()
 
 def trinity():
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
@@ -1270,5 +1305,8 @@ def trinity():
             duoCraft(random.randint(1,10))
         end = time.time()
 
-#test()        
+#test() 
+#test1()
+#test2()
+#test3()       
 trinity()
