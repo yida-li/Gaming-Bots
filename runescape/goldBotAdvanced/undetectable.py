@@ -972,9 +972,9 @@ def quadruple():
         elif decision==1:
             SoloClean(random.randint(50,75))
         elif decision==2:
-            SoloFletch(random.randint(3,13))
+            SoloFletch(random.randint(1,10))
         else:
-            SoloCraft(random.randint(5,25))
+            SoloCraft(random.randint(2,7))
         end = time.time()
 def trinity():
 
@@ -983,9 +983,9 @@ def trinity():
     while(end-start<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            SoloMix(random.randint(50,150))
+            SoloMix(random.randint(100,200))
         elif decision==1:
-            SoloClean(random.randint(75,125))
+            SoloClean(random.randint(25,75))
         else:
             SoloCraft(random.randint(5,25))
         end = time.time()
@@ -1003,3 +1003,4 @@ def choice():
         quadruple()   
         
 choice()
+#testCase()

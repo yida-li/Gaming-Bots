@@ -909,10 +909,10 @@ def triforce():
     randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
     while(end-start<=randomThreshold):
-        decision=random.randint(0,2)
+        decision=random.randint(0,1)
         if decision==0:
             duoMix(random.randint(25,200))
-        elif decision==1:
+        elif decision==2:
             duoClean(random.randint(25,100))
         else:
             duoCraft(random.randint(5,20))

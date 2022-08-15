@@ -6,135 +6,7 @@ pyautogui.FAILSAFE = False
 start = time.time()
 
 
-def closeBank(x,y):
-    arbitraryMovement(random.randint(551, 556)+x,random.randint(111, 125)+y,random.uniform(0.78,1.12))
-    pyautogui.click()
-    temp = random.randint(1, 2)
-    for i in range(temp):
-        pyautogui.click()
-        time.sleep(0.2)
 
-def login(i,j):
-    check=pyautogui.locateOnScreen('authenticatorRecognition/login.png')
-    time.sleep(random.uniform(3.3, 3.780))
-    if check:
-        pyautogui.leftClick(x=449+i,y=319+j,duration=1)
-        check2=pyautogui.locateOnScreen('authenticatorRecognition/enterusername.png')
-        time.sleep(random.uniform(3.3, 3.780))    
-        if check2:
-            pyautogui.leftClick(x=312+i,y=349+j,duration=1)
-            pyautogui.moveTo(random.randint(0,700),random.randint(0,200))
-            time.sleep(random.uniform(5.3, 6.780))        
-            pyautogui.leftClick(x=371+i,y=348+j,duration=2)
-            check4=pyautogui.locateOnScreen('authenticatorRecognition/clickhere.png')
-            time.sleep(random.uniform(3.3, 3.780))
-            if not check4:
-                pyautogui.keyDown('down')
-                time.sleep(random.uniform(1.3, 2.380))
-                pyautogui.keyUp('down')
-                pyautogui.moveTo(x=51+i,y=142+j,duration=1)
-                
-                pyautogui.dragTo(x=227+i,y=147+j,duration=2,button='right')
-
-def logout(i,j):
-    closeBank()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(640,647)+i,random.randint(502,517)+j,random.uniform(0.5,1.5))
-    time.sleep(random.uniform(1.3, 2.380))
-    pyautogui.leftClick()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(607,689)+i,random.randint(453,463)+j,random.uniform(0.5,1.5))
-    pyautogui.leftClick()
-
-
-
-# VPN located in the middle of screen
-def checkVPN():
-    check=pyautogui.locateOnScreen('authenticatorRecognition/forti.png')
-    if check:
-        pyautogui.leftClick(x=1434,y=525,duration=2)
-        pyautogui.typewrite('password', interval=1)
-        pyautogui.leftClick(x=1490,y=587,duration=1)
-
-def normalDeposit(Xi,Xj):
-    X_herbArray = [
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-    ]
-    Y_herbArray = [
-        random.randint(247, 258),
-        random.randint(283, 296),
-        random.randint(321, 332),
-        random.randint(358, 371),
-        random.randint(389, 406),
-        random.randint(431, 444),
-        random.randint(463, 479),
-        random.randint(247, 258),
-        random.randint(283, 296),
-        random.randint(321, 332),
-        random.randint(358, 371),
-        random.randint(389, 406),
-        random.randint(431, 444),
-        random.randint(463, 479),
-        random.randint(247, 258),
-        random.randint(283, 296),
-        random.randint(321, 332),
-        random.randint(358, 371),
-        random.randint(389, 406),
-        random.randint(431, 444),
-        random.randint(463, 479),
-        random.randint(247, 258),
-        random.randint(283, 296),
-        random.randint(321, 332),
-        random.randint(358, 371),
-        random.randint(389, 406),
-        random.randint(431, 444),
-        random.randint(463, 479),
-    ]
-    counter1 = 0
-
-    while (counter1 < 2):
-        destiny = random.randint(0, 27)
-        if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
-            arbitraryMovement(
-                X_herbArray[destiny]+Xi, Y_herbArray[destiny]+Xj, random.uniform(0.50, 0.150))
-            pyautogui.click()
-            time.sleep(random.uniform(0.50, 0.150))
-            X_herbArray[destiny] = 0
-            Y_herbArray[destiny] = 0
-
-            counter1 = counter1+1
-
-    if (X_herbArray[0] != 0):
-        arbitraryMovement(
-            X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
-        pyautogui.click()
 
 def mediumDeposit(Xi,Xj):
     X_herbArray = [
@@ -220,7 +92,94 @@ def mediumDeposit(Xi,Xj):
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
 
-# decadence
+def closeBank(x,y):
+    arbitraryMovement(random.randint(551, 556)+x,random.randint(111, 125)+y,random.uniform(0.78,1.12))
+    pyautogui.click()
+    temp = random.randint(1, 2)
+    for i in range(temp):
+        pyautogui.click()
+        time.sleep(0.2)
+
+def normalDeposit(Xi,Xj):
+    X_herbArray = [
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+    ]
+    Y_herbArray = [
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+    ]
+    counter1 = 0
+
+    while (counter1 < 2):
+        destiny = random.randint(0, 27)
+        if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
+            arbitraryMovement(
+                X_herbArray[destiny]+Xi, Y_herbArray[destiny]+Xj, random.uniform(0.50, 0.150))
+            pyautogui.click()
+            time.sleep(random.uniform(0.50, 0.150))
+            X_herbArray[destiny] = 0
+            Y_herbArray[destiny] = 0
+
+            counter1 = counter1+1
+
+    if (X_herbArray[0] != 0):
+        arbitraryMovement(
+            X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
+
 def advancedDeposit1(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -285,7 +244,7 @@ def advancedDeposit1(Xi,Xj):
 
     counter1 = 0
 
-    while (counter1 < 3):
+    while (counter1 < 7):
         destiny = random.randint(0, 27)
         if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
             arbitraryMovement(
@@ -302,6 +261,11 @@ def advancedDeposit1(Xi,Xj):
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
 
+    time.sleep(random.uniform(0.601, 0.799))
+    if (X_herbArray[17] != 0):
+        arbitraryMovement(
+            X_herbArray[10]+Xi, Y_herbArray[10]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
 
     time.sleep(random.uniform(0.601, 0.799))
     if (X_herbArray[27] != 0):
@@ -310,7 +274,6 @@ def advancedDeposit1(Xi,Xj):
         time.sleep(random.uniform(0.101, 0.199))
         pyautogui.click
 
-# arbitrarymoments
 def arbitraryMovement1(x, y, z):
     temp = random.randint(0, 12)
     if temp == 0:
@@ -339,8 +302,6 @@ def arbitraryMovement1(x, y, z):
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutElastic)
     elif temp == 12:
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
-
-
 
 # arbitrarymoments with more precision, less variety
 def arbitraryMovement(x, y, z):
@@ -375,8 +336,7 @@ def sleepsegment():
     elif temp == 4:
         time.sleep(random.uniform(0.600, 0.800))  
 
-
-def SoloClean(x):    
+def duoClean(x):    
     for i in range(x):
 
         arbitraryMovement(random.randint(
@@ -385,9 +345,45 @@ def SoloClean(x):
         pyautogui.click(button='left')
         sleepsegment()
         closeBank(0,8)
+        arbitraryMovement(random.randint(
+            429 - 4, 429 + 4), random.randint(237, 245)+543, random.uniform(1.89, 2.11))
+
+        pyautogui.click(button='left')
+        sleepsegment()
+        closeBank(0,551)
         # print('phase')
         sleepsegment()
         X_herbArray = [
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(699, 716),
+            random.randint(699, 716),
+            random.randint(699, 716),
+            random.randint(699, 716),
+            random.randint(699, 716),
+            random.randint(699, 716),
+        ]
+        X_herbArray2 = [
             random.randint(576, 586),
             random.randint(576, 586),
             random.randint(576, 586),
@@ -447,6 +443,36 @@ def SoloClean(x):
             random.randint(431, 444),
             random.randint(463, 479),
         ]
+        Y_herbArray2 = [
+            random.randint(247, 258)+543,
+            random.randint(283, 296)+543,
+            random.randint(321, 332)+543,
+            random.randint(358, 371)+543,
+            random.randint(389, 406)+543,
+            random.randint(431, 444)+543,
+            random.randint(463, 479)+543,
+            random.randint(247, 258)+543,
+            random.randint(283, 296)+543,
+            random.randint(321, 332)+543,
+            random.randint(358, 371)+543,
+            random.randint(389, 406)+543,
+            random.randint(431, 444)+543,
+            random.randint(463, 479)+543,
+            random.randint(247, 258)+543,
+            random.randint(283, 296)+543,
+            random.randint(321, 332)+543,
+            random.randint(358, 371)+543,
+            random.randint(389, 406)+543,
+            random.randint(431, 444)+543,
+            random.randint(463, 479)+543,
+            random.randint(247, 258)+543,
+            random.randint(283, 296)+543,
+            random.randint(321, 332)+543,
+            random.randint(358, 371)+543,
+            random.randint(389, 406)+543,
+            random.randint(431, 444)+543,
+            random.randint(463, 479)+543,
+        ]
 
         counter = 0
         while (counter < 27):
@@ -454,16 +480,31 @@ def SoloClean(x):
             destiny = random.randint(0, 27)
 
             if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
-
+               # pyautogui.moveTo(X_herbArray[destiny], Y_herbArray[destiny])
                 pyautogui.click(
                     button='left', x=X_herbArray[destiny], y=Y_herbArray[destiny])
-
+                # print(destiny)
                 X_herbArray[destiny] = 0
                 Y_herbArray[destiny] = 0
 
                 counter = counter+1
 
-        time.sleep(random.uniform(2.4000, 2.500))
+        counter2 = 0        
+        while (counter2 < 27):
+
+            destiny = random.randint(0, 27)
+
+            if (X_herbArray2[destiny] != 0 and Y_herbArray2[destiny] != 0):
+               
+                pyautogui.click(
+                    button='left', x=X_herbArray2[destiny], y=Y_herbArray2[destiny])
+                
+                X_herbArray2[destiny] = 0
+                Y_herbArray2[destiny] = 0
+
+                counter2 = counter2+1
+       
+        time.sleep(random.uniform(1.234, 1.780))
 
         pyautogui.moveTo(
             random.randint(256, 256 + 97),
@@ -475,16 +516,32 @@ def SoloClean(x):
         time.sleep(random.uniform(0.634, 0.780))
         moreRandom=random.randint(0,10)
         if moreRandom ==0:
-            normalDeposit(0,0)
+            mediumDeposit(0,10) 
         elif moreRandom ==1:
-            advancedDeposit1(0,0)
+            advancedDeposit1(0,10)
         else:
-            mediumDeposit(0,10)  
+            normalDeposit(0,10) 
 
+        pyautogui.moveTo(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53)+543,random.uniform(0.5,0.953)
+        )
+        pyautogui.click(button='left')
+        time.sleep(random.uniform(0.100, 0.200))
+        pyautogui.click(button='left')
+        time.sleep(random.uniform(0.634, 0.780))
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            mediumDeposit(0,551)
+        elif moreRandom ==1:
+            advancedDeposit1(0,551)
+        else:
+            normalDeposit(0,551)  
+        #normalDeposit()
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
-def SoloMix(x):
+def duoMix(x):
 
     for i in range(x):
 
@@ -570,142 +627,31 @@ def SoloMix(x):
             sleepsegment()
             arbitraryMovement(
                 random.randint(429 - 4, 429 + 4),
-                random.randint(198 - 3, 198 + 3)+8, random.uniform(0.25,0.45)
+                random.randint(198 - 3, 198 + 3)+10, random.uniform(0.25,0.45)
             )
             pyautogui.click()
-        else:
-            xlocation = random.randint(429 - 4, 429 + 4)
-            ylocation = random.randint(198 - 3, 198 + 3)+8
+            closeBank(0,10)
+            sleepsegment()
+
+            temp = random.randint(0, 13)
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+            pyautogui.click()
+            sleepsegment()
+            temp2 = random.randint(0, 13)
             arbitraryMovement(
-                xlocation,
-                ylocation, random.uniform(0.25,0.45)
-            )
-            sleepsegment()
-            pyautogui.click(button='right')
-
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+                X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
             pyautogui.click()
-
             sleepsegment()
-            arbitraryMovement(
-                random.randint(380, 382),
-                random.randint(198 -1, 198+1 )+8, random.uniform(0.25,0.45)
-            )
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480), 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
             pyautogui.click()
 
 
-        closeBank(0,10)
-        sleepsegment()
-        temp = random.randint(0, 13)
-        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        temp2 = random.randint(0, 13)
-        arbitraryMovement(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        arbitraryMovement(random.randint(
-            227, 290), random.randint(433, 480), 0.2)
-        pyautogui.click()
-        time.sleep(random.uniform(0.100, 0.200))
-        pyautogui.click()
-        time.sleep(random.uniform(8.800, 9.200))
 
-        arbitraryMovement(
-            random.randint(256, 256 + 97),
-            random.randint(190, 190 + 53), 0.5
-        )
-        pyautogui.click()
-        time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,10)
-        if moreRandom ==0:
-            normalDeposit(0,10)
-        elif moreRandom ==1:
-            advancedDeposit1(0,10)
-        else:
-            mediumDeposit(0,10)  
-        
-        time.sleep(random.uniform(0.634, 0.780))
-        end = time.time()
-        print(round((end - start)/60,2),"minutes ")
-
-def SoloMix2(x):
-
-    for i in range(x):
-
-        X_firstHalf = [
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-        ]
-        X_secondHalf = [
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-        ]
-        Y_firstHalf = [
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-        ]
-        Y_secondHalf = [
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-        ]
-
-        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
-
-        Choice =random.randint(0,1)
-        if Choice==1:
             xlocation = random.randint(380, 382)
-            ylocation = random.randint(198 -1, 198+1 )+10
+            ylocation = random.randint(198 -1, 198+1 )+551
             arbitraryMovement(xlocation, ylocation, 0.3)
             sleepsegment()
             pyautogui.click(button='right')
@@ -717,308 +663,37 @@ def SoloMix2(x):
             sleepsegment()
             arbitraryMovement(
                 random.randint(429 - 4, 429 + 4),
-                random.randint(239,243), random.uniform(0.25,0.45)
+                random.randint(198 - 3, 198 + 3)+551, random.uniform(0.25,0.45)
             )
             pyautogui.click()
+            closeBank(0,551)
+            sleepsegment()
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480)+551, 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(1.100, 2.200))
+            arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5)
+            pyautogui.click()
+            time.sleep(random.uniform(2.500, 3.700))
+            moreRandom=random.randint(0,10)
+            if moreRandom ==0:
+                mediumDeposit(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
+            else:
+                normalDeposit(0,10)
         else:
             xlocation = random.randint(429 - 4, 429 + 4)
-            ylocation = random.randint(239,243)
-            arbitraryMovement(
-                xlocation,
-                ylocation, random.uniform(0.25,0.45)
-            )
-            sleepsegment()
-            pyautogui.click(button='right')
-
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
-            pyautogui.click()
-
-            sleepsegment()
-            arbitraryMovement(
-                random.randint(380, 382),
-                random.randint(198 -1, 198+1 )+8, random.uniform(0.25,0.45)
-            )
-            pyautogui.click()
-
-
-        closeBank(0,10)
-        sleepsegment()
-        temp = random.randint(0, 13)
-        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        temp2 = random.randint(0, 13)
-        arbitraryMovement(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        arbitraryMovement(random.randint(
-            227, 290), random.randint(433, 480), 0.2)
-        pyautogui.click()
-        time.sleep(random.uniform(0.100, 0.200))
-        pyautogui.click()
-        time.sleep(random.uniform(8.800, 9.200))
-
-        arbitraryMovement(
-            random.randint(256, 256 + 97),
-            random.randint(190, 190 + 53), 0.5
-        )
-        pyautogui.click()
-        time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,10)
-        if moreRandom ==0:
-            normalDeposit(0,10)
-        elif moreRandom ==1:
-            advancedDeposit1(0,10)
-        else:
-            mediumDeposit(0,10)  
-        
-        time.sleep(random.uniform(0.634, 0.780))
-        end = time.time()
-        print(round((end - start)/60,2),"minutes ")
-
-def SoloMix3(x):
-
-    for i in range(x):
-
-        X_firstHalf = [
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-        ]
-        X_secondHalf = [
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-        ]
-        Y_firstHalf = [
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-        ]
-        Y_secondHalf = [
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-        ]
-
-        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
-
-        Choice =random.randint(0,1)
-        if Choice==1:
-            xlocation = random.randint(380, 382)
-            ylocation = random.randint(198 -1, 198+1 )+10
-            arbitraryMovement(xlocation, ylocation, 0.3)
-            sleepsegment()
-            pyautogui.click(button='right')
-
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
-            pyautogui.click()
-
-            sleepsegment()
-            arbitraryMovement(
-                random.randint(429 - 4, 429 + 4),
-                random.randint(275,281), random.uniform(0.25,0.45)
-            )
-            pyautogui.click()
-        else:
-            xlocation = random.randint(429 - 4, 429 + 4)
-            ylocation = random.randint(275,281)
-            arbitraryMovement(
-                xlocation,
-                ylocation, random.uniform(0.25,0.45)
-            )
-            sleepsegment()
-            pyautogui.click(button='right')
-
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
-            pyautogui.click()
-
-            sleepsegment()
-            arbitraryMovement(
-                random.randint(380, 382),
-                random.randint(198 -1, 198+1 )+8, random.uniform(0.25,0.45)
-            )
-            pyautogui.click()
-
-
-        closeBank(0,10)
-        sleepsegment()
-        temp = random.randint(0, 13)
-        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        temp2 = random.randint(0, 13)
-        arbitraryMovement(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        arbitraryMovement(random.randint(
-            227, 290), random.randint(433, 480), 0.2)
-        pyautogui.click()
-        time.sleep(random.uniform(0.100, 0.200))
-        pyautogui.click()
-        time.sleep(random.uniform(8.800, 9.200))
-
-        arbitraryMovement(
-            random.randint(256, 256 + 97),
-            random.randint(190, 190 + 53), 0.5
-        )
-        pyautogui.click()
-        time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,10)
-        if moreRandom ==0:
-            normalDeposit(0,10)
-        elif moreRandom ==1:
-            advancedDeposit1(0,10)
-        else:
-            mediumDeposit(0,10)  
-        
-        time.sleep(random.uniform(0.634, 0.780))
-        end = time.time()
-        print(round((end - start)/60,2),"minutes ")
-
-
-
-def SoloFletch(x):
-
-    for i in range(x):
-
-        X_firstHalf = [
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-        ]
-        X_secondHalf = [
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-        ]
-        Y_firstHalf = [
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-        ]
-        Y_secondHalf = [
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-        ]
-
-        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
-
-        Choice =random.randint(0,1)
-        if Choice==1:
-            xlocation = random.randint(380, 382)
             ylocation = random.randint(198 -1, 198+1 )+45
-            arbitraryMovement(xlocation, ylocation, 0.3)
-            sleepsegment()
-            pyautogui.click(button='right')
-
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
-            pyautogui.click()
-
-            sleepsegment()
-            arbitraryMovement(
-                random.randint(331 - 4, 331 + 4),
-                random.randint(198 - 3, 198 + 3)+45, random.uniform(0.25,0.45)
-            )
-            pyautogui.click()
-        else:
-            xlocation = random.randint(331 - 4, 331 + 4)
-            ylocation = random.randint(198 - 3, 198 + 3)+45
             arbitraryMovement(
                 xlocation,
                 ylocation, random.uniform(0.25,0.45)
@@ -1033,139 +708,28 @@ def SoloFletch(x):
             sleepsegment()
             arbitraryMovement(
                 random.randint(380, 382),
-                random.randint(198 -1, 198+1 )+45, random.uniform(0.25,0.45)
+                random.randint(198 -1, 198+1 )+8, random.uniform(0.25,0.45)
             )
             pyautogui.click()
-
-
-        closeBank(0,10)
-        sleepsegment()
-        temp = random.randint(0, 13)
-        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        temp2 = random.randint(0, 13)
-        arbitraryMovement(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        arbitraryMovement(random.randint(
-            227, 290), random.randint(433, 480), 0.2)
-        pyautogui.click()
-        time.sleep(random.uniform(0.100, 0.200))
-        pyautogui.click()
-        time.sleep(random.uniform(15.690, 16.700))
-
-        arbitraryMovement(
-            random.randint(256, 256 + 97),
-            random.randint(190, 190 + 53), 0.5
-        )
-        pyautogui.click()
-        time.sleep(random.uniform(0.634, 0.780))
-        moreRandom=random.randint(0,10)
-        if moreRandom ==0:
-            normalDeposit(0,10)
-        elif moreRandom ==1:
-            advancedDeposit1(0,10)
-        else:
-            mediumDeposit(0,10)  
-        
-        time.sleep(random.uniform(0.634, 0.780))
-        end = time.time()
-        print(round((end - start)/60,2),"minutes ")
-
-def SoloFletch2(x):
-
-    for i in range(x):
-
-        X_firstHalf = [
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-        ]
-        X_secondHalf = [
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-            random.randint(576, 586),
-            random.randint(616, 630),
-            random.randint(656, 670),
-            random.randint(699, 716),
-        ]
-        Y_firstHalf = [
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-        ]
-        Y_secondHalf = [
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-        ]
-
-        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
-
-        Choice =random.randint(0,1)
-        if Choice==1:
-            xlocation = random.randint(380, 382)
-            ylocation = random.randint(273, 281)
-            arbitraryMovement(xlocation, ylocation, 0.3)
+            closeBank(0,10)
             sleepsegment()
-            pyautogui.click(button='right')
 
-            sleepsegment()
-            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            temp = random.randint(0, 13)
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
             pyautogui.click()
-
             sleepsegment()
+            temp2 = random.randint(0, 13)
             arbitraryMovement(
-                random.randint(331 - 4, 331 + 4),
-                random.randint(198 - 3, 198 + 3)+45, random.uniform(0.25,0.45)
-            )
+                X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
             pyautogui.click()
-        else:
-            xlocation = random.randint(331 - 4, 331 + 4)
-            ylocation = random.randint(198 - 3, 198 + 3)+45
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480), 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
+            pyautogui.click()
+            xlocation = random.randint(429 - 4, 429 + 4)
+            ylocation = random.randint(198 - 3, 198 + 3)+551
             arbitraryMovement(
                 xlocation,
                 ylocation, random.uniform(0.25,0.45)
@@ -1180,52 +744,56 @@ def SoloFletch2(x):
             sleepsegment()
             arbitraryMovement(
                 random.randint(380, 382),
-                random.randint(273, 281), random.uniform(0.25,0.45)
+                random.randint(198 -1, 198+1 )+551, random.uniform(0.25,0.45)
             )
             pyautogui.click()
+            closeBank(0,551)
+            sleepsegment()
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480)+551, 0.2)
+            pyautogui.click()
 
-
-        closeBank(0,10)
-        sleepsegment()
-        temp = random.randint(0, 13)
-        arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        temp2 = random.randint(0, 13)
-        arbitraryMovement(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
-        pyautogui.click()
-        sleepsegment()
-        arbitraryMovement(random.randint(
-            227, 290), random.randint(433, 480), 0.2)
-        pyautogui.click()
-        time.sleep(random.uniform(0.100, 0.200))
-        pyautogui.click()
-        time.sleep(random.uniform(15.490, 16.320))
+            time.sleep(random.uniform(1.100, 2.200))
+            arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5)
+            pyautogui.click()
+            time.sleep(random.uniform(2.400, 3.200))
+            moreRandom=random.randint(0,6)
+            if moreRandom ==0:
+                mediumDeposit(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
+            else:
+                normalDeposit(0,10) 
+            
 
         arbitraryMovement(
             random.randint(256, 256 + 97),
-            random.randint(190, 190 + 53), 0.5
+            random.randint(190, 190 + 53)+551, 0.5
         )
         pyautogui.click()
-        time.sleep(random.uniform(0.634, 0.780))
+        time.sleep(random.uniform(0.634, 0.780))      
         moreRandom=random.randint(0,10)
         if moreRandom ==0:
-            normalDeposit(0,10)
+            mediumDeposit(0,551)
         elif moreRandom ==1:
-            advancedDeposit1(0,10)
+            advancedDeposit1(0,551)
         else:
-            mediumDeposit(0,10)  
+            normalDeposit(0,551)  
         
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
-def bankAll(x,y):
-            arbitraryMovement( 
-                    random.randint(437, 458)+x,random.randint(333, 349)+y, random.uniform(0.2,0.5))
-            pyautogui.click() 
-def SoloCraft(x):
+def duoCraft(x):
 
     for i in range(x):
 
@@ -1310,7 +878,38 @@ def SoloCraft(x):
             sleepsegment()
             pyautogui.click()
             sleepsegment()
+            closeBank(0,10)
+            sleepsegment()
+            temp = 0
+            arbitraryMovement1(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+            sleepsegment()
+            pyautogui.click()
+            sleepsegment()
+            temp2 = random.randint(0, 13)
+            arbitraryMovement1(
+                X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+            sleepsegment()    
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement1(random.randint(
+                335, 370), random.randint(443, 481), 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
+            pyautogui.click()           
 
+
+            xlocation = random.randint(280, 286)
+            ylocation = random.randint(238, 243)
+            arbitraryMovement1(xlocation, ylocation+551, 0.3)
+            sleepsegment()
+            pyautogui.click()
+
+            xlocation = random.randint(329, 333)
+            ylocation = random.randint(201, 209)
+            arbitraryMovement1(xlocation, ylocation+551, 0.3)
+            sleepsegment()
+            pyautogui.click()
+            sleepsegment()
         else: 
             # future potentials
 
@@ -1335,25 +934,25 @@ def SoloCraft(x):
             pyautogui.click()
 
 
-        closeBank(0,10)
+        closeBank(0,551)
         sleepsegment()
         temp = 0
-        arbitraryMovement1(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+        arbitraryMovement1(X_firstHalf[temp], Y_firstHalf[temp]+551, 0.2)
         sleepsegment()
         pyautogui.click()
         sleepsegment()
         temp2 = random.randint(0, 13)
         arbitraryMovement1(
-            X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+            X_secondHalf[temp2], Y_secondHalf[temp2]+551, 0.2)
         sleepsegment()    
         pyautogui.click()
         sleepsegment()
         arbitraryMovement1(random.randint(
-            335, 370), random.randint(443, 481), 0.2)
+            335, 370), random.randint(443, 481)+551, 0.2)
         pyautogui.click()
         time.sleep(random.uniform(0.100, 0.200))
         pyautogui.click()
-        time.sleep(random.uniform(33.800, 35.200))
+        time.sleep(random.uniform(36.800, 38.200))
 
         arbitraryMovement1(
             random.randint(256, 256 + 97),
@@ -1366,77 +965,310 @@ def SoloCraft(x):
         if moreRandom ==0:
             mediumDeposit(0,10) 
         elif moreRandom ==1:
-            advancedDeposit1(0,0)
+            advancedDeposit1(0,10)
         else:
-            normalDeposit(0,0)     
+            normalDeposit(0,10)       
+        arbitraryMovement1(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53)+551, 0.5
+        )
+        pyautogui.click()
+        time.sleep(random.uniform(0.634, 0.780))
+        
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            mediumDeposit(0,551)
+        elif moreRandom ==1:
+            advancedDeposit1(0,551)
+        else:
+            normalDeposit(0,551)  
         time.sleep(random.uniform(0.634, 0.780))
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
-def fletch():
-    x=1300
-    while(x>0):
-        pyautogui.moveTo(random.randint(570,590),random.randint(252,265))
+
+
+def duoFletch(x):
+
+    for i in range(x):
+
+        X_firstHalf = [
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+        ]
+        X_secondHalf = [
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+            random.randint(576, 586),
+            random.randint(616, 630),
+            random.randint(656, 670),
+            random.randint(699, 716),
+        ]
+        Y_firstHalf = [
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(247, 258)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(283, 296)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(321, 332)+8,
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+        ]
+        Y_secondHalf = [
+            random.randint(358, 371)+8,
+            random.randint(358, 371)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(389, 406)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(431, 444)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+            random.randint(463, 479)+8,
+        ]
+
+        arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
+
+        Choice =random.randint(0,1)
+        if Choice==0:
+            xlocation = random.randint(380, 382)
+            ylocation = random.randint(198 -1, 198+1 )+45
+            arbitraryMovement(xlocation, ylocation, 0.3)
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(331 - 4, 331 + 4),
+                random.randint(198 - 3, 198 + 3)+45, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+            closeBank(0,10)
+            sleepsegment()
+
+            temp = random.randint(0, 13)
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+            pyautogui.click()
+            sleepsegment()
+            temp2 = random.randint(0, 13)
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480), 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
+            pyautogui.click()
+
+
+
+            xlocation = random.randint(380, 382)
+            ylocation = random.randint(198 -1, 198+1 )+596
+            arbitraryMovement(xlocation, ylocation, 0.3)
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(331 - 4, 331 + 4),
+                random.randint(198 - 3, 198 + 3)+596, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+            closeBank(0,551)
+            sleepsegment()
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2]+545, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480)+551, 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
+            pyautogui.click()
+            time.sleep(random.uniform(8.100, 10.200))
+            arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5)
+            pyautogui.click()
+            time.sleep(random.uniform(2.500, 3.700))
+            moreRandom=random.randint(0,10)
+            if moreRandom ==0:
+                mediumDeposit(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
+            else:
+                normalDeposit(0,10)
+        else:
+            xlocation = random.randint(331 - 4, 331 + 4)
+            ylocation = random.randint(198 -1, 198+1 )+45
+            arbitraryMovement(
+                xlocation,
+                ylocation, random.uniform(0.25,0.45)
+            )
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(380, 382),
+                random.randint(198 -1, 198+1 )+45, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+            closeBank(0,10)
+            sleepsegment()
+
+            temp = random.randint(0, 13)
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp], 0.2)
+            pyautogui.click()
+            sleepsegment()
+            temp2 = random.randint(0, 13)
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2], 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480), 0.2)
+            pyautogui.click()
+            time.sleep(random.uniform(0.100, 0.200))
+            pyautogui.click()
+            xlocation = random.randint(380, 382)
+            ylocation = random.randint(198 - 3, 198 + 3)+596
+            arbitraryMovement(
+                xlocation,
+                ylocation, random.uniform(0.25,0.45)
+            )
+            sleepsegment()
+            pyautogui.click(button='right')
+
+            sleepsegment()
+            arbitraryMovement(xlocation, ylocation + 85, 0.5)
+            pyautogui.click()
+
+            sleepsegment()
+            arbitraryMovement(
+                random.randint(331 - 4, 331 + 4),
+                random.randint(198 -1, 198+1 )+596, random.uniform(0.25,0.45)
+            )
+            pyautogui.click()
+            closeBank(0,551)
+            sleepsegment()
+            arbitraryMovement(X_firstHalf[temp], Y_firstHalf[temp]+551, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(
+                X_secondHalf[temp2], Y_secondHalf[temp2]+545, 0.2)
+            pyautogui.click()
+            sleepsegment()
+            arbitraryMovement(random.randint(
+                227, 290), random.randint(433, 480)+551, 0.2)
+            pyautogui.click()
+            
+            time.sleep(random.uniform(9.100, 10.200))
+            arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53), 0.5)
+            pyautogui.click()
+            time.sleep(random.uniform(2.400, 3.400))
+            moreRandom=random.randint(0,6)
+            if moreRandom ==0:
+                mediumDeposit(0,10) 
+            elif moreRandom ==1:
+                advancedDeposit1(0,10)
+            else:
+                normalDeposit(0,10) 
+            
+
+        arbitraryMovement(
+            random.randint(256, 256 + 97),
+            random.randint(190, 190 + 53)+551, 0.5
+        )
         pyautogui.click()
-        time.sleep(random.uniform(0.0023, 0.0120))
-        pyautogui.moveTo(random.randint(570,590),random.randint(295,306))
-        pyautogui.click()
-        x=x-1
+        time.sleep(random.uniform(0.634, 0.780))      
+        moreRandom=random.randint(0,10)
+        if moreRandom ==0:
+            mediumDeposit(0,551)
+        elif moreRandom ==1:
+            advancedDeposit1(0,551)
+        else:
+            normalDeposit(0,551)  
+        
+        time.sleep(random.uniform(0.634, 0.780))
+        end = time.time()
+        print(round((end - start)/60,2),"minutes ")
 
 
-def Triforce(x):
-    while(x>0):
-        x=x-1
-        decision=random.randint(0,0)
-        if decision==0:
-            SoloMix(random.randint(1,50))
-        elif decision==1:
-            SoloMix2(random.randint(1,5))
-        elif decision==2:
-            SoloMix3(random.randint(1,5))       
-
-def Bifrost(x):
-    while(x>0):
-        x=x-1
-        decision=random.randint(0,1)
-        if decision==0:
-            SoloFletch(random.randint(1,1))
-        elif decision==1:
-            SoloFletch2(random.randint(1,1))
-
-
-#test cases completed
 def test():
-    while(True):
-        decision=random.randint(0,1)
-        if decision==0:
-            SoloFletch(random.randint(1,1))
-        elif decision==1:
-            SoloFletch2(random.randint(1,1))
-def test1():
-    while(True):
-        decision=random.randint(0,2)
-        if decision==0:
-            SoloMix(random.randint(1,1))
-        elif decision==1:
-            SoloMix2(random.randint(1,1))
-        elif decision==2:
-            SoloMix3(random.randint(1,1))
-
-
-def willToTruth():
-    randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
     while(end-start<=randomThreshold):
         decision=random.randint(0,2)
         if decision==0:
-            Triforce(random.randint(25,200))
-        elif decision==1:
-            Bifrost(random.randint(3,13))
+            duoMix(random.randint(1,1))
+        if decision==1:
+            duoFletch(random.randint(1,1))
         else:
-            SoloCraft(random.randint(2,12))
+            duoCraft(random.randint(1,1))
         end = time.time()
 
-willToTruth()
 
+def trinity():
+    randomThreshold=random.randint(15000,19111) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    end = time.time()
+    while(end-start<=randomThreshold):
+        decision=random.randint(0,2)
+        if decision==0:
+            duoMix(random.randint(5,200))
+        if decision==1:
+            duoFletch(random.randint(1,20))
+        else:
+            duoCraft(random.randint(1,10))
+        end = time.time()
 
+#test()        
+trinity()
