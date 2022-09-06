@@ -1397,25 +1397,6 @@ def Bifrost(x):
             SoloFletch2(random.randint(1,1))
 
 
-#test cases completed
-def test():
-    while(True):
-        decision=random.randint(0,1)
-        if decision==0:
-            SoloFletch(random.randint(1,1))
-        elif decision==1:
-            SoloFletch2(random.randint(1,1))
-def test1():
-    while(True):
-        decision=random.randint(0,2)
-        if decision==0:
-            SoloMix(random.randint(1,1))
-        elif decision==1:
-            SoloMix2(random.randint(1,1))
-        elif decision==2:
-            SoloMix3(random.randint(1,1))
-
-
 def willToTruth():
     randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
     end = time.time()
