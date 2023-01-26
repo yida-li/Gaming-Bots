@@ -963,12 +963,12 @@ def testCase():
 
 def quadruple():
 
-    randomThreshold=random.randint(14499,19333) # between 4 hours and 20 minutes to 5 hours and 18 minutes
+    randomThreshold=random.randint(14499,18333) # between 4 hours and 20 minutes to 5 hours and 18 minutes
     end = time.time()
     while(end-start<=randomThreshold):
         decision=random.randint(0,3)
         if decision==0:
-            SoloMix(random.randint(140,200))
+            SoloMix(random.randint(100,150))
         elif decision==1:
             SoloClean(random.randint(50,75))
         elif decision==2:
@@ -1002,5 +1002,8 @@ def choice():
     if x=='4':
         quadruple()   
         
-choice()
+#choice()
 #testCase()
+
+quadruple()
+

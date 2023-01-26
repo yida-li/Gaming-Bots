@@ -217,7 +217,7 @@ def rocktake():
 
 
 def decreaseHP():
-    counter=random.randint(19,26)
+    counter=random.randint(23,30)
     
     while(counter>0):
         y=random.randint(247, 258)
@@ -234,11 +234,14 @@ def decreaseHP():
 
 def halfcourse():
     #decreaseHP()
-    count =4
+    count =8
     while(count>0):
         count=count-1
         inventory(0,0)
 
-halfcourse()
+
+
+
 #decreaseHP()
+halfcourse()
 #rocktake()
