@@ -5,6 +5,21 @@ import keyboard
 pyautogui.FAILSAFE = False
 start = time.time()
 
+#collect resources/gold from grand exchange
+def collect():
+    xlocation = random.randint(290, 300)
+    ylocation = random.randint(175,181)
+    arbitraryMovement(xlocation, ylocation, 0.3)
+    sleepsegment()
+    pyautogui.click(button='right')
+
+    sleepsegment()
+    arbitraryMovement(xlocation, ylocation + 85, 0.5)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(random.randint(295, 325), random.randint(295, 300), 0.4)
+    pyautogui.click()
+
 
 def closeBank(x,y):
     arbitraryMovement(random.randint(551, 556)+x,random.randint(111, 125)+y,random.uniform(0.78,1.12))
@@ -371,7 +386,6 @@ def sleepsegment():
         time.sleep(random.uniform(0.800, 0.900))    
     elif temp == 4:
         time.sleep(random.uniform(0.600, 0.800))  
-
 
 def SoloClean(x):    
     for i in range(x):
@@ -962,36 +976,36 @@ def SoloMix3(x):
             random.randint(699, 716),
         ]
         Y_firstHalf = [
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(247, 258)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(283, 296)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(321, 332)+8,
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
+            random.randint(247, 258),#+8
+            random.randint(247, 258),#+8
+            random.randint(247, 258),#+8
+            random.randint(247, 258),#+8
+            random.randint(283, 296),#+8
+            random.randint(283, 296),#+8
+            random.randint(283, 296),#+8
+            random.randint(283, 296),#+8
+            random.randint(321, 332),#+8
+            random.randint(321, 332),#+8
+            random.randint(321, 332),#+8
+            random.randint(321, 332),#+8
+            random.randint(358, 371),#+8
+            random.randint(358, 371),#+8
         ]
         Y_secondHalf = [
-            random.randint(358, 371)+8,
-            random.randint(358, 371)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(389, 406)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(431, 444)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
-            random.randint(463, 479)+8,
+            random.randint(358, 371),#+8
+            random.randint(358, 371),#+8
+            random.randint(389, 406),#+8
+            random.randint(389, 406),#+8
+            random.randint(389, 406),#+8
+            random.randint(389, 406),#+8
+            random.randint(431, 444),#+8
+            random.randint(431, 444),#+8
+            random.randint(431, 444),#+8
+            random.randint(431, 444),#+8
+            random.randint(463, 479),#+8
+            random.randint(463, 479),#+8
+            random.randint(463, 479),#+8
+            random.randint(463, 479),#+8
         ]
 
         arbitraryMovement(random.randint(0, 560), random.randint(0, 332), 0.5)
@@ -2184,11 +2198,11 @@ def Potion(x):
     while(x>0):
         x=x-1
         # Calibrate here 
-        decision=random.randint(0,4)
-        if decision==0 or decision == 1:
+        decision=random.randint(0,2)
+        if decision==0:
             SoloMix1(random.randint(1,20))
-        elif decision==5:
-            SoloMix2(random.randint(1,1))  
+        elif decision==1:
+            SoloMix2(random.randint(1,20))  
         else:
             SoloMix0(random.randint(1,20))  
 
@@ -2197,14 +2211,18 @@ def willToTruth():
     randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
     end = time.time()
     while(end-start<=randomThreshold):
-        decision=random.randint(0,5)
+
+        dice=random.randint(0,360)
+        if dice==30:
+            collect()
+        decision=random.randint(0,4)
         if decision==0 or decision==3 or decision==4:
-            Potion(random.randint(1,150))
+            Potion(random.randint(1,1))
             #MixPotion(random.randint(1,150))
-        elif decision==1:
-            SoloCraft(random.randint(2,9))            
+        #elif decision==1:
+        #    SoloCraft(random.randint(2,9))            
         else:
-            Bifrost(random.randint(3,13))
+            Bifrost(random.randint(1,5))
         end = time.time()
 
 willToTruth()
