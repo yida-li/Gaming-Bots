@@ -2,74 +2,28 @@ import pyautogui
 import random
 import time
 import keyboard
+import numpy as np
 pyautogui.FAILSAFE = False
 start = time.time()
 
-#collect resources/gold from grand exchange
-def collect():
-    xlocation = random.randint(290, 300)
-    ylocation = random.randint(175,181)
-    arbitraryMovement(xlocation, ylocation, 0.3)
-    sleepsegment()
-    pyautogui.click(button='right')
 
-    sleepsegment()
-    arbitraryMovement(xlocation, ylocation + 85, 0.5)
+def reset(x,y):
+    arbitraryMovement(random.randint(555, 565)+x,random.randint(111, 121)+y,random.uniform(0.68,1.15))
     pyautogui.click()
-    sleepsegment()
-    arbitraryMovement(random.randint(295, 325), random.randint(295, 300), 0.4)
-    pyautogui.click()
-
+    inventory_cordinates = random.randint(1, 2)
+    for i in range(2):
+        pyautogui.click()
+        time.sleep(0.2)
 
 def closeBank(x,y):
-    arbitraryMovement(random.randint(551, 556)+x,random.randint(111, 125)+y,random.uniform(0.78,1.12))
+    arbitraryMovement(random.randint(555, 565)+x,random.randint(111, 121)+y,random.uniform(0.68,1.15))
     pyautogui.click()
     temp = random.randint(1, 2)
     for i in range(temp):
         pyautogui.click()
         time.sleep(0.2)
 
-def login(i,j):
-    check=pyautogui.locateOnScreen('authenticatorRecognition/login.png')
-    time.sleep(random.uniform(3.3, 3.780))
-    if check:
-        pyautogui.leftClick(x=449+i,y=319+j,duration=1)
-        check2=pyautogui.locateOnScreen('authenticatorRecognition/enterusername.png')
-        time.sleep(random.uniform(3.3, 3.780))    
-        if check2:
-            pyautogui.leftClick(x=312+i,y=349+j,duration=1)
-            pyautogui.moveTo(random.randint(0,700),random.randint(0,200))
-            time.sleep(random.uniform(5.3, 6.780))        
-            pyautogui.leftClick(x=371+i,y=348+j,duration=2)
-            check4=pyautogui.locateOnScreen('authenticatorRecognition/clickhere.png')
-            time.sleep(random.uniform(3.3, 3.780))
-            if not check4:
-                pyautogui.keyDown('down')
-                time.sleep(random.uniform(1.3, 2.380))
-                pyautogui.keyUp('down')
-                pyautogui.moveTo(x=51+i,y=142+j,duration=1)
-                
-                pyautogui.dragTo(x=227+i,y=147+j,duration=2,button='right')
-
-def logout(i,j):
-    closeBank()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(640,647)+i,random.randint(502,517)+j,random.uniform(0.5,1.5))
-    time.sleep(random.uniform(1.3, 2.380))
-    pyautogui.leftClick()
-    time.sleep(random.uniform(1.3, 2.380))
-    arbitraryMovement(random.randint(607,689)+i,random.randint(453,463)+j,random.uniform(0.5,1.5))
-    pyautogui.leftClick()
-
-
-# VPN located in the middle of screen
-def checkVPN():
-    check=pyautogui.locateOnScreen('authenticatorRecognition/forti.png')
-    if check:
-        pyautogui.leftClick(x=1434,y=525,duration=2)
-        pyautogui.typewrite('password', interval=1)
-        pyautogui.leftClick(x=1490,y=587,duration=1)
-
+# checks at least position 0
 def normalDeposit(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -150,6 +104,7 @@ def normalDeposit(Xi,Xj):
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
 
+# checks at least position 0 and 27
 def mediumDeposit(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -233,8 +188,8 @@ def mediumDeposit(Xi,Xj):
         arbitraryMovement(
             X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
         pyautogui.click()
-
-# decadence
+ 
+# checks at least position 0 and 27 and 1 more random spot
 def advancedDeposit1(Xi,Xj):
     X_herbArray = [
         random.randint(576, 586),
@@ -324,6 +279,104 @@ def advancedDeposit1(Xi,Xj):
         time.sleep(random.uniform(0.101, 0.199))
         pyautogui.click
 
+# deposit exchanges items
+def safeDeposit(Xi,Xj):
+    X_herbArray = [
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(576, 586),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(616, 630),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(656, 670),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+        random.randint(699, 716),
+    ]
+    Y_herbArray = [
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+        random.randint(247, 258),
+        random.randint(283, 296),
+        random.randint(321, 332),
+        random.randint(358, 371),
+        random.randint(389, 406),
+        random.randint(431, 444),
+        random.randint(463, 479),
+    ]
+    counter1 = 0
+
+    while (counter1 < 2):
+        destiny = random.randint(0, 27)
+        if (X_herbArray[destiny] != 0 and Y_herbArray[destiny] != 0):
+            arbitraryMovement(
+                X_herbArray[destiny]+Xi, Y_herbArray[destiny]+Xj, random.uniform(0.50, 0.150))
+            pyautogui.click()
+            time.sleep(random.uniform(0.50, 0.150))
+            X_herbArray[destiny] = 0
+            Y_herbArray[destiny] = 0
+
+            counter1 = counter1+1
+
+    if (X_herbArray[0] != 0):
+        arbitraryMovement(
+            X_herbArray[0]+Xi, Y_herbArray[0]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
+
+    if (X_herbArray[7] != 0):
+        arbitraryMovement(
+            X_herbArray[7]+Xi, Y_herbArray[7]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
+    sleepsegment()
+    if (X_herbArray[14] != 0):
+        arbitraryMovement(
+            X_herbArray[14]+Xi, Y_herbArray[14]+Xj, random.uniform(0.50, 0.150))
+        pyautogui.click()
+
+    sleepsegment()
+    arbitraryMovement(
+            random.randint(444, 452),random.randint(330, 350), random.uniform(0.50, 0.150))
+    pyautogui.click()
+    sleepsegment()
+
+
 # arbitrarymoments
 def arbitraryMovement1(x, y, z):
     temp = random.randint(0, 12)
@@ -353,8 +406,8 @@ def arbitraryMovement1(x, y, z):
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutElastic)
     elif temp == 12:
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
-
 # arbitrarymoments with more precision, less variety
+
 def arbitraryMovement(x, y, z):
     temp = random.randint(0, 7)
     if temp == 1:
@@ -373,6 +426,7 @@ def arbitraryMovement(x, y, z):
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutCubic)
     elif temp == 0:
         pyautogui.moveTo(x, y, z, pyautogui.easeInOutExpo)
+
 # unpredictability
 def sleepsegment():
     temp= random.randint(0,4)
@@ -386,6 +440,173 @@ def sleepsegment():
         time.sleep(random.uniform(0.800, 0.900))    
     elif temp == 4:
         time.sleep(random.uniform(0.600, 0.800))  
+
+
+def enterExchange():
+    # 2 seconds to enter randomly the exchange booth
+    arbitraryMovement(random.randint(
+            176, 184), random.randint(40,100), random.uniform(1.89, 2.11))
+    temp = random.randint(1, 2)
+    for i in range(temp):
+        pyautogui.click()
+        time.sleep(0.2)
+
+def enterBank():
+    # 2 seconds to enter randomly the bank
+    arbitraryMovement(random.randint(
+            280, 320), random.randint(170,190), random.uniform(1.89, 2.11))
+    temp = random.randint(1, 2)
+    for i in range(temp):
+        pyautogui.click()
+        time.sleep(0.2)
+
+
+#                 0,1, ...                     6, 7
+#                                             14,15
+#                                   ,19,20,21,22,23
+#                                   ,27,28,29,22,31                             
+#                                   ,35,36,37,38,39
+#                                             46,47
+#
+#bank cordinates for windows
+bank_cordinates=[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
+                ,[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0] 
+                ,[0,0],[0,0],[0,0],[235,200],[285,200],[332,200],[380,200],[428,200]
+                ,[0,0],[0,0],[0,0],[235,235],[285,235],[332,235],[380,235],[428,235]
+                ,[0,0],[0,0],[0,0],[235,270],[285,270],[332,270],[380,270],[428,270]
+                ,[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
+                ,[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+  
+#inventory cordinates for windows           
+inventory_cordinates = [
+            [random.randint(576, 586),random.randint(247, 258)]
+            ,[random.randint(616, 630),random.randint(247, 258)]
+            ,[random.randint(656, 670),random.randint(247, 258)]
+            ,[random.randint(699, 716),random.randint(247, 258)]
+           
+            ,[random.randint(576, 586),random.randint(283, 296)]
+            ,[random.randint(616, 630),random.randint(283, 296)]
+            ,[random.randint(656, 670),random.randint(283, 296)]
+            ,[random.randint(699, 716),random.randint(283, 296)]
+
+            ,[random.randint(576, 586),random.randint(321, 332)]
+            ,[random.randint(616, 630),random.randint(321, 332)]
+            ,[random.randint(656, 670),random.randint(321, 332)]
+            ,[random.randint(699, 716),random.randint(321, 332)]
+
+           ,[random.randint(576, 586), random.randint(358, 371)]
+           ,[random.randint(616, 630),random.randint(358, 371)]
+           ,[random.randint(656, 670),random.randint(358, 371)]
+           ,[random.randint(699, 716),random.randint(358, 371)]
+
+            ,[random.randint(576, 586),random.randint(389, 406)]
+            ,[random.randint(616, 630),random.randint(389, 406)]
+            ,[random.randint(656, 670),random.randint(389, 406)]
+            ,[random.randint(699, 716),random.randint(389, 406)]
+
+            ,[random.randint(576, 586), random.randint(431, 444)]
+            ,[random.randint(616, 630), random.randint(431, 444)]
+            ,[random.randint(656, 670), random.randint(431, 444)]
+            ,[random.randint(699, 716), random.randint(431, 444)]
+
+            ,[random.randint(576, 586), random.randint(463, 479)]
+            ,[random.randint(616, 630), random.randint(463, 479)]
+            ,[random.randint(656, 670), random.randint(463, 479)]
+            ,[random.randint(699, 716), random.randint(463, 479)]
+        ]
+
+#exchange booth cordinates for windows
+exchange_cordinates=[[[0,0],[0,0],True],[[176,177],[231,177],True],[[302,177],[351,177],True],[[409,177],[466,177],True],
+                     [[0,0],[0,0],True],[[176,298],[231,298],True],[[302,298],[351,298],True],[[409,298],[466,298],True]]
+
+
+#collect resources/gold from grand exchange
+def collect():
+    reset(0,0)
+    sleepsegment()
+    xlocation = random.randint(290, 300)
+    ylocation = random.randint(175,181)
+    arbitraryMovement(xlocation, ylocation, 0.3)
+    sleepsegment()
+    pyautogui.click(button='right')
+
+    sleepsegment()
+    arbitraryMovement(xlocation, ylocation + 85, 0.5)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(random.randint(295, 325), random.randint(295, 300), 0.4)
+    pyautogui.click()
+
+    sleepsegment()
+    reset(0,0)
+    sleepsegment()
+    enterBank()
+    sleepsegment()
+
+
+def sell():
+
+    if exchange_cordinates[7][2]==True:
+
+    #7
+        arbitraryMovement(random.randint(exchange_cordinates[7][1][0]-10, exchange_cordinates[7][1][0]+10),
+                        random.randint(exchange_cordinates[7][1][1]-10, exchange_cordinates[7][1][1]+10),0.7)
+        pyautogui.click()
+
+        arbitraryMovement(inventory_cordinates[0][0],inventory_cordinates[0][1]
+                        ,0.7)
+        pyautogui.click()
+        sleepsegment()
+
+        #up 5%
+        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        pyautogui.click()
+        sleepsegment()
+        exchange_cordinates[7][2]==False
+        sleepsegment()
+
+    if exchange_cordinates[6][2]==True:
+    #6
+        arbitraryMovement(random.randint(exchange_cordinates[6][1][0]-10, exchange_cordinates[6][1][0]+10),
+                        random.randint(exchange_cordinates[6][1][1]-10, exchange_cordinates[6][1][1]+10),0.7)
+        pyautogui.click()
+
+        arbitraryMovement(inventory_cordinates[1][0],inventory_cordinates[1][1]
+                        ,0.7)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        pyautogui.click()
+        sleepsegment()    
+        exchange_cordinates[6][2]==False
+        sleepsegment()
+
+    if exchange_cordinates[5][2]==True:
+    #5
+        arbitraryMovement(random.randint(exchange_cordinates[5][1][0]-10, exchange_cordinates[5][1][0]+10),
+                        random.randint(exchange_cordinates[5][1][1]-10, exchange_cordinates[5][1][1]+10),0.7)
+        pyautogui.click()
+
+        arbitraryMovement(inventory_cordinates[2][0],inventory_cordinates[2][1]
+                        ,0.7)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        pyautogui.click()
+        sleepsegment()  
+        exchange_cordinates[5][2]==False
+        sleepsegment()
+
+
 
 def SoloClean(x):    
     for i in range(x):
@@ -1789,7 +2010,6 @@ def SoloFletch0(x):
         end = time.time()
         print(round((end - start)/60,2),"minutes ")
 
-
 # unused position for now
 def SoloFletch2(x):
 
@@ -2105,6 +2325,38 @@ def Bifrost(x):
         elif decision==1:
             SoloFletch0(random.randint(1,1))
 
+def MixPotion(x):
+    while(x>0):
+        x=x-1
+        decision=random.randint(0,4)
+        if decision==0 or decision == 1:
+            SoloMix1(random.randint(1,20))
+        elif decision==2:
+            secondDecision==random.randint(0,4)
+            if secondDecision==0:
+                SoloMix2(random.randint(1,1))
+            elif secondDecision==1:
+                SoloMix3(random.randint(1,1))
+            elif secondDecision==2:
+                SoloMix4(random.randint(1,1))
+            elif secondDecision==3:
+                SoloMix5(random.randint(1,1))  
+            else:
+                SoloMix6(random.randint(1,1))                 
+        else:
+            SoloMix0(random.randint(1,20))  
+
+def Potion(x):
+    while(x>0):
+        x=x-1
+        # Calibrate here 
+        decision=random.randint(0,1)
+        if decision==0:
+            SoloMix1(random.randint(1,20))
+        elif decision==3:
+            SoloMix2(random.randint(1,20))  
+        else:
+            SoloMix0(random.randint(1,20))  
 
 #test cases completed
 def test():
@@ -2114,6 +2366,7 @@ def test():
             SoloFletch1(random.randint(1,1))
         elif decision==1:
             SoloFletch0(random.randint(1,1))
+
 def test1():
     while(True):
         decision=random.randint(0,2)
@@ -2156,58 +2409,246 @@ def test4(x):
         else:
             SoloMix6(random.randint(1,1))  
 
-
-def MixPotion(x):
-    while(x>0):
-        x=x-1
+def test5():
+    while(True):
         decision=random.randint(0,4)
-        if decision==0 or decision == 1:
-            SoloMix1(random.randint(1,20))
-        elif decision==2:
-            secondDecision==random.randint(0,4)
-            if secondDecision==0:
-                SoloMix2(random.randint(1,1))
-            elif secondDecision==1:
-                SoloMix3(random.randint(1,1))
-            elif secondDecision==2:
-                SoloMix4(random.randint(1,1))
-            elif secondDecision==3:
-                SoloMix5(random.randint(1,1))  
-            else:
-                SoloMix6(random.randint(1,1))                 
-        else:
-            SoloMix0(random.randint(1,20))  
-
-
-
-
-def UltimateTest():
-    randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
-    end = time.time()
-    while(end-start<=randomThreshold):
-        decision=random.randint(0,2)
         if decision==0:         
-            test4(random.randint(1,5))
+            SoloMix0(random.randint(1,1))
         elif decision==1:
-            SoloCraft(random.randint(1,1))            
+            SoloMix1(random.randint(1,1))
+        elif decision==2:
+            collect()
+        elif decision==3:
+            sell_items()            
         else:
             Bifrost(random.randint(1,1))
         end = time.time()
 
-def Potion(x):
-    while(x>0):
-        x=x-1
-        # Calibrate here 
-        decision=random.randint(0,2)
+
+
+def sell_items():
+    
+    sleepsegment()
+    #note the items
+    arbitraryMovement(random.randint(
+            190, 210), random.randint(345,355), random.uniform(1.89, 2.11))
+    sleepsegment() 
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(
+        random.randint(bank_cordinates[19][0]-5,bank_cordinates[19][0]+5),
+        random.randint(bank_cordinates[19][1]-5,bank_cordinates[19][1]+5), random.uniform(1.89, 2.11))
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(
+        random.randint(bank_cordinates[27][0]-5,bank_cordinates[27][0]+5),
+        random.randint(bank_cordinates[27][1]-5,bank_cordinates[27][1]+5), random.uniform(1.89, 2.11))
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(
+        random.randint(bank_cordinates[35][0]-5,bank_cordinates[35][0]+5),
+        random.randint(bank_cordinates[35][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
+    pyautogui.click()
+    sleepsegment()
+    reset(0,0)
+    enterExchange()
+    sleepsegment()
+    sell()
+    reset(0,0)
+    enterBank()
+    safeDeposit(0,0)
+
+def buy_items():
+
+
+    sleepsegment()
+    #withdraw cash
+    arbitraryMovement(
+        random.randint(bank_cordinates[20][0]-5,bank_cordinates[20][0]+5),
+        random.randint(bank_cordinates[20][1]-5,bank_cordinates[20][1]+5), random.uniform(1.89, 2.11))
+    pyautogui.click()
+
+    sleepsegment()
+    pyautogui.click()
+
+    sleepsegment()
+    reset(0,0)
+    enterExchange()
+    sleepsegment()
+
+    arbitraryMovement(random.randint(exchange_cordinates[1][0][0]-10, exchange_cordinates[1][0][0]+10),
+                        random.randint(exchange_cordinates[1][0][1]-10, exchange_cordinates[1][0][1]+10),0.7)
+    pyautogui.click()
+    sleepsegment()
+    pyautogui.typewrite('grimy toadflax\n', interval=2)
+    sleepsegment()
+    #note the items
+    arbitraryMovement(random.randint(
+            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
+    sleepsegment()
+    pyautogui.click()
+    #note the items
+    arbitraryMovement(random.randint(
+            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+    rolldices=random.randint(2,3)
+
+    while rolldices>0:
+        pyautogui.click()
+        time.sleep(random.uniform(0.1,0.45))
+        rolldices=rolldices-1
+
+    sleepsegment()
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    pyautogui.click()
+    sleepsegment()
+
+
+
+
+
+
+    arbitraryMovement(random.randint(exchange_cordinates[2][0][0]-10, exchange_cordinates[2][0][0]+10),
+                        random.randint(exchange_cordinates[2][0][1]-10, exchange_cordinates[2][0][1]+10),0.7)
+    pyautogui.click()
+    sleepsegment()
+    pyautogui.typewrite('grimy kwuarm\n', interval=2)
+    sleepsegment()
+    #note the items
+    arbitraryMovement(random.randint(
+            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
+    sleepsegment()
+    pyautogui.click()
+    #note the items
+    arbitraryMovement(random.randint(
+            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+    rolldices=random.randint(2,3)
+
+    while rolldices>0:
+        pyautogui.click()
+        time.sleep(random.uniform(0.1,0.45))
+        rolldices=rolldices-1
+
+    sleepsegment()
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    pyautogui.click()
+    sleepsegment()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    arbitraryMovement(random.randint(exchange_cordinates[3][0][0]-10, exchange_cordinates[3][0][0]+10),
+                        random.randint(exchange_cordinates[3][0][1]-10, exchange_cordinates[3][0][1]+10),0.7)
+    pyautogui.click()
+    sleepsegment()
+    pyautogui.typewrite('grimy avantoe\n', interval=2)
+    sleepsegment()
+    #note the items
+    arbitraryMovement(random.randint(
+            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
+    sleepsegment()
+    pyautogui.click()
+    #note the items
+    arbitraryMovement(random.randint(
+            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+    rolldices=random.randint(2,3)
+
+    while rolldices>0:
+        pyautogui.click()
+        time.sleep(random.uniform(0.1,0.45))
+        rolldices=rolldices-1
+
+    sleepsegment()
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    pyautogui.click()
+    sleepsegment()
+    reset()
+    enterBank()
+
+def abort():
+
+    sleepsegment()
+
+    spec=random.randint(261, 327)
+    spe1c=random.randint(261, 327)
+    spe2c=random.randint(261, 327)
+    tru=random.randint(391, 487)
+    tru1=random.randint(391, 487)
+    durm=random.randint(276, 369)
+    durm1=random.randint(276, 369)
+    ewer=random.randint(154,246)
+    ewer1=random.randint(154,246)
+    arbitraryMovement(tru, spec, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(tru, spec+40, 0.4)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(durm, spe1c, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(durm, spe1c+40, 0.4)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(ewer, spe2c, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(ewer, spe2c+40, 0.4)
+    pyautogui.click()
+
+    bomse=random.randint(142, 204)
+    bomse1=random.randint(142, 204)
+    bomse2=random.randint(142, 204)
+    sleepsegment()
+    arbitraryMovement(tru1, bomse, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(tru1, bomse+40, 0.4)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(durm1, bomse1, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(durm1, bomse1+40, 0.4)
+    pyautogui.click()
+    sleepsegment()
+    arbitraryMovement(ewer1, bomse2, 0.4)
+    sleepsegment()
+    pyautogui.click(button='right')
+    arbitraryMovement(ewer1, bomse2+40, 0.4)
+    pyautogui.click()
+    sleepsegment()
+
+def test6():
+    while(True):
+
+        decision=random.randint(0,5)
         if decision==0:
-            SoloMix1(random.randint(1,20))
+            SoloMix0(1)
         elif decision==1:
-            SoloMix2(random.randint(1,20))  
+            SoloMix1(1)
+        elif decision==2:
+            SoloMix2(1)
+        elif decision==3:
+            sell_items()
+        elif decision==4:
+            buy_items()          
         else:
-            SoloMix0(random.randint(1,20))  
-
-
-def willToTruth():
+            Bifrost(random.randint(1,1))
+def test7():
     randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
     end = time.time()
     while(end-start<=randomThreshold):
@@ -2215,6 +2656,10 @@ def willToTruth():
         dice=random.randint(0,360)
         if dice==30:
             collect()
+        #elif dice%160==0:
+        #    sell_items()
+        #if dice%80:
+        #    buy_items()
         decision=random.randint(0,4)
         if decision==0 or decision==3 or decision==4:
             Potion(random.randint(1,1))
@@ -2225,5 +2670,5 @@ def willToTruth():
             Bifrost(random.randint(1,5))
         end = time.time()
 
-willToTruth()
 
+test7()
