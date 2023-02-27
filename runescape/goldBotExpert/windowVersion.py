@@ -2671,4 +2671,5 @@ def test7():
         end = time.time()
 
 
-test7()
+#test7()
+sell_items()
