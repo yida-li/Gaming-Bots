@@ -534,7 +534,7 @@ def collect():
     arbitraryMovement(xlocation, ylocation + 85, 0.5)
     pyautogui.click()
     sleepsegment()
-    arbitraryMovement(random.randint(295, 325), random.randint(295, 300), 0.4)
+    arbitraryMovement(random.randint(295, 325), random.randint(295, 300)+8, 0.4)
     pyautogui.click()
 
     sleepsegment()
@@ -559,14 +559,14 @@ def sell():
         sleepsegment()
 
         #up 5%
-        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        #pyautogui.click()
-        #sleepsegment()
+        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        pyautogui.click()
+        sleepsegment()
 
 
 
 
-        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
         pyautogui.click()
         sleepsegment()
         exchange_cordinates[7][2]==False
@@ -578,13 +578,13 @@ def sell():
                         random.randint(exchange_cordinates[6][1][1]-10, exchange_cordinates[6][1][1]+10),0.7)
         pyautogui.click()
         #up 5%
-        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        #pyautogui.click()
-        #sleepsegment()
         arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
         pyautogui.click()
         sleepsegment()
-        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245)+8, 0.4)
+        #pyautogui.click()
+        #sleepsegment()
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
         pyautogui.click()
         sleepsegment()    
         exchange_cordinates[6][2]==False
@@ -601,10 +601,10 @@ def sell():
         pyautogui.click()
         sleepsegment()
         #up 5%
-        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        #pyautogui.click()
-        #sleepsegment()
-        arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        pyautogui.click()
+        sleepsegment()
+        arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
         pyautogui.click()
         sleepsegment()  
         exchange_cordinates[5][2]==False
@@ -2533,6 +2533,7 @@ def sell_items():
     enterBank()
     safeDeposit(0,0)
 
+#bulk of the code for rehoabam, a lot of algorithm to be inserted and integrated nested inside
 def buy_items():
 
 
@@ -2551,20 +2552,30 @@ def buy_items():
     enterExchange()
     sleepsegment()
 
+
+
+
+
+
+##############################################################################################################################
+##############################################################################################################################
+
+
     arbitraryMovement(random.randint(exchange_cordinates[1][0][0]-10, exchange_cordinates[1][0][0]+10),
                         random.randint(exchange_cordinates[1][0][1]-10, exchange_cordinates[1][0][1]+10),0.7)
     pyautogui.click()
     sleepsegment()
-    pyautogui.typewrite('grimy toadflax\n', interval=2)
+    pyautogui.typewrite('grimy toadflax\n', interval=random.uniform(1.79, 2.31))
     sleepsegment()
-    #note the items
+    
+    #down 5%
+    #arbitraryMovement(random.randint(
+    #        280,300 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))   
+    #sleepsegment()
+    #pyautogui.click()
+    
     arbitraryMovement(random.randint(
-            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
-    sleepsegment()
-    pyautogui.click()
-    #note the items
-    arbitraryMovement(random.randint(
-            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+            190,200 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))
     rolldices=random.randint(2,3)
 
     while rolldices>0:
@@ -2573,11 +2584,15 @@ def buy_items():
         rolldices=rolldices-1
 
     sleepsegment()
-    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
     pyautogui.click()
     sleepsegment()
 
 
+
+
+##############################################################################################################################
+##############################################################################################################################
 
 
 
@@ -2586,16 +2601,17 @@ def buy_items():
                         random.randint(exchange_cordinates[2][0][1]-10, exchange_cordinates[2][0][1]+10),0.7)
     pyautogui.click()
     sleepsegment()
-    pyautogui.typewrite('grimy kwuarm\n', interval=2)
+    pyautogui.typewrite('grimy kwuarm\n', interval=random.uniform(1.79, 2.31))
     sleepsegment()
-    #note the items
+    
+    #down 5%
+    #arbitraryMovement(random.randint(
+    #        280,300 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))   
+    #sleepsegment()
+    #pyautogui.click()
+    
     arbitraryMovement(random.randint(
-            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
-    sleepsegment()
-    pyautogui.click()
-    #note the items
-    arbitraryMovement(random.randint(
-            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+            190,200 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))
     rolldices=random.randint(2,3)
 
     while rolldices>0:
@@ -2604,41 +2620,30 @@ def buy_items():
         rolldices=rolldices-1
 
     sleepsegment()
-    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
     pyautogui.click()
     sleepsegment()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##############################################################################################################################
+##############################################################################################################################
 
 
     arbitraryMovement(random.randint(exchange_cordinates[3][0][0]-10, exchange_cordinates[3][0][0]+10),
                         random.randint(exchange_cordinates[3][0][1]-10, exchange_cordinates[3][0][1]+10),0.7)
     pyautogui.click()
     sleepsegment()
-    pyautogui.typewrite('grimy avantoe\n', interval=2)
+    pyautogui.typewrite('grimy avantoe\n', interval=random.uniform(1.79, 2.31))
     sleepsegment()
-    #note the items
+    
+    #down 5%
+    #arbitraryMovement(random.randint(
+    #        280,300 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))   
+    #sleepsegment()
+    #pyautogui.click()
+    
     arbitraryMovement(random.randint(
-            280,300 ), random.randint(230,250), random.uniform(1.89, 2.11))   
-    sleepsegment()
-    pyautogui.click()
-    #note the items
-    arbitraryMovement(random.randint(
-            190,200 ), random.randint(230,250), random.uniform(1.89, 2.11))
+            190,200 ), random.randint(230,250)+8, random.uniform(1.89, 2.11))
     rolldices=random.randint(2,3)
 
     while rolldices>0:
@@ -2647,7 +2652,7 @@ def buy_items():
         rolldices=rolldices-1
 
     sleepsegment()
-    arbitraryMovement(random.randint(245, 285), random.randint(309, 321), 0.4)
+    arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
     pyautogui.click()
     sleepsegment()
     reset(0,0)
@@ -2729,7 +2734,7 @@ def test7():
     while(end-start<=randomThreshold):
 
         dice=random.randint(0,360)
-        if dice==30:
+        if dice%10==0:
             collect()
         #elif dice%160==0:
         #    sell_items()
@@ -2779,16 +2784,16 @@ def recycleExchange():
     collect()
     enterBank()
 
-def test9():
-    randomThreshold=random.randint(60*60*1,60*60*1)#clearly between 1 hour and 1 hour
+def test10():
+    randomThreshold=random.randint(60*60*3,60*60*4.5)#clearly between 1 hour and 1 hour
     end = time.time()
     recycleExchange()
-    buy_items()
     sell_items()
+    buy_items()
     while(end-start<=randomThreshold):
 
         dice=random.randint(0,360)
-        if dice%60==0:
+        if dice%10==0:
             collect()
         decision=random.randint(0,4)
         if decision==0 or decision==3 or decision==4:
@@ -2798,4 +2803,5 @@ def test9():
         end = time.time()
 
     
-test9()
+
+test10()
