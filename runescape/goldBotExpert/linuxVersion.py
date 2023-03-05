@@ -559,9 +559,9 @@ def sell():
         sleepsegment()
 
         #up 5%
-        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        pyautogui.click()
-        sleepsegment()
+        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        #pyautogui.click()
+        #sleepsegment()
 
 
 
@@ -578,9 +578,9 @@ def sell():
                         random.randint(exchange_cordinates[6][1][1]-10, exchange_cordinates[6][1][1]+10),0.7)
         pyautogui.click()
         #up 5%
-        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        pyautogui.click()
-        sleepsegment()
+        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        #pyautogui.click()
+        #sleepsegment()
         #arbitraryMovement(random.randint(445, 455), random.randint(235, 245)+8, 0.4)
         #pyautogui.click()
         #sleepsegment()
@@ -601,9 +601,9 @@ def sell():
         pyautogui.click()
         sleepsegment()
         #up 5%
-        arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
-        pyautogui.click()
-        sleepsegment()
+        #arbitraryMovement(random.randint(445, 455), random.randint(235, 245), 0.4)
+        #pyautogui.click()
+        #sleepsegment()
         arbitraryMovement(random.randint(245, 285), random.randint(309, 321)+8, 0.4)
         pyautogui.click()
         sleepsegment()  
@@ -2436,7 +2436,7 @@ def sell_items():
     sleepsegment()
     #note the items
     arbitraryMovement(random.randint(
-            190, 210), random.randint(345,355), random.uniform(1.89, 2.11))
+            190, 210), random.randint(345,355), random.uniform(1.89, 2.11)+16)
     sleepsegment() 
     pyautogui.click()
     sleepsegment()
@@ -2449,80 +2449,111 @@ def sell_items():
         random.randint(bank_cordinates[37][1]-5,bank_cordinates[37][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
+        
         arbitraryMovement(
             random.randint(bank_cordinates[27][0]-5,bank_cordinates[27][0]+5),
             random.randint(bank_cordinates[27][1]-5,bank_cordinates[27][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[19][0]-5,bank_cordinates[35][0]+5),
             random.randint(bank_cordinates[19][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
     elif chance==1:
         arbitraryMovement(
         random.randint(bank_cordinates[36][0]-5,bank_cordinates[36][0]+5),
         random.randint(bank_cordinates[36][1]-5,bank_cordinates[36][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[27][0]-5,bank_cordinates[27][0]+5),
             random.randint(bank_cordinates[27][1]-5,bank_cordinates[27][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[19][0]-5,bank_cordinates[35][0]+5),
             random.randint(bank_cordinates[19][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
     elif chance==2:
         arbitraryMovement(
         random.randint(bank_cordinates[37][0]-5,bank_cordinates[37][0]+5),
         random.randint(bank_cordinates[37][1]-5,bank_cordinates[37][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[35][0]-5,bank_cordinates[35][0]+5),
             random.randint(bank_cordinates[35][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[19][0]-5,bank_cordinates[35][0]+5),
             random.randint(bank_cordinates[19][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
     elif chance==3:
         arbitraryMovement(
         random.randint(bank_cordinates[19][0]-5,bank_cordinates[19][0]+5),
         random.randint(bank_cordinates[19][1]-5,bank_cordinates[19][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[27][0]-5,bank_cordinates[27][0]+5),
             random.randint(bank_cordinates[27][1]-5,bank_cordinates[27][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[36][0]-5,bank_cordinates[36][0]+5),
             random.randint(bank_cordinates[36][1]-5,bank_cordinates[36][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
     else:
         arbitraryMovement(
         random.randint(bank_cordinates[19][0]-5,bank_cordinates[19][0]+5),
         random.randint(bank_cordinates[19][1]-5,bank_cordinates[19][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[27][0]-5,bank_cordinates[27][0]+5),
             random.randint(bank_cordinates[27][1]-5,bank_cordinates[27][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
         arbitraryMovement(
             random.randint(bank_cordinates[35][0]-5,bank_cordinates[35][0]+5),
             random.randint(bank_cordinates[35][1]-5,bank_cordinates[35][1]+5), random.uniform(1.89, 2.11))
         pyautogui.click()
         sleepsegment()
+        sleepsegment()
+
 
 
     reset(0,0)
@@ -2728,7 +2759,10 @@ def test6():
             buy_items()          
         else:
             Bifrost(random.randint(1,1))
-def test7():
+
+
+            
+def finite():
     randomThreshold=random.randint(14499,19131) # between 4 hours to 5 hours and 20 minutes
     end = time.time()
     while(end-start<=randomThreshold):
@@ -2784,17 +2818,21 @@ def recycleExchange():
     collect()
     enterBank()
 
-def test10():
-    randomThreshold=random.randint(60*60*3,60*60*4.5)#clearly between 1 hour and 1 hour
+def infinite():
+    randomThreshold=random.randint(60*60*4.75,60*60*5.5)#clearly between 4 hour,45minutes to 5 hour 30 minutes
     end = time.time()
-    recycleExchange()
+    #recycleExchange()# not necessary needed
+    
+    #enterBank()
+    #safeDeposit()
+    #sleepsegment()
     sell_items()
     buy_items()
     while(end-start<=randomThreshold):
 
         dice=random.randint(0,360)
         if dice%10==0:
-            collect()
+            collect()#smooth tuned
         decision=random.randint(0,4)
         if decision==0 or decision==3 or decision==4:
             Potion(random.randint(1,1))         
@@ -2802,6 +2840,5 @@ def test10():
             Bifrost(random.randint(1,5))
         end = time.time()
 
-    
-
-test10()
+finite()    
+#infinite()
