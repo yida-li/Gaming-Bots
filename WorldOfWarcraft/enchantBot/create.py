@@ -95,44 +95,56 @@ def enchant(x):
         sleepsegment()
         sleepsegment()
         x=x-1
-enchant(21)
 
 
-bag_cordinate = [
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(576, 586),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(616, 630),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(656, 670),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-        random.randint(699, 716),
-    ]
+
+
+
 
 def disenchant(x):
-    while(x>0):
-        sleepsegment()
-        print("task left : ",x)
-        
-       
-enchant(21)
+    bag_cordinate = [
+        [random.randint(785-7, 785+7),random.randint(657-6, 657+6)],[random.randint(828-7, 828+7),random.randint(657-6, 657+6)]
+       ,[random.randint(873-7, 873+7),random.randint(657-6, 657+6)],[random.randint(915-7, 915+7),random.randint(657-6, 657+6)]
+       ,[random.randint(960-7, 960+7),random.randint(657-6, 657+6)],[random.randint(1005-7, 1005+7),random.randint(657-6, 657+6)]
+       ,[random.randint(1045-7, 1045+7),random.randint(657-6, 657+6)],[random.randint(1090-7, 1090+7),random.randint(657-6, 657+6)]
+       ,[random.randint(1132-7, 1132+7),random.randint(657-6, 657+6)],[random.randint(1179-7, 1179+7),random.randint(657-6, 657+6)]
+
+       ,[random.randint(785-7, 785+7),random.randint(702-6, 702+6)],[random.randint(828-7, 828+7),random.randint(702-6, 702+6)]
+       ,[random.randint(873-7, 873+7),random.randint(702-6, 702+6)],[random.randint(915-7, 915+7),random.randint(702-6, 702+6)]
+       ,[random.randint(960-7, 960+7),random.randint(702-6, 702+6)],[random.randint(1005-7, 1005+7),random.randint(702-6, 702+6)]
+       ,[random.randint(1045-7, 1045+7),random.randint(702-6, 702+6)],[random.randint(1090-7, 1090+7),random.randint(702-6, 702+6)]
+       ,[random.randint(1132-7, 1132+7),random.randint(702-6, 702+6)],[random.randint(1179-7, 1179+7),random.randint(702-6, 702+6)]
+      ,[random.randint(785-7, 785+7),random.randint(743-6, 743+6)],[random.randint(828-7, 828+7),random.randint(743-6, 743+6)]
+       ,[random.randint(873-7, 873+7),random.randint(743-6, 743+6)],[random.randint(915-7, 915+7),random.randint(743-6, 743+6)]
+       ,[random.randint(960-7, 960+7),random.randint(743-6, 743+6)],[random.randint(1005-7, 1005+7),random.randint(743-6, 743+6)]
+       ,[random.randint(1045-7, 1045+7),random.randint(743-6, 743+6)],[random.randint(1090-7, 1090+7),random.randint(743-6, 743+6)]
+       ,[random.randint(1132-7, 1132+7),random.randint(743-6, 743+6)],[random.randint(1179-7, 1179+7),random.randint(743-6, 743+6)]
+      ,[random.randint(785-7, 785+7),random.randint(791-6, 791+6)],[random.randint(828-7, 828+7),random.randint(791-6, 791+6)]
+       ,[random.randint(873-7, 873+7),random.randint(791-6, 791+6)],[random.randint(915-7, 915+7),random.randint(791-6, 791+6)]
+       ,[random.randint(960-7, 960+7),random.randint(791-6, 791+6)],[random.randint(1005-7, 1005+7),random.randint(791-6, 791+6)]
+       ,[random.randint(1045-7, 1045+7),random.randint(791-6, 791+6)],[random.randint(1090-7, 1090+7),random.randint(791-6, 791+6)]
+       ,[random.randint(1132-7, 1132+7),random.randint(791-6, 791+6)],[random.randint(1179-7, 1179+7),random.randint(791-6, 791+6)]
+    ]
+    sleepsegment()
+    arbitraryMovement1(random.randint(230, 280),random.randint(300, 825),random.uniform(0.68,1.15))
+    pyautogui.click()
+    counter = 0
+    while (counter < x):
+        destiny = random.randint(0, x-1)
+        if (bag_cordinate[destiny][0]!= 0):
+                        sleepsegment()
+                        pyautogui.typewrite("1")
+                        sleepsegment()
+                        arbitraryMovement1(bag_cordinate[destiny][0],bag_cordinate[destiny][1],random.uniform(0.68,1.15))
+                        sleepsegment()
+                        pyautogui.click(
+                            button='left')
+                        bag_cordinate[destiny][0] = 0
+                        counter = counter+1
+                        time.sleep(3)
+                        sleepsegment()
+
+
+enchant(35)
+#disenchant(30)
+
