@@ -98,6 +98,18 @@ def enchant(x):
 
 
 
+def autopurchase():
+    randomThreshold=random.randint(60*60*4.75,60*60*5.5)#clearly between 4 hour,45minutes to 5 hour 30 minutes
+    end = time.time()
+
+    while(end-start<=randomThreshold):
+        time.sleep(10)
+        sleepsegment()
+        
+        dice=random.randint(0,360)
+        if dice%10==0:
+            print("current cycle time is ", end-start," out of ", randomThreshold)
+        end = time.time()
 
 
 
@@ -145,6 +157,7 @@ def disenchant(x):
                         sleepsegment()
 
 
-enchant(35)
-#disenchant(30)
+#enchant(33)
+#disenchant(33)
 
+autopurchase()
