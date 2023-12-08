@@ -106,14 +106,19 @@ def autopurchase():
         time.sleep(10)
         sleepsegment()
         
+        #
+        
+
+        #
         dice=random.randint(0,360)
         if dice%10==0:
             print("current cycle time is ", end-start," out of ", randomThreshold)
         end = time.time()
 
 
-
+#task number
 def disenchant(x):
+
     bag_cordinate = [
         [random.randint(785-7, 785+7),random.randint(657-6, 657+6)],[random.randint(828-7, 828+7),random.randint(657-6, 657+6)]
        ,[random.randint(873-7, 873+7),random.randint(657-6, 657+6)],[random.randint(915-7, 915+7),random.randint(657-6, 657+6)]
@@ -156,8 +161,40 @@ def disenchant(x):
                         time.sleep(3)
                         sleepsegment()
 
+def duality():
+    choice = input("1 for enchant, 2 for disenchant")
+    if choice=="1":
+        number = input("how many are we enchanting?")
+        number_as_integer = int((number))
+        
+        enchant(number_as_integer)
+    if choice =="2":
+        number = input("how many are we disenchanting?")
+        number_as_integer = int((number))
+        disenchant(number_as_integer)
 
-#enchant(33)
-#disenchant(33)
 
-autopurchase()
+#TODO
+def trinity():
+    choice = input("1 for enchant, 2 for disenchant, 3 for auto purchase")
+    if choice=="1":
+        number = input("how many are we enchanting?")
+        number_as_integer = int((number))
+        
+        enchant(number_as_integer)
+    if choice =="2":
+        number = input("how many are we disenchanting?")
+        number_as_integer = int((number))
+        disenchant(number_as_integer)
+    if choice =="3":
+        selection = input("set type")
+        #
+        if (selection=="weapons"):
+            number_as_integer = int((number))
+            disenchant(number_as_integer)
+
+
+
+
+
+duality()
