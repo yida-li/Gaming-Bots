@@ -1,26 +1,6 @@
-# Gaming-Bots
+# Goal
 
-
-
-
-By harnessing the power of Advanced Computational Devices (maximal CPU output), program scripts that push the limits and barrier of what human can achieve in gaming.
-
-
-
-
-
-
-Making decisions on the nano scale in games.
-
-
-
-
-Making Heuristic decisions
-
-
-
-
-# Goal?
+  *Have fun
 
 # Potential Source of Error/Problem
   
@@ -38,12 +18,17 @@ Making Heuristic decisions
   
 # Runescape  ( sleeping )
 
+[login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/grandExchangeBot/access.gif)
+[Potion](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/goldBot/collectingMinterals.gif)
+[Clean](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/goldBot/collectingVespianGase.gif)
+[Fletch](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/goldBot/dualSupply.gif)
 
-command line to perform chain actions [collect resources](https://github.com/ai-gorithm-js/CommandCenter/tree/main/planets/runescape) ,  [login](https://github.com/yida-li/Gaming-Bots/blob/master/runescape/grandExchangeBot/access.gif), logout,buy,sell,level up
 # SecondLife ( pending )
 
 # ClassicWow  ( starting )
 
+[Enchant](https://github.com/yida-li/Gaming-Bots/blob/master/WorldOfWarcraft/)
+[Disenchant](https://github.com/yida-li/Gaming-Bots/blob/master/WorldOfWarcraft/)
 
 <span class="edit-link"><a href="https://github.com/yida-li/Gaming-Bots/edit/master/README.md" target="_blank"><i class="fa fa-github"></i> edit this page</a></span>
 

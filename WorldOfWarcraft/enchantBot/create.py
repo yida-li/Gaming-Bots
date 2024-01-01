@@ -86,7 +86,7 @@ def sleepsegment():
 def enchant(x):
     while(x>0):
         sleepsegment()
-        print("task left : ",x)
+        #print("task left : ",x)
         
         sleepsegment()
         arbitraryMovement1(random.randint(230, 280),random.randint(620, 625),random.uniform(0.68,1.15))
@@ -158,8 +158,16 @@ def disenchant(x):
                             button='left')
                         bag_cordinate[destiny][0] = 0
                         counter = counter+1
-                        time.sleep(3)
+                        time.sleep(2.5)
+                        print("cycle number: ",counter)
                         sleepsegment()
+                        if (destiny%3==0):
+                            enchant(1)
+def task():
+
+    number = input("enter the total task cycle?")
+    number_as_integer = int((number))    
+    enchant(number_as_integer)
 
 def duality():
     choice = input("1 for enchant, 2 for disenchant")
@@ -196,5 +204,5 @@ def trinity():
 
 
 
-
-duality()
+#duality()
+task()
